@@ -15,6 +15,13 @@ python3 -m unittest discover -s tests -v
 
 The default output is human-readable Markdown. Use `--format json` for machine-readable output. The browser-only demo is [demo.html](demo.html): choose a JSON/CSV file or click the synthetic sample button. No server, account, dependency, or network request is required.
 
+CSV parsing is designed for practical care exports:
+
+- UTF-8 BOM handling
+- quoted commas
+- embedded newlines inside quoted fields
+- blank line skip
+
 ## What it checks
 
 - Required fields and schema version

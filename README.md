@@ -7,10 +7,6 @@
 
 検査規則のID・日英説明・修正ヒントは [rules.json](rules.json) を正本とし、CLIとブラウザデモで共有します。
 
-公開準備の判断材料は [PUBLIC_LAUNCH_DRAFT.md](PUBLIC_LAUNCH_DRAFT.md) にあります（未公開）。
-
-公開候補ファイルの一覧は [public-files.txt](public-files.txt) で管理します。`python3 export_public.py <空の出力先>` を実行すると、許可したファイルだけを別フォルダへコピーできます。
-
 ## 実行
 
 ```bash
@@ -23,6 +19,13 @@ node tests/test_demo_smoke.mjs
 ```
 
 JSONまたはCSVを入力できます。デフォルト出力は人が読むためのMarkdownです。`--format json`では機械処理しやすい結果を出します。
+
+CSV入力はダッシュルールを扱えるように以下に対応しています。
+
+- UTF-8 BOMの除去
+- ダブルクォート内のカンマ
+- ダブルクォート内改行
+- 空行のスキップ
 
 ## ブラウザで試す
 
