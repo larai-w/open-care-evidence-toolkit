@@ -3,6 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Topics](https://img.shields.io/badge/topics-care%20data--quality%20%7C%20synthetic%20data%20%7C%20python-blue)](https://github.com/larai-w/open-care-evidence-toolkit)
 [![Releases](https://img.shields.io/github/v/release/larai-w/open-care-evidence-toolkit)](https://github.com/larai-w/open-care-evidence-toolkit/releases)
+[![GitHub stars](https://img.shields.io/github/stars/larai-w/open-care-evidence-toolkit?style=social)](https://github.com/larai-w/open-care-evidence-toolkit/stargazers)
 
 A tiny offline checker for synthetic observation records. It validates data quality without sending files anywhere. It does not make medical judgments, diagnoses, or store personal data.
 
@@ -73,6 +74,7 @@ Use synthetic data only. The tool does not infer that an unrecorded event did no
 
 - [Latest release](https://github.com/larai-w/open-care-evidence-toolkit/releases)
 - [Changelog](CHANGELOG.md)
+- [Star this repository](https://github.com/larai-w/open-care-evidence-toolkit/stargazers)
 - [Open an issue](https://github.com/larai-w/open-care-evidence-toolkit/issues/new)
 - [Choose issue template](https://github.com/larai-w/open-care-evidence-toolkit/issues/new/choose)
 - [Send a pull request](https://github.com/larai-w/open-care-evidence-toolkit/pulls)

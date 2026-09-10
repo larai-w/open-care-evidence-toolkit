@@ -3,6 +3,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Topics](https://img.shields.io/badge/topics-care%20data--quality%20%7C%20synthetic%20data%20%7C%20python-blue)](https://github.com/larai-w/open-care-evidence-toolkit)
 [![Releases](https://img.shields.io/github/v/release/larai-w/open-care-evidence-toolkit)](https://github.com/larai-w/open-care-evidence-toolkit/releases)
+[![GitHub stars](https://img.shields.io/github/stars/larai-w/open-care-evidence-toolkit?style=social)](https://github.com/larai-w/open-care-evidence-toolkit/stargazers)
 
 合成データの観察記録を、**外部送信なし**で品質チェックするローカルツールです。  
 対象は研究・PoC・運用前の検証用途です。医療判断・診断・個人データの保存は扱いません。  
@@ -86,6 +87,7 @@ python3 care_evidence.py fixtures/complete.json --format json
 
 - [最新リリース](https://github.com/larai-w/open-care-evidence-toolkit/releases)
 - [変更履歴](CHANGELOG.md)
+- [スター](https://github.com/larai-w/open-care-evidence-toolkit/stargazers)
 - [問題を報告する](https://github.com/larai-w/open-care-evidence-toolkit/issues/new)
 - [issueテンプレート](https://github.com/larai-w/open-care-evidence-toolkit/issues/new/choose)
 - [プルリクエスト](https://github.com/larai-w/open-care-evidence-toolkit/pulls)
