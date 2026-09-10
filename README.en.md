@@ -1,19 +1,48 @@
 # Open Care Evidence Toolkit (local MVP)
 
-A tiny offline checker for synthetic observation records. It checks data quality without making medical judgments, diagnoses, or storing personal data.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Topics](https://img.shields.io/badge/topics-care%20data--quality%20%7C%20synthetic%20data%20%7C%20python-blue)](https://github.com/larai-w/open-care-evidence-toolkit)
+[![Releases](https://img.shields.io/github/v/release/larai-w/open-care-evidence-toolkit)](https://github.com/larai-w/open-care-evidence-toolkit/releases)
 
-This is currently a local MVP. See [SCHEMA.md](SCHEMA.md) for the input contract, [SECURITY.md](SECURITY.md) for the safety boundary, and [CONTRIBUTING.md](CONTRIBUTING.md) for contribution rules. Rule IDs, Japanese/English labels, and repair hints live in [rules.json](rules.json), including machine-readable `severity` metadata (`high/medium/low`) shared by the CLI and browser demo.
+A tiny offline checker for synthetic observation records. It validates data quality without sending files anywhere. It does not make medical judgments, diagnoses, or store personal data.
 
-## Run it
+Intended for research pilots, internal QA, and pre-production validation.  
+[Japanese version](README.md)
+
+Target users:
+
+- developers validating care-data quality workflows
+- researchers prototyping event schema and QA rules
+- teams who want offline CSV/JSON validation before integrating into a platform
+
+Reference docs: [SCHEMA.md](SCHEMA.md) / [SECURITY.md](SECURITY.md) / [CONTRIBUTING.md](CONTRIBUTING.md)  
+Rule definitions are in [rules.json](rules.json) and shared by CLI + browser demo (including machine-readable `severity` as `high/medium/low`).
+
+## Start here
+
+```bash
+git clone https://github.com/larai-w/open-care-evidence-toolkit
+cd open-care-evidence-toolkit
+python3 care_evidence.py fixtures/complete.json
+```
+
+## How to run (CLI)
 
 ```bash
 python3 care_evidence.py fixtures/complete.json
 python3 care_evidence.py fixtures/missing.json --format json
 python3 care_evidence.py fixtures/complete.csv
-python3 -m unittest discover -s tests -v
 ```
 
-The default output is human-readable Markdown. Use `--format json` for machine-readable output. The browser-only demo is [demo.html](demo.html): choose a JSON/CSV file or click the synthetic sample button. No server, account, dependency, or network request is required.
+JSON and CSV are supported. Default output is human-readable Markdown. Use `--format json` for machine-friendly CI outputs.
+
+```bash
+python3 care_evidence.py fixtures/complete.json --format json
+```
+
+### CSV coverage
+
+The parser is tuned for realistic export edges before production.
 
 CSV parsing is designed for practical care exports:
 
@@ -22,8 +51,15 @@ CSV parsing is designed for practical care exports:
 - embedded newlines inside quoted fields
 - blank line skip
 
-## What it checks
+## Rule metadata
 
+`rules.json` includes metadata fields for automation:
+
+- `severity`: priority (`high`, `medium`, `low`)
+- `area`: quality domain
+- `machine_readable`: structured automation flag
+
+## What it checks
 - Required fields and schema version
 - ISO 8601 timestamps with an explicit timezone offset
 - Separation of observation from interpretation
@@ -32,3 +68,9 @@ CSV parsing is designed for practical care exports:
 - Correction references to earlier event IDs
 
 Use synthetic data only. The tool does not infer that an unrecorded event did not happen, and it does not provide clinical or emergency guidance.
+
+## Contributing on GitHub
+
+- [Latest release](https://github.com/larai-w/open-care-evidence-toolkit/releases)
+- [Open an issue](https://github.com/larai-w/open-care-evidence-toolkit/issues/new)
+- [Send a pull request](https://github.com/larai-w/open-care-evidence-toolkit/pulls)
