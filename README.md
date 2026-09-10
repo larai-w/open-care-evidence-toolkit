@@ -39,6 +39,10 @@ cd open-care-evidence-toolkit
 python3 care_evidence.py fixtures/complete.json
 ```
 
+### 1分で再現したいとき
+
+- [1分で始める手順](examples/ONE_MINUTE.md)
+
 ## 使い方（CLI）
 
 ```bash

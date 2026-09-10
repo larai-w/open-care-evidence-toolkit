@@ -27,6 +27,10 @@ cd open-care-evidence-toolkit
 python3 care_evidence.py fixtures/complete.json
 ```
 
+### 1-minute quick start
+
+- [1-minute quick start guide](examples/ONE_MINUTE.md)
+
 ## How to run (CLI)
 
 ```bash
