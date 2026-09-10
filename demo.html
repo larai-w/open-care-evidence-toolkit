@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Open Care Evidence Toolkit — local demo</title>
+  <style>
+    :root { color-scheme: light; font-family: system-ui, sans-serif; }
+    body { max-width: 760px; margin: 2rem auto; padding: 0 1rem; color: #1f2937; }
+    h1 { font-size: 1.55rem; } .note { background:#eef6ff; padding:1rem; border-radius:.5rem; }
+    label { display:block; margin:1rem 0 .35rem; font-weight:600; }
+    input, button { font:inherit; padding:.55rem .7rem; } button { cursor:pointer; }
+    :focus-visible { outline: 3px solid #155eef; outline-offset: 2px; }
+    pre { white-space:pre-wrap; background:#f7f7f8; padding:1rem; border-radius:.5rem; }
+    .ok { color:#126b35; } .bad { color:#9b1c1c; }
+  </style>
+</head>
+<body>
+  <p><button id="language" type="button" aria-pressed="false">English</button></p>
+  <h1 id="title">Open Care Evidence Toolkit</h1>
+  <p id="privacy-note" class="note">ローカル専用デモです。ファイルはこのブラウザ内だけで処理され、外部へ送信されません。実在の介護記録ではなく合成データを使ってください。</p>
+  <label id="file-label" for="file">JSON / CSVファイル</label>
+  <input id="file" type="file" accept=".json,.csv,application/json,text/csv" aria-describedby="privacy-note">
+  <button id="sample" type="button">合成サンプルを表示</button>
+  <h2 id="results-heading">結果</h2>
+  <div id="results" role="region" aria-labelledby="results-heading" aria-live="polite">
+    <div id="summary" role="status">ファイルを選択してください。</div>
+  <pre id="output" tabindex="0" aria-label="検査結果"></pre>
+  </div>
+  <script type="application/json" id="rule-registry">[
+    {"id":"required_fields","ja":"必須フィールド","en":"Required fields","hint":"Add every field in the minimum event schema."},
+    {"id":"timestamp_timezone","ja":"時刻とタイムゾーン","en":"Timestamp and timezone","hint":"Use ISO 8601 with an offset and an IANA timezone."},
+    {"id":"observation_interpretation","ja":"観察と解釈の分離","en":"Observation and interpretation","hint":"Keep what was observed separate from what it may mean."},
+    {"id":"provenance","ja":"出典と記録者","en":"Provenance","hint":"Record a source and a recorder role without personal names."},
+    {"id":"missingness_status","ja":"欠測と非発生の区別","en":"Missingness and non-occurrence","hint":"Use not_recorded only for missing records, not as proof of non-occurrence."},
+    {"id":"correction_reference","ja":"訂正履歴","en":"Correction reference","hint":"Point to the earlier event ID when correcting a record."}
+  ]</script>
+  <script>
+    const REQUIRED = ['event_id','observed_at','timezone','source','recorder_role','observation','interpretation','status','corrects','schema_version'];
+    const STATUSES = new Set(['observed','not_recorded','not_occurring']);
+    const registry = JSON.parse(document.querySelector('#rule-registry').textContent);
+    let language = 'ja', lastResults = null;
+    const labels = Object.fromEntries(registry.map(rule => [rule.id, rule.ja]));
+    const copy = {
+      ja: { title:'Open Care Evidence Toolkit', note:'ローカル専用デモです。ファイルはこのブラウザ内だけで処理され、外部へ送信されません。実在の介護記録ではなく合成データを使ってください。', file:'JSON / CSVファイル', sample:'合成サンプルを表示', results:'結果', initial:'ファイルを選択してください。', count:(events, issues)=>`${events}イベント / ${issues}件の問題`, passed:'✅ 6規則を通過', missing:'(event_idなし)' },
+      en: { title:'Open Care Evidence Toolkit', note:'This local demo processes files in your browser only. Nothing is sent outside. Use synthetic data, not real care records.', file:'JSON / CSV file', sample:'Show synthetic sample', results:'Results', initial:'Choose a file to begin.', count:(events, issues)=>`${events} event(s) / ${issues} issue(s)`, passed:'✅ Passed all 6 rules', missing:'(no event_id)' }
+    };
+    function renderResults() {
+      if (!lastResults) return;
+      const current = copy[language], count = lastResults.reduce((sum, item) => sum + item.issues.length, 0);
+      summary.textContent = current.count(lastResults.length, count);
+      summary.className = count ? 'bad' : 'ok';
+      output.textContent = lastResults.map(item => `${item.id || current.missing}\n${item.issues.length ? item.issues.map(([rule, message]) => {
+        const definition = registry.find(entry => entry.id === rule);
+        return `⚠️ ${language === 'ja' ? definition.ja : definition.en}: ${language === 'ja' ? message : definition.hint}`;
+      }).join('\n') : current.passed}`).join('\n\n');
+    }
+    function setLanguage(next) {
+      language = next; document.documentElement.lang = next === 'ja' ? 'ja' : 'en';
+      const current = copy[language];
+      title.textContent = current.title; privacyNote.textContent = current.note; fileLabel.textContent = current.file; sample.textContent = current.sample; resultsHeading.textContent = current.results;
+      languageButton.textContent = language === 'ja' ? 'English' : '日本語'; languageButton.setAttribute('aria-pressed', String(language === 'en'));
+      if (!lastResults) summary.textContent = current.initial; else renderResults();
+    }
+    function check(event) {
+      const issues = [], missing = REQUIRED.filter(key => !(key in event));
+      if (missing.length) issues.push(['required_fields', `不足: ${missing.join(', ')}`]);
+      const parsed = new Date(String(event.observed_at || ''));
+      if (Number.isNaN(parsed.getTime()) || !/[zZ]|[+-]\d\d:\d\d$/.test(String(event.observed_at || ''))) issues.push(['timestamp_timezone','observed_at はISO 8601形式とタイムゾーンオフセットが必要です']);
+      if (!String(event.timezone || '').trim()) issues.push(['timestamp_timezone','timezone がありません']);
+      const observation = String(event.observation || '').trim();
+      if (observation && /と思う|かもしれない|likely|maybe/i.test(observation)) issues.push(['observation_interpretation','観察欄に推測表現があります']);
+      if (event.status === 'observed' && !observation) issues.push(['observation_interpretation','observed には観察内容が必要です']);
+      if (!String(event.source || '').trim() || !String(event.recorder_role || '').trim()) issues.push(['provenance','source と recorder_role を記録してください']);
+      if (!STATUSES.has(event.status)) issues.push(['missingness_status','status は observed / not_recorded / not_occurring のいずれかです']);
+      if (event.status === 'not_recorded' && (observation || String(event.interpretation || '').trim())) issues.push(['missingness_status','not_recorded に観察・解釈を入れないでください']);
+      if (!(typeof event.corrects === 'string' || Array.isArray(event.corrects))) issues.push(['correction_reference','corrects は元イベントIDまたはID配列です']);
+      return issues;
+    }
+    function parseCsv(text) {
+      const rows = [], normalized = text.replace(/^\uFEFF/, ''); let row = [], cell = '', quoted = false;
+      for (let i = 0; i < normalized.length; i += 1) {
+        const char = normalized[i], next = normalized[i + 1];
+        if (char === '"' && quoted && next === '"') { cell += '"'; i += 1; }
+        else if (char === '"') quoted = !quoted;
+        else if (char === ',' && !quoted) { row.push(cell); cell = ''; }
+        else if ((char === '\n' || char === '\r') && !quoted) { if (char === '\r' && next === '\n') i += 1; row.push(cell); if (row.some(value => value !== '')) rows.push(row); row = []; cell = ''; }
+        else cell += char;
+      }
+      if (cell || row.length) { row.push(cell); if (row.some(value => value !== '')) rows.push(row); }
+      const headers = rows.shift() || [];
+      return rows.map(row => Object.fromEntries(headers.map((header, i) => [header, row[i] || ''])))
+        .map(event => ({...event, corrects: event.corrects ? event.corrects.split(';').filter(Boolean) : [], schema_version: /^\d+$/.test(event.schema_version) ? Number(event.schema_version) : event.schema_version}));
+    }
+    function inspect(text, name) {
+      let events;
+      try { const payload = name.toLowerCase().endsWith('.csv') ? null : JSON.parse(text); events = payload ? (Array.isArray(payload) ? payload : payload.events || [payload]) : parseCsv(text); }
+      catch (error) { summary.textContent = `読み込みエラー: ${error.message}`; summary.className = 'bad'; output.textContent = ''; return; }
+      const results = events.map(event => ({ id:event.event_id, issues:check(event) }));
+      lastResults = results; renderResults();
+    }
+    const file = document.querySelector('#file'), summary = document.querySelector('#summary'), output = document.querySelector('#output'), title = document.querySelector('#title'), privacyNote = document.querySelector('#privacy-note'), fileLabel = document.querySelector('#file-label'), sample = document.querySelector('#sample'), resultsHeading = document.querySelector('#results-heading'), languageButton = document.querySelector('#language');
+    file.addEventListener('change', () => { const selected = file.files[0]; if (!selected) return; const reader = new FileReader(); reader.onload = () => inspect(reader.result, selected.name); reader.readAsText(selected); });
+    sample.addEventListener('click', () => inspect(JSON.stringify({events:[{event_id:'evt-browser-001',observed_at:'2026-09-10T09:00:00+09:00',timezone:'Asia/Tokyo',source:'synthetic-care-log',recorder_role:'family-caregiver',observation:'朝食後に水を200mL飲んだ',interpretation:'',status:'observed',corrects:[],schema_version:1}]}), 'sample.json'));
+    languageButton.addEventListener('click', () => setLanguage(language === 'ja' ? 'en' : 'ja'));
+  </script>
+</body>
+</html>

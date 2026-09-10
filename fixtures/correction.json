@@ -1,0 +1,16 @@
+{
+  "events": [
+    {
+      "event_id": "evt-demo-003",
+      "observed_at": "2026-09-10T10:00:00+09:00",
+      "timezone": "Asia/Tokyo",
+      "source": "synthetic-care-log",
+      "recorder_role": "support-worker",
+      "observation": "昼の記録を訂正した",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": ["evt-demo-002"],
+      "schema_version": 1
+    }
+  ]
+}

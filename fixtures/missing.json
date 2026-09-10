@@ -1,0 +1,16 @@
+{
+  "events": [
+    {
+      "event_id": "evt-demo-002",
+      "observed_at": "2026-09-10T09:00:00+09:00",
+      "timezone": "",
+      "source": "",
+      "recorder_role": "family-caregiver",
+      "observation": "",
+      "interpretation": "記録がないので問題ないと思う",
+      "status": "not_recorded",
+      "corrects": 12,
+      "schema_version": 1
+    }
+  ]
+}

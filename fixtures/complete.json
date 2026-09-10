@@ -1,0 +1,16 @@
+{
+  "events": [
+    {
+      "event_id": "evt-demo-001",
+      "observed_at": "2026-09-10T09:00:00+09:00",
+      "timezone": "Asia/Tokyo",
+      "source": "synthetic-care-log",
+      "recorder_role": "family-caregiver",
+      "observation": "朝食後に水を200mL飲んだ",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+event_id,observed_at,timezone,source,recorder_role,observation,interpretation,status,corrects,schema_version
+evt-csv-001,2026-09-10T09:00:00+09:00,Asia/Tokyo,synthetic-care-log,family-caregiver,朝食後に水を200mL飲んだ,,observed,,1
