@@ -2,7 +2,7 @@
 
 A tiny offline checker for synthetic observation records. It checks data quality without making medical judgments, diagnoses, or storing personal data.
 
-This is currently a local MVP. See [SCHEMA.md](SCHEMA.md) for the input contract, [SECURITY.md](SECURITY.md) for the safety boundary, and [CONTRIBUTING.md](CONTRIBUTING.md) for contribution rules. Rule IDs, Japanese/English labels, and repair hints live in [rules.json](rules.json) and are shared by the CLI and browser demo.
+This is currently a local MVP. See [SCHEMA.md](SCHEMA.md) for the input contract, [SECURITY.md](SECURITY.md) for the safety boundary, and [CONTRIBUTING.md](CONTRIBUTING.md) for contribution rules. Rule IDs, Japanese/English labels, and repair hints live in [rules.json](rules.json), including machine-readable `severity` metadata (`high/medium/low`) shared by the CLI and browser demo.
 
 ## Run it
 

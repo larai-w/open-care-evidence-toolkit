@@ -48,6 +48,10 @@ class DemoTests(unittest.TestCase):
             "provenance", "missingness_status", "correction_reference"
         ])
         for item in registry:
+            self.assertIn(item["severity"], {"high", "medium", "low"})
+            self.assertIsInstance(item["machine_readable"], bool)
+            self.assertIn("area", item)
+        for item in registry:
             self.assertIn(f'"id":"{item["id"]}"', html)
 
     def test_demo_has_language_toggle_and_bilingual_copy(self):

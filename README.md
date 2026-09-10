@@ -5,7 +5,7 @@
 
 現在は公開前のローカルMVPです。仕様は [SCHEMA.md](SCHEMA.md)、安全境界は [SECURITY.md](SECURITY.md)、貢献方法は [CONTRIBUTING.md](CONTRIBUTING.md) を参照してください。
 
-検査規則のID・日英説明・修正ヒントは [rules.json](rules.json) を正本とし、CLIとブラウザデモで共有します。
+検査規則のID・日英説明・修正ヒント・`severity`（`high/medium/low`）は [rules.json](rules.json) を正本とし、CLIとブラウザデモで共有します。
 
 ## 実行
 
