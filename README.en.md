@@ -1,7 +1,8 @@
-# Open Care Evidence Toolkit (local MVP)
+# Open Care Evidence Toolkit
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 [![Topics](https://img.shields.io/badge/topics-care%20data--quality%20%7C%20synthetic%20data%20%7C%20python-blue)](https://github.com/larai-w/open-care-evidence-toolkit)
+[![CI](https://github.com/larai-w/open-care-evidence-toolkit/actions/workflows/test.yml/badge.svg)](https://github.com/larai-w/open-care-evidence-toolkit/actions/workflows/test.yml)
 [![Releases](https://img.shields.io/github/v/release/larai-w/open-care-evidence-toolkit)](https://github.com/larai-w/open-care-evidence-toolkit/releases)
 [![GitHub stars](https://img.shields.io/github/stars/larai-w/open-care-evidence-toolkit?style=social)](https://github.com/larai-w/open-care-evidence-toolkit/stargazers)
 
