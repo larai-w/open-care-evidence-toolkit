@@ -74,9 +74,11 @@ Use synthetic data only. The tool does not infer that an unrecorded event did no
 
 - [Latest release](https://github.com/larai-w/open-care-evidence-toolkit/releases)
 - [Changelog](CHANGELOG.md)
+- [Citation](CITATION.md)
 - [Star this repository](https://github.com/larai-w/open-care-evidence-toolkit/stargazers)
 - [Open an issue](https://github.com/larai-w/open-care-evidence-toolkit/issues/new)
 - [Choose issue template](https://github.com/larai-w/open-care-evidence-toolkit/issues/new/choose)
 - [Send a pull request](https://github.com/larai-w/open-care-evidence-toolkit/pulls)
+- [Roadmap](ROADMAP.md)
 - [Code of Conduct](CODE_OF_CONDUCT.md)
 - [Support](SUPPORT.md)
