@@ -16,17 +16,20 @@
   </style>
 </head>
 <body>
-  <p><button id="language" type="button" aria-pressed="false">English</button></p>
-  <h1 id="title">Open Care Evidence Toolkit</h1>
-  <p id="privacy-note" class="note">ローカル専用デモです。ファイルはこのブラウザ内だけで処理され、外部へ送信されません。実在の介護記録ではなく合成データを使ってください。</p>
-  <label id="file-label" for="file">JSON / CSVファイル</label>
-  <input id="file" type="file" accept=".json,.csv,application/json,text/csv" aria-describedby="privacy-note">
-  <button id="sample" type="button">合成サンプルを表示</button>
-  <h2 id="results-heading">結果</h2>
-  <div id="results" role="region" aria-labelledby="results-heading" aria-live="polite">
-    <div id="summary" role="status">ファイルを選択してください。</div>
-  <pre id="output" tabindex="0" aria-label="検査結果"></pre>
-  </div>
+  <main>
+    <p><button id="language" type="button" aria-pressed="false">English</button></p>
+    <h1 id="title">Open Care Evidence Toolkit</h1>
+    <p id="privacy-note" class="note">ローカル専用デモです。ファイルはこのブラウザ内だけで処理され、外部へ送信されません。実在の介護記録ではなく合成データを使ってください。</p>
+    <label id="file-label" for="file">JSON / CSVファイル</label>
+    <input id="file" type="file" accept=".json,.csv,application/json,text/csv" aria-describedby="privacy-note">
+    <p id="sample-hint">検証向けの合成データを即時で読めます。</p>
+    <button id="sample" type="button" aria-describedby="sample-hint">合成サンプルを表示</button>
+    <h2 id="results-heading">結果</h2>
+    <div id="results" role="region" aria-labelledby="results-heading" aria-live="polite">
+      <div id="summary" role="status">ファイルを選択してください。</div>
+      <pre id="output" role="status" tabindex="0" aria-live="polite" aria-atomic="true" aria-label="検査結果"></pre>
+    </div>
+  </main>
   <script type="application/json" id="rule-registry">[
     {"id":"required_fields","ja":"必須フィールド","en":"Required fields","hint":"Add every field in the minimum event schema."},
     {"id":"timestamp_timezone","ja":"時刻とタイムゾーン","en":"Timestamp and timezone","hint":"Use ISO 8601 with an offset and an IANA timezone."},

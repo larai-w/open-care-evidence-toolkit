@@ -32,9 +32,11 @@ class DemoTests(unittest.TestCase):
 
     def test_demo_has_accessible_result_region_and_focus_style(self):
         html = (ROOT / "demo.html").read_text(encoding="utf-8")
+        self.assertIn("<main>", html)
         self.assertIn('role="region"', html)
         self.assertIn('role="status"', html)
         self.assertIn('aria-describedby="privacy-note"', html)
+        self.assertIn('aria-describedby="sample-hint"', html)
         self.assertIn(':focus-visible', html)
 
     def test_rule_registry_matches_the_six_rules(self):

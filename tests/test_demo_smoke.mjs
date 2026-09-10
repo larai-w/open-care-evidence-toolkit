@@ -14,6 +14,8 @@ assert.equal(elements.get('summary').textContent, 'ファイルを選択して�
 elements.get('sample').listeners.click();
 assert.match(elements.get('summary').textContent, /1イベント \/ 0件の問題/);
 assert.match(elements.get('output').textContent, /6規則を通過/);
+assert.equal(elements.get('output').attrs.role, 'status');
+assert.equal(elements.get('output').attrs['aria-live'], 'polite');
 elements.get('language').listeners.click();
 assert.equal(context.document.documentElement.lang, 'en');
 assert.match(elements.get('summary').textContent, /1 event\(s\) \/ 0 issue\(s\)/);
