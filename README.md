@@ -85,5 +85,9 @@ python3 care_evidence.py fixtures/complete.json --format json
 ## GitHubでの進め方
 
 - [最新リリース](https://github.com/larai-w/open-care-evidence-toolkit/releases)
+- [変更履歴](CHANGELOG.md)
 - [問題を報告する](https://github.com/larai-w/open-care-evidence-toolkit/issues/new)
+- [issueテンプレート](https://github.com/larai-w/open-care-evidence-toolkit/issues/new/choose)
 - [プルリクエスト](https://github.com/larai-w/open-care-evidence-toolkit/pulls)
+- [行動規範](CODE_OF_CONDUCT.md)
+- [サポート窓口](SUPPORT.md)
