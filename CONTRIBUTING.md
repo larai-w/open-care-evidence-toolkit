@@ -16,6 +16,12 @@ python3 care_evidence.py fixtures/complete.json
 python3 scripts/check_public_repo.py
 ```
 
+コミット前に同じ確認を自動で走らせるには、クローンごとに一度だけ次を実行してください（`scripts/check_public_repo.py --staged` と、入っていれば gitleaks が走ります）。
+
+```bash
+git config core.hooksPath .githooks
+```
+
 ブラウザデモは `demo.html` を直接開いて確認できます。公開用の変更では、実行前に `python3 scripts/check_public_repo.py` を実行してください。内部用の下書き・秘密鍵形式・既知のトークン形式が混入していないかを確認します。
 
 ## すぐに寄与しやすい改善
