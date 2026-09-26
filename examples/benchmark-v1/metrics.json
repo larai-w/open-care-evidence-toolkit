@@ -1,0 +1,3016 @@
+{
+  "format_version": 1,
+  "synthetic_only": true,
+  "configuration": {
+    "size": 120,
+    "rates": [
+      0.1,
+      0.3,
+      0.6
+    ],
+    "seeds": [
+      7,
+      19
+    ],
+    "eligible_rows": 59
+  },
+  "source_sha256": {
+    "care_evidence.py": "e8d7274b92b0a462d0c7be6264198966dfefb3d55d9ea1317326b64fc542525a",
+    "rules.json": "f71c6221613494a9b2f05093cd2c27966744ab834198ef9de09c8c1c9962285d",
+    "benchmarks/quality_benchmark.py": "8710b02410a7b4bb702ceb7ea64662a0472cf7d44b0d886c1a746b5afa63b4c0"
+  },
+  "baseline_sha256": "cd2126ffd29377f433170f709a4c0d37d7b194ff62d6ca00fa0bfacf9f4cabbb",
+  "evidence_sha256": "e106a7b16ac149b3887c093b16736f94f5230ca2699ce2f6cc28ebe815dbbe9b",
+  "reference": {
+    "rows": 120,
+    "observed": 60,
+    "not_occurring": 45,
+    "not_recorded": 15,
+    "known_rows": 105,
+    "observed_fraction_among_known": 0.5714285714285714
+  },
+  "clean_control": {
+    "detection": {
+      "tp": 0,
+      "fp": 8,
+      "fn": 0,
+      "tn": 112,
+      "precision": 0.0,
+      "recall": null,
+      "false_positive_rate": 0.06666666666666667,
+      "retained_fraction": 0.9333333333333333
+    },
+    "raw": {
+      "rows": 120,
+      "observed": 60,
+      "not_occurring": 45,
+      "not_recorded": 15,
+      "known_rows": 105,
+      "observed_fraction_among_known": 0.5714285714285714
+    },
+    "retained": {
+      "rows": 112,
+      "observed": 52,
+      "not_occurring": 45,
+      "not_recorded": 15,
+      "known_rows": 97,
+      "observed_fraction_among_known": 0.5360824742268041
+    },
+    "raw_absolute_error": 0.0,
+    "retained_absolute_error": 0.03534609720176729
+  },
+  "cases": [
+    {
+      "id": "missing_source-scattered-rate0.1-seed7",
+      "scenario": "missing_source",
+      "pattern": "scattered",
+      "requested_rate": 0.1,
+      "seed": 7,
+      "injected_rows": 5,
+      "input_sha256": "eb6ad98f4de1f02913446ecade2281ac41cca99ef749135c5f2e6733d252fa26",
+      "detection": {
+        "tp": 5,
+        "fp": 8,
+        "fn": 0,
+        "tn": 107,
+        "precision": 0.38461538461538464,
+        "recall": 1.0,
+        "false_positive_rate": 0.06956521739130435,
+        "retained_fraction": 0.8916666666666667
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 107,
+        "observed": 47,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 92,
+        "observed_fraction_among_known": 0.5108695652173914
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.060559006211180044,
+      "incremental_detection": {
+        "newly_flagged_injected": 5,
+        "already_flagged_injected": 0
+      }
+    },
+    {
+      "id": "naive_timestamp-scattered-rate0.1-seed7",
+      "scenario": "naive_timestamp",
+      "pattern": "scattered",
+      "requested_rate": 0.1,
+      "seed": 7,
+      "injected_rows": 5,
+      "input_sha256": "565ef1b630793f75fcbe9e36fc5f5c31fdf5d8bcaacbc0872a7d65b563f02fbc",
+      "detection": {
+        "tp": 5,
+        "fp": 8,
+        "fn": 0,
+        "tn": 107,
+        "precision": 0.38461538461538464,
+        "recall": 1.0,
+        "false_positive_rate": 0.06956521739130435,
+        "retained_fraction": 0.8916666666666667
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 107,
+        "observed": 47,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 92,
+        "observed_fraction_among_known": 0.5108695652173914
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.060559006211180044,
+      "incremental_detection": {
+        "newly_flagged_injected": 5,
+        "already_flagged_injected": 0
+      }
+    },
+    {
+      "id": "missingness_contradiction-scattered-rate0.1-seed7",
+      "scenario": "missingness_contradiction",
+      "pattern": "scattered",
+      "requested_rate": 0.1,
+      "seed": 7,
+      "injected_rows": 5,
+      "input_sha256": "df5704a03872c9cd7aaa38bc4aaada8ce32a248d0e156a1668160d30d9231dc9",
+      "detection": {
+        "tp": 5,
+        "fp": 8,
+        "fn": 0,
+        "tn": 107,
+        "precision": 0.38461538461538464,
+        "recall": 1.0,
+        "false_positive_rate": 0.06956521739130435,
+        "retained_fraction": 0.8916666666666667
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 55,
+        "not_occurring": 45,
+        "not_recorded": 20,
+        "known_rows": 100,
+        "observed_fraction_among_known": 0.55
+      },
+      "retained": {
+        "rows": 107,
+        "observed": 47,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 92,
+        "observed_fraction_among_known": 0.5108695652173914
+      },
+      "raw_absolute_error": 0.021428571428571352,
+      "retained_absolute_error": 0.060559006211180044,
+      "incremental_detection": {
+        "newly_flagged_injected": 5,
+        "already_flagged_injected": 0
+      }
+    },
+    {
+      "id": "duplicate_id-scattered-rate0.1-seed7",
+      "scenario": "duplicate_id",
+      "pattern": "scattered",
+      "requested_rate": 0.1,
+      "seed": 7,
+      "injected_rows": 5,
+      "input_sha256": "5f5b3ca43a4357896f43feb59ff52b6b8a87dfb5572679bdea4e3428f8ec2877",
+      "detection": {
+        "tp": 0,
+        "fp": 8,
+        "fn": 5,
+        "tn": 107,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.06956521739130435,
+        "retained_fraction": 0.9333333333333333
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 112,
+        "observed": 52,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 97,
+        "observed_fraction_among_known": 0.5360824742268041
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.03534609720176729,
+      "incremental_detection": {
+        "newly_flagged_injected": 0,
+        "already_flagged_injected": 0
+      }
+    },
+    {
+      "id": "invalid_timezone-scattered-rate0.1-seed7",
+      "scenario": "invalid_timezone",
+      "pattern": "scattered",
+      "requested_rate": 0.1,
+      "seed": 7,
+      "injected_rows": 5,
+      "input_sha256": "ff92bbd51633bf35c12b0e4fa86542129dab7c02d36618fbfa1ae6a09eb9449c",
+      "detection": {
+        "tp": 0,
+        "fp": 8,
+        "fn": 5,
+        "tn": 107,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.06956521739130435,
+        "retained_fraction": 0.9333333333333333
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 112,
+        "observed": 52,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 97,
+        "observed_fraction_among_known": 0.5360824742268041
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.03534609720176729,
+      "incremental_detection": {
+        "newly_flagged_injected": 0,
+        "already_flagged_injected": 0
+      }
+    },
+    {
+      "id": "false_non_occurrence-scattered-rate0.1-seed7",
+      "scenario": "false_non_occurrence",
+      "pattern": "scattered",
+      "requested_rate": 0.1,
+      "seed": 7,
+      "injected_rows": 5,
+      "input_sha256": "0f1a58d296f41c1093469e4551568e178188711837a9eefe276f9188f970f056",
+      "detection": {
+        "tp": 0,
+        "fp": 8,
+        "fn": 5,
+        "tn": 107,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.06956521739130435,
+        "retained_fraction": 0.9333333333333333
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 55,
+        "not_occurring": 50,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5238095238095238
+      },
+      "retained": {
+        "rows": 112,
+        "observed": 47,
+        "not_occurring": 50,
+        "not_recorded": 15,
+        "known_rows": 97,
+        "observed_fraction_among_known": 0.4845360824742268
+      },
+      "raw_absolute_error": 0.04761904761904756,
+      "retained_absolute_error": 0.0868924889543446,
+      "incremental_detection": {
+        "newly_flagged_injected": 0,
+        "already_flagged_injected": 0
+      }
+    },
+    {
+      "id": "missing_source-scattered-rate0.3-seed7",
+      "scenario": "missing_source",
+      "pattern": "scattered",
+      "requested_rate": 0.3,
+      "seed": 7,
+      "injected_rows": 17,
+      "input_sha256": "dad85f43f8344d7264a073ad6241cf213b295f3fda722ec9966a5d0faa3a79fb",
+      "detection": {
+        "tp": 17,
+        "fp": 8,
+        "fn": 0,
+        "tn": 95,
+        "precision": 0.68,
+        "recall": 1.0,
+        "false_positive_rate": 0.07766990291262135,
+        "retained_fraction": 0.7916666666666666
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 95,
+        "observed": 35,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 80,
+        "observed_fraction_among_known": 0.4375
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.1339285714285714,
+      "incremental_detection": {
+        "newly_flagged_injected": 17,
+        "already_flagged_injected": 0
+      }
+    },
+    {
+      "id": "naive_timestamp-scattered-rate0.3-seed7",
+      "scenario": "naive_timestamp",
+      "pattern": "scattered",
+      "requested_rate": 0.3,
+      "seed": 7,
+      "injected_rows": 17,
+      "input_sha256": "76a981afa96369061ab03467e156fa02c57662727bbe640e677e9c81a4fe611d",
+      "detection": {
+        "tp": 17,
+        "fp": 8,
+        "fn": 0,
+        "tn": 95,
+        "precision": 0.68,
+        "recall": 1.0,
+        "false_positive_rate": 0.07766990291262135,
+        "retained_fraction": 0.7916666666666666
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 95,
+        "observed": 35,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 80,
+        "observed_fraction_among_known": 0.4375
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.1339285714285714,
+      "incremental_detection": {
+        "newly_flagged_injected": 17,
+        "already_flagged_injected": 0
+      }
+    },
+    {
+      "id": "missingness_contradiction-scattered-rate0.3-seed7",
+      "scenario": "missingness_contradiction",
+      "pattern": "scattered",
+      "requested_rate": 0.3,
+      "seed": 7,
+      "injected_rows": 17,
+      "input_sha256": "09e7ec003c2be462b7e551e71537321d899241833992e1e9e2b1c155ab7f33dd",
+      "detection": {
+        "tp": 17,
+        "fp": 8,
+        "fn": 0,
+        "tn": 95,
+        "precision": 0.68,
+        "recall": 1.0,
+        "false_positive_rate": 0.07766990291262135,
+        "retained_fraction": 0.7916666666666666
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 43,
+        "not_occurring": 45,
+        "not_recorded": 32,
+        "known_rows": 88,
+        "observed_fraction_among_known": 0.48863636363636365
+      },
+      "retained": {
+        "rows": 95,
+        "observed": 35,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 80,
+        "observed_fraction_among_known": 0.4375
+      },
+      "raw_absolute_error": 0.08279220779220775,
+      "retained_absolute_error": 0.1339285714285714,
+      "incremental_detection": {
+        "newly_flagged_injected": 17,
+        "already_flagged_injected": 0
+      }
+    },
+    {
+      "id": "duplicate_id-scattered-rate0.3-seed7",
+      "scenario": "duplicate_id",
+      "pattern": "scattered",
+      "requested_rate": 0.3,
+      "seed": 7,
+      "injected_rows": 17,
+      "input_sha256": "52f531650df39b5d1ace36ed098d561fbe654ad709fbc20c5982ac5521252714",
+      "detection": {
+        "tp": 0,
+        "fp": 8,
+        "fn": 17,
+        "tn": 95,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.07766990291262135,
+        "retained_fraction": 0.9333333333333333
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 112,
+        "observed": 52,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 97,
+        "observed_fraction_among_known": 0.5360824742268041
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.03534609720176729,
+      "incremental_detection": {
+        "newly_flagged_injected": 0,
+        "already_flagged_injected": 0
+      }
+    },
+    {
+      "id": "invalid_timezone-scattered-rate0.3-seed7",
+      "scenario": "invalid_timezone",
+      "pattern": "scattered",
+      "requested_rate": 0.3,
+      "seed": 7,
+      "injected_rows": 17,
+      "input_sha256": "c935c1cc01f1614107547744a7ff8d85665c8c38ad4ad4905690d24e30130579",
+      "detection": {
+        "tp": 0,
+        "fp": 8,
+        "fn": 17,
+        "tn": 95,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.07766990291262135,
+        "retained_fraction": 0.9333333333333333
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 112,
+        "observed": 52,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 97,
+        "observed_fraction_among_known": 0.5360824742268041
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.03534609720176729,
+      "incremental_detection": {
+        "newly_flagged_injected": 0,
+        "already_flagged_injected": 0
+      }
+    },
+    {
+      "id": "false_non_occurrence-scattered-rate0.3-seed7",
+      "scenario": "false_non_occurrence",
+      "pattern": "scattered",
+      "requested_rate": 0.3,
+      "seed": 7,
+      "injected_rows": 17,
+      "input_sha256": "75f69eda1a0f70fc9c5bcfcc04b4f42ec6d346974d676bdf407416a09faef5c1",
+      "detection": {
+        "tp": 0,
+        "fp": 8,
+        "fn": 17,
+        "tn": 95,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.07766990291262135,
+        "retained_fraction": 0.9333333333333333
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 43,
+        "not_occurring": 62,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.4095238095238095
+      },
+      "retained": {
+        "rows": 112,
+        "observed": 35,
+        "not_occurring": 62,
+        "not_recorded": 15,
+        "known_rows": 97,
+        "observed_fraction_among_known": 0.36082474226804123
+      },
+      "raw_absolute_error": 0.16190476190476188,
+      "retained_absolute_error": 0.21060382916053016,
+      "incremental_detection": {
+        "newly_flagged_injected": 0,
+        "already_flagged_injected": 0
+      }
+    },
+    {
+      "id": "missing_source-scattered-rate0.6-seed7",
+      "scenario": "missing_source",
+      "pattern": "scattered",
+      "requested_rate": 0.6,
+      "seed": 7,
+      "injected_rows": 35,
+      "input_sha256": "de3bd84b0b21d314f08f223eeee798ee9bbd42c6c5d3b06aa7143594c8f0094b",
+      "detection": {
+        "tp": 35,
+        "fp": 4,
+        "fn": 0,
+        "tn": 81,
+        "precision": 0.8974358974358975,
+        "recall": 1.0,
+        "false_positive_rate": 0.047058823529411764,
+        "retained_fraction": 0.675
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 81,
+        "observed": 21,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 66,
+        "observed_fraction_among_known": 0.3181818181818182
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.2532467532467532,
+      "incremental_detection": {
+        "newly_flagged_injected": 31,
+        "already_flagged_injected": 4
+      }
+    },
+    {
+      "id": "naive_timestamp-scattered-rate0.6-seed7",
+      "scenario": "naive_timestamp",
+      "pattern": "scattered",
+      "requested_rate": 0.6,
+      "seed": 7,
+      "injected_rows": 35,
+      "input_sha256": "e43154019a657e9a830544430a7eb90343831c7beb2017304e30bb5b4ee1627c",
+      "detection": {
+        "tp": 35,
+        "fp": 4,
+        "fn": 0,
+        "tn": 81,
+        "precision": 0.8974358974358975,
+        "recall": 1.0,
+        "false_positive_rate": 0.047058823529411764,
+        "retained_fraction": 0.675
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 81,
+        "observed": 21,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 66,
+        "observed_fraction_among_known": 0.3181818181818182
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.2532467532467532,
+      "incremental_detection": {
+        "newly_flagged_injected": 31,
+        "already_flagged_injected": 4
+      }
+    },
+    {
+      "id": "missingness_contradiction-scattered-rate0.6-seed7",
+      "scenario": "missingness_contradiction",
+      "pattern": "scattered",
+      "requested_rate": 0.6,
+      "seed": 7,
+      "injected_rows": 35,
+      "input_sha256": "fe3fb1513f3a375cd91c29eb40cbfc9f9340b69eaeb106c40c2200a59e4beb5a",
+      "detection": {
+        "tp": 35,
+        "fp": 4,
+        "fn": 0,
+        "tn": 81,
+        "precision": 0.8974358974358975,
+        "recall": 1.0,
+        "false_positive_rate": 0.047058823529411764,
+        "retained_fraction": 0.675
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 25,
+        "not_occurring": 45,
+        "not_recorded": 50,
+        "known_rows": 70,
+        "observed_fraction_among_known": 0.35714285714285715
+      },
+      "retained": {
+        "rows": 81,
+        "observed": 21,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 66,
+        "observed_fraction_among_known": 0.3181818181818182
+      },
+      "raw_absolute_error": 0.21428571428571425,
+      "retained_absolute_error": 0.2532467532467532,
+      "incremental_detection": {
+        "newly_flagged_injected": 31,
+        "already_flagged_injected": 4
+      }
+    },
+    {
+      "id": "duplicate_id-scattered-rate0.6-seed7",
+      "scenario": "duplicate_id",
+      "pattern": "scattered",
+      "requested_rate": 0.6,
+      "seed": 7,
+      "injected_rows": 35,
+      "input_sha256": "d6d65ba8204cd5d479bbf0ba0fdc237108e6e1d4c5b764525bafb463680a8428",
+      "detection": {
+        "tp": 4,
+        "fp": 4,
+        "fn": 31,
+        "tn": 81,
+        "precision": 0.5,
+        "recall": 0.11428571428571428,
+        "false_positive_rate": 0.047058823529411764,
+        "retained_fraction": 0.9333333333333333
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 112,
+        "observed": 52,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 97,
+        "observed_fraction_among_known": 0.5360824742268041
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.03534609720176729,
+      "incremental_detection": {
+        "newly_flagged_injected": 0,
+        "already_flagged_injected": 4
+      }
+    },
+    {
+      "id": "invalid_timezone-scattered-rate0.6-seed7",
+      "scenario": "invalid_timezone",
+      "pattern": "scattered",
+      "requested_rate": 0.6,
+      "seed": 7,
+      "injected_rows": 35,
+      "input_sha256": "22484a08b7933b2e6e3784fd4a0e12525c66bce80442ed66f7bdc8624db50b8b",
+      "detection": {
+        "tp": 4,
+        "fp": 4,
+        "fn": 31,
+        "tn": 81,
+        "precision": 0.5,
+        "recall": 0.11428571428571428,
+        "false_positive_rate": 0.047058823529411764,
+        "retained_fraction": 0.9333333333333333
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 112,
+        "observed": 52,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 97,
+        "observed_fraction_among_known": 0.5360824742268041
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.03534609720176729,
+      "incremental_detection": {
+        "newly_flagged_injected": 0,
+        "already_flagged_injected": 4
+      }
+    },
+    {
+      "id": "false_non_occurrence-scattered-rate0.6-seed7",
+      "scenario": "false_non_occurrence",
+      "pattern": "scattered",
+      "requested_rate": 0.6,
+      "seed": 7,
+      "injected_rows": 35,
+      "input_sha256": "dadae58a328b653d305aba6ce8b758ec96d05fd73ff437f04007af752abc24dc",
+      "detection": {
+        "tp": 0,
+        "fp": 4,
+        "fn": 35,
+        "tn": 81,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.047058823529411764,
+        "retained_fraction": 0.9666666666666667
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 25,
+        "not_occurring": 80,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.23809523809523808
+      },
+      "retained": {
+        "rows": 116,
+        "observed": 21,
+        "not_occurring": 80,
+        "not_recorded": 15,
+        "known_rows": 101,
+        "observed_fraction_among_known": 0.2079207920792079
+      },
+      "raw_absolute_error": 0.3333333333333333,
+      "retained_absolute_error": 0.3635077793493635,
+      "incremental_detection": {
+        "newly_flagged_injected": 0,
+        "already_flagged_injected": 0
+      }
+    },
+    {
+      "id": "missing_source-block-rate0.1-seed7",
+      "scenario": "missing_source",
+      "pattern": "block",
+      "requested_rate": 0.1,
+      "seed": 7,
+      "injected_rows": 5,
+      "input_sha256": "29855185cb9cc43caf0ca385a31bdbbbdcddb2008b2cfbc28cc0705d022316b9",
+      "detection": {
+        "tp": 5,
+        "fp": 7,
+        "fn": 0,
+        "tn": 108,
+        "precision": 0.4166666666666667,
+        "recall": 1.0,
+        "false_positive_rate": 0.06086956521739131,
+        "retained_fraction": 0.9
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 108,
+        "observed": 48,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 93,
+        "observed_fraction_among_known": 0.5161290322580645
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.055299539170506895,
+      "incremental_detection": {
+        "newly_flagged_injected": 4,
+        "already_flagged_injected": 1
+      }
+    },
+    {
+      "id": "naive_timestamp-block-rate0.1-seed7",
+      "scenario": "naive_timestamp",
+      "pattern": "block",
+      "requested_rate": 0.1,
+      "seed": 7,
+      "injected_rows": 5,
+      "input_sha256": "9d5d0c55cd6f4d321ce40960252788abf850a0bfea586fdbce72b78cac0dec9c",
+      "detection": {
+        "tp": 5,
+        "fp": 7,
+        "fn": 0,
+        "tn": 108,
+        "precision": 0.4166666666666667,
+        "recall": 1.0,
+        "false_positive_rate": 0.06086956521739131,
+        "retained_fraction": 0.9
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 108,
+        "observed": 48,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 93,
+        "observed_fraction_among_known": 0.5161290322580645
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.055299539170506895,
+      "incremental_detection": {
+        "newly_flagged_injected": 4,
+        "already_flagged_injected": 1
+      }
+    },
+    {
+      "id": "missingness_contradiction-block-rate0.1-seed7",
+      "scenario": "missingness_contradiction",
+      "pattern": "block",
+      "requested_rate": 0.1,
+      "seed": 7,
+      "injected_rows": 5,
+      "input_sha256": "67527124c2d3877a852bd42a64e68cc79e2dea428d4b1803534db6b6a9118b08",
+      "detection": {
+        "tp": 5,
+        "fp": 7,
+        "fn": 0,
+        "tn": 108,
+        "precision": 0.4166666666666667,
+        "recall": 1.0,
+        "false_positive_rate": 0.06086956521739131,
+        "retained_fraction": 0.9
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 55,
+        "not_occurring": 45,
+        "not_recorded": 20,
+        "known_rows": 100,
+        "observed_fraction_among_known": 0.55
+      },
+      "retained": {
+        "rows": 108,
+        "observed": 48,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 93,
+        "observed_fraction_among_known": 0.5161290322580645
+      },
+      "raw_absolute_error": 0.021428571428571352,
+      "retained_absolute_error": 0.055299539170506895,
+      "incremental_detection": {
+        "newly_flagged_injected": 4,
+        "already_flagged_injected": 1
+      }
+    },
+    {
+      "id": "duplicate_id-block-rate0.1-seed7",
+      "scenario": "duplicate_id",
+      "pattern": "block",
+      "requested_rate": 0.1,
+      "seed": 7,
+      "injected_rows": 5,
+      "input_sha256": "ee91cc9957adb96edf9d9b6a59b5e812c74789e5c7862808b63e2324c753ef60",
+      "detection": {
+        "tp": 1,
+        "fp": 7,
+        "fn": 4,
+        "tn": 108,
+        "precision": 0.125,
+        "recall": 0.2,
+        "false_positive_rate": 0.06086956521739131,
+        "retained_fraction": 0.9333333333333333
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 112,
+        "observed": 52,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 97,
+        "observed_fraction_among_known": 0.5360824742268041
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.03534609720176729,
+      "incremental_detection": {
+        "newly_flagged_injected": 0,
+        "already_flagged_injected": 1
+      }
+    },
+    {
+      "id": "invalid_timezone-block-rate0.1-seed7",
+      "scenario": "invalid_timezone",
+      "pattern": "block",
+      "requested_rate": 0.1,
+      "seed": 7,
+      "injected_rows": 5,
+      "input_sha256": "6c3e97fe5e2837834a2769c6fd5cba0b6ea139ffd49e4d76206ffb75670370e3",
+      "detection": {
+        "tp": 1,
+        "fp": 7,
+        "fn": 4,
+        "tn": 108,
+        "precision": 0.125,
+        "recall": 0.2,
+        "false_positive_rate": 0.06086956521739131,
+        "retained_fraction": 0.9333333333333333
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 112,
+        "observed": 52,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 97,
+        "observed_fraction_among_known": 0.5360824742268041
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.03534609720176729,
+      "incremental_detection": {
+        "newly_flagged_injected": 0,
+        "already_flagged_injected": 1
+      }
+    },
+    {
+      "id": "false_non_occurrence-block-rate0.1-seed7",
+      "scenario": "false_non_occurrence",
+      "pattern": "block",
+      "requested_rate": 0.1,
+      "seed": 7,
+      "injected_rows": 5,
+      "input_sha256": "dce979d7fe3b3fc98f205bca77526b0c805507fa9924c86c8da6e8066aebf489",
+      "detection": {
+        "tp": 0,
+        "fp": 7,
+        "fn": 5,
+        "tn": 108,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.06086956521739131,
+        "retained_fraction": 0.9416666666666667
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 55,
+        "not_occurring": 50,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5238095238095238
+      },
+      "retained": {
+        "rows": 113,
+        "observed": 48,
+        "not_occurring": 50,
+        "not_recorded": 15,
+        "known_rows": 98,
+        "observed_fraction_among_known": 0.4897959183673469
+      },
+      "raw_absolute_error": 0.04761904761904756,
+      "retained_absolute_error": 0.08163265306122447,
+      "incremental_detection": {
+        "newly_flagged_injected": 0,
+        "already_flagged_injected": 0
+      }
+    },
+    {
+      "id": "missing_source-block-rate0.3-seed7",
+      "scenario": "missing_source",
+      "pattern": "block",
+      "requested_rate": 0.3,
+      "seed": 7,
+      "injected_rows": 17,
+      "input_sha256": "dce74f4aa548032ff0550e464cff8b8b0e3b4ce00367c8f6eff8e35355470589",
+      "detection": {
+        "tp": 17,
+        "fp": 6,
+        "fn": 0,
+        "tn": 97,
+        "precision": 0.7391304347826086,
+        "recall": 1.0,
+        "false_positive_rate": 0.05825242718446602,
+        "retained_fraction": 0.8083333333333333
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 97,
+        "observed": 37,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 82,
+        "observed_fraction_among_known": 0.45121951219512196
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.12020905923344943,
+      "incremental_detection": {
+        "newly_flagged_injected": 15,
+        "already_flagged_injected": 2
+      }
+    },
+    {
+      "id": "naive_timestamp-block-rate0.3-seed7",
+      "scenario": "naive_timestamp",
+      "pattern": "block",
+      "requested_rate": 0.3,
+      "seed": 7,
+      "injected_rows": 17,
+      "input_sha256": "4e7de46eb8baef114b857978ad3350b6b040f307162af7399909e66d84165865",
+      "detection": {
+        "tp": 17,
+        "fp": 6,
+        "fn": 0,
+        "tn": 97,
+        "precision": 0.7391304347826086,
+        "recall": 1.0,
+        "false_positive_rate": 0.05825242718446602,
+        "retained_fraction": 0.8083333333333333
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 97,
+        "observed": 37,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 82,
+        "observed_fraction_among_known": 0.45121951219512196
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.12020905923344943,
+      "incremental_detection": {
+        "newly_flagged_injected": 15,
+        "already_flagged_injected": 2
+      }
+    },
+    {
+      "id": "missingness_contradiction-block-rate0.3-seed7",
+      "scenario": "missingness_contradiction",
+      "pattern": "block",
+      "requested_rate": 0.3,
+      "seed": 7,
+      "injected_rows": 17,
+      "input_sha256": "104be526fa8c1ee58787c2b65782be143e0b91971e7514446ee2d37ee33a1199",
+      "detection": {
+        "tp": 17,
+        "fp": 6,
+        "fn": 0,
+        "tn": 97,
+        "precision": 0.7391304347826086,
+        "recall": 1.0,
+        "false_positive_rate": 0.05825242718446602,
+        "retained_fraction": 0.8083333333333333
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 43,
+        "not_occurring": 45,
+        "not_recorded": 32,
+        "known_rows": 88,
+        "observed_fraction_among_known": 0.48863636363636365
+      },
+      "retained": {
+        "rows": 97,
+        "observed": 37,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 82,
+        "observed_fraction_among_known": 0.45121951219512196
+      },
+      "raw_absolute_error": 0.08279220779220775,
+      "retained_absolute_error": 0.12020905923344943,
+      "incremental_detection": {
+        "newly_flagged_injected": 15,
+        "already_flagged_injected": 2
+      }
+    },
+    {
+      "id": "duplicate_id-block-rate0.3-seed7",
+      "scenario": "duplicate_id",
+      "pattern": "block",
+      "requested_rate": 0.3,
+      "seed": 7,
+      "injected_rows": 17,
+      "input_sha256": "ef475530123aaa87fc4d438af67ea24dd93b9d626fc671fae450756361885c65",
+      "detection": {
+        "tp": 2,
+        "fp": 6,
+        "fn": 15,
+        "tn": 97,
+        "precision": 0.25,
+        "recall": 0.11764705882352941,
+        "false_positive_rate": 0.05825242718446602,
+        "retained_fraction": 0.9333333333333333
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 112,
+        "observed": 52,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 97,
+        "observed_fraction_among_known": 0.5360824742268041
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.03534609720176729,
+      "incremental_detection": {
+        "newly_flagged_injected": 0,
+        "already_flagged_injected": 2
+      }
+    },
+    {
+      "id": "invalid_timezone-block-rate0.3-seed7",
+      "scenario": "invalid_timezone",
+      "pattern": "block",
+      "requested_rate": 0.3,
+      "seed": 7,
+      "injected_rows": 17,
+      "input_sha256": "a7686d5b32d1b59f11a398650995e44ffce3452ab785e13d92cbc823f55dab65",
+      "detection": {
+        "tp": 2,
+        "fp": 6,
+        "fn": 15,
+        "tn": 97,
+        "precision": 0.25,
+        "recall": 0.11764705882352941,
+        "false_positive_rate": 0.05825242718446602,
+        "retained_fraction": 0.9333333333333333
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 112,
+        "observed": 52,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 97,
+        "observed_fraction_among_known": 0.5360824742268041
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.03534609720176729,
+      "incremental_detection": {
+        "newly_flagged_injected": 0,
+        "already_flagged_injected": 2
+      }
+    },
+    {
+      "id": "false_non_occurrence-block-rate0.3-seed7",
+      "scenario": "false_non_occurrence",
+      "pattern": "block",
+      "requested_rate": 0.3,
+      "seed": 7,
+      "injected_rows": 17,
+      "input_sha256": "e9b280b2ff6e1a996eab4d6904493f082d22b1d063859c94ee793ae3eb71abab",
+      "detection": {
+        "tp": 0,
+        "fp": 6,
+        "fn": 17,
+        "tn": 97,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.05825242718446602,
+        "retained_fraction": 0.95
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 43,
+        "not_occurring": 62,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.4095238095238095
+      },
+      "retained": {
+        "rows": 114,
+        "observed": 37,
+        "not_occurring": 62,
+        "not_recorded": 15,
+        "known_rows": 99,
+        "observed_fraction_among_known": 0.37373737373737376
+      },
+      "raw_absolute_error": 0.16190476190476188,
+      "retained_absolute_error": 0.19769119769119764,
+      "incremental_detection": {
+        "newly_flagged_injected": 0,
+        "already_flagged_injected": 0
+      }
+    },
+    {
+      "id": "missing_source-block-rate0.6-seed7",
+      "scenario": "missing_source",
+      "pattern": "block",
+      "requested_rate": 0.6,
+      "seed": 7,
+      "injected_rows": 35,
+      "input_sha256": "6c81f332b74fad52476ccb121cd779c7704b32b60dbc05597e43034ed8c1bd76",
+      "detection": {
+        "tp": 35,
+        "fp": 4,
+        "fn": 0,
+        "tn": 81,
+        "precision": 0.8974358974358975,
+        "recall": 1.0,
+        "false_positive_rate": 0.047058823529411764,
+        "retained_fraction": 0.675
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 81,
+        "observed": 21,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 66,
+        "observed_fraction_among_known": 0.3181818181818182
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.2532467532467532,
+      "incremental_detection": {
+        "newly_flagged_injected": 31,
+        "already_flagged_injected": 4
+      }
+    },
+    {
+      "id": "naive_timestamp-block-rate0.6-seed7",
+      "scenario": "naive_timestamp",
+      "pattern": "block",
+      "requested_rate": 0.6,
+      "seed": 7,
+      "injected_rows": 35,
+      "input_sha256": "5458e20b6f6f3b79850fd043aea145a0ebf26ed7a5c27524dbc694f8fb7c6062",
+      "detection": {
+        "tp": 35,
+        "fp": 4,
+        "fn": 0,
+        "tn": 81,
+        "precision": 0.8974358974358975,
+        "recall": 1.0,
+        "false_positive_rate": 0.047058823529411764,
+        "retained_fraction": 0.675
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 81,
+        "observed": 21,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 66,
+        "observed_fraction_among_known": 0.3181818181818182
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.2532467532467532,
+      "incremental_detection": {
+        "newly_flagged_injected": 31,
+        "already_flagged_injected": 4
+      }
+    },
+    {
+      "id": "missingness_contradiction-block-rate0.6-seed7",
+      "scenario": "missingness_contradiction",
+      "pattern": "block",
+      "requested_rate": 0.6,
+      "seed": 7,
+      "injected_rows": 35,
+      "input_sha256": "5e278f295f1bf01aa5753a89d8461ce8d9df8051d8a9340e90613fd121d7f534",
+      "detection": {
+        "tp": 35,
+        "fp": 4,
+        "fn": 0,
+        "tn": 81,
+        "precision": 0.8974358974358975,
+        "recall": 1.0,
+        "false_positive_rate": 0.047058823529411764,
+        "retained_fraction": 0.675
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 25,
+        "not_occurring": 45,
+        "not_recorded": 50,
+        "known_rows": 70,
+        "observed_fraction_among_known": 0.35714285714285715
+      },
+      "retained": {
+        "rows": 81,
+        "observed": 21,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 66,
+        "observed_fraction_among_known": 0.3181818181818182
+      },
+      "raw_absolute_error": 0.21428571428571425,
+      "retained_absolute_error": 0.2532467532467532,
+      "incremental_detection": {
+        "newly_flagged_injected": 31,
+        "already_flagged_injected": 4
+      }
+    },
+    {
+      "id": "duplicate_id-block-rate0.6-seed7",
+      "scenario": "duplicate_id",
+      "pattern": "block",
+      "requested_rate": 0.6,
+      "seed": 7,
+      "injected_rows": 35,
+      "input_sha256": "e248252c3a1e857190bb5069304901a3dd724cfdfdaba5ded642e73c1a4d9aaf",
+      "detection": {
+        "tp": 4,
+        "fp": 4,
+        "fn": 31,
+        "tn": 81,
+        "precision": 0.5,
+        "recall": 0.11428571428571428,
+        "false_positive_rate": 0.047058823529411764,
+        "retained_fraction": 0.9333333333333333
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 112,
+        "observed": 52,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 97,
+        "observed_fraction_among_known": 0.5360824742268041
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.03534609720176729,
+      "incremental_detection": {
+        "newly_flagged_injected": 0,
+        "already_flagged_injected": 4
+      }
+    },
+    {
+      "id": "invalid_timezone-block-rate0.6-seed7",
+      "scenario": "invalid_timezone",
+      "pattern": "block",
+      "requested_rate": 0.6,
+      "seed": 7,
+      "injected_rows": 35,
+      "input_sha256": "2a641cfcd72644fb9204d331fa4d72295c301918efda18a0ee59ade3bdb3d366",
+      "detection": {
+        "tp": 4,
+        "fp": 4,
+        "fn": 31,
+        "tn": 81,
+        "precision": 0.5,
+        "recall": 0.11428571428571428,
+        "false_positive_rate": 0.047058823529411764,
+        "retained_fraction": 0.9333333333333333
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 112,
+        "observed": 52,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 97,
+        "observed_fraction_among_known": 0.5360824742268041
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.03534609720176729,
+      "incremental_detection": {
+        "newly_flagged_injected": 0,
+        "already_flagged_injected": 4
+      }
+    },
+    {
+      "id": "false_non_occurrence-block-rate0.6-seed7",
+      "scenario": "false_non_occurrence",
+      "pattern": "block",
+      "requested_rate": 0.6,
+      "seed": 7,
+      "injected_rows": 35,
+      "input_sha256": "a9d543ce5bc981bd950d5e4466eee31a9a9c18e2cfaea54b320c9fc71fc9a97b",
+      "detection": {
+        "tp": 0,
+        "fp": 4,
+        "fn": 35,
+        "tn": 81,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.047058823529411764,
+        "retained_fraction": 0.9666666666666667
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 25,
+        "not_occurring": 80,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.23809523809523808
+      },
+      "retained": {
+        "rows": 116,
+        "observed": 21,
+        "not_occurring": 80,
+        "not_recorded": 15,
+        "known_rows": 101,
+        "observed_fraction_among_known": 0.2079207920792079
+      },
+      "raw_absolute_error": 0.3333333333333333,
+      "retained_absolute_error": 0.3635077793493635,
+      "incremental_detection": {
+        "newly_flagged_injected": 0,
+        "already_flagged_injected": 0
+      }
+    },
+    {
+      "id": "missing_source-scattered-rate0.1-seed19",
+      "scenario": "missing_source",
+      "pattern": "scattered",
+      "requested_rate": 0.1,
+      "seed": 19,
+      "injected_rows": 5,
+      "input_sha256": "8186f6120ad225b2cadb8a9af3e06758060978549f1ef48aa8c31e4dc5215766",
+      "detection": {
+        "tp": 5,
+        "fp": 8,
+        "fn": 0,
+        "tn": 107,
+        "precision": 0.38461538461538464,
+        "recall": 1.0,
+        "false_positive_rate": 0.06956521739130435,
+        "retained_fraction": 0.8916666666666667
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 107,
+        "observed": 47,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 92,
+        "observed_fraction_among_known": 0.5108695652173914
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.060559006211180044,
+      "incremental_detection": {
+        "newly_flagged_injected": 5,
+        "already_flagged_injected": 0
+      }
+    },
+    {
+      "id": "naive_timestamp-scattered-rate0.1-seed19",
+      "scenario": "naive_timestamp",
+      "pattern": "scattered",
+      "requested_rate": 0.1,
+      "seed": 19,
+      "injected_rows": 5,
+      "input_sha256": "4a81de22afde99cd1b60ec9c1549785d8551cd2814b39f2af2a6547275db7b4b",
+      "detection": {
+        "tp": 5,
+        "fp": 8,
+        "fn": 0,
+        "tn": 107,
+        "precision": 0.38461538461538464,
+        "recall": 1.0,
+        "false_positive_rate": 0.06956521739130435,
+        "retained_fraction": 0.8916666666666667
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 107,
+        "observed": 47,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 92,
+        "observed_fraction_among_known": 0.5108695652173914
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.060559006211180044,
+      "incremental_detection": {
+        "newly_flagged_injected": 5,
+        "already_flagged_injected": 0
+      }
+    },
+    {
+      "id": "missingness_contradiction-scattered-rate0.1-seed19",
+      "scenario": "missingness_contradiction",
+      "pattern": "scattered",
+      "requested_rate": 0.1,
+      "seed": 19,
+      "injected_rows": 5,
+      "input_sha256": "1f21ea3064a71e0a48fa1f9d03d66e0e4c3505be62b1d0184b82ac333b1dcad8",
+      "detection": {
+        "tp": 5,
+        "fp": 8,
+        "fn": 0,
+        "tn": 107,
+        "precision": 0.38461538461538464,
+        "recall": 1.0,
+        "false_positive_rate": 0.06956521739130435,
+        "retained_fraction": 0.8916666666666667
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 55,
+        "not_occurring": 45,
+        "not_recorded": 20,
+        "known_rows": 100,
+        "observed_fraction_among_known": 0.55
+      },
+      "retained": {
+        "rows": 107,
+        "observed": 47,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 92,
+        "observed_fraction_among_known": 0.5108695652173914
+      },
+      "raw_absolute_error": 0.021428571428571352,
+      "retained_absolute_error": 0.060559006211180044,
+      "incremental_detection": {
+        "newly_flagged_injected": 5,
+        "already_flagged_injected": 0
+      }
+    },
+    {
+      "id": "duplicate_id-scattered-rate0.1-seed19",
+      "scenario": "duplicate_id",
+      "pattern": "scattered",
+      "requested_rate": 0.1,
+      "seed": 19,
+      "injected_rows": 5,
+      "input_sha256": "0cb0237d99757fe9e23f82cfc291dfae7652da0a902be7cf44fb61575a70691d",
+      "detection": {
+        "tp": 0,
+        "fp": 8,
+        "fn": 5,
+        "tn": 107,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.06956521739130435,
+        "retained_fraction": 0.9333333333333333
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 112,
+        "observed": 52,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 97,
+        "observed_fraction_among_known": 0.5360824742268041
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.03534609720176729,
+      "incremental_detection": {
+        "newly_flagged_injected": 0,
+        "already_flagged_injected": 0
+      }
+    },
+    {
+      "id": "invalid_timezone-scattered-rate0.1-seed19",
+      "scenario": "invalid_timezone",
+      "pattern": "scattered",
+      "requested_rate": 0.1,
+      "seed": 19,
+      "injected_rows": 5,
+      "input_sha256": "38629f3139e80789e14a651a199014d5cbdd7c7711fa2237ffc120a20685deba",
+      "detection": {
+        "tp": 0,
+        "fp": 8,
+        "fn": 5,
+        "tn": 107,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.06956521739130435,
+        "retained_fraction": 0.9333333333333333
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 112,
+        "observed": 52,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 97,
+        "observed_fraction_among_known": 0.5360824742268041
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.03534609720176729,
+      "incremental_detection": {
+        "newly_flagged_injected": 0,
+        "already_flagged_injected": 0
+      }
+    },
+    {
+      "id": "false_non_occurrence-scattered-rate0.1-seed19",
+      "scenario": "false_non_occurrence",
+      "pattern": "scattered",
+      "requested_rate": 0.1,
+      "seed": 19,
+      "injected_rows": 5,
+      "input_sha256": "cb445db2d4863a6eecd2fcda5015efe5b99a5a986c98538cc1479000c78d4901",
+      "detection": {
+        "tp": 0,
+        "fp": 8,
+        "fn": 5,
+        "tn": 107,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.06956521739130435,
+        "retained_fraction": 0.9333333333333333
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 55,
+        "not_occurring": 50,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5238095238095238
+      },
+      "retained": {
+        "rows": 112,
+        "observed": 47,
+        "not_occurring": 50,
+        "not_recorded": 15,
+        "known_rows": 97,
+        "observed_fraction_among_known": 0.4845360824742268
+      },
+      "raw_absolute_error": 0.04761904761904756,
+      "retained_absolute_error": 0.0868924889543446,
+      "incremental_detection": {
+        "newly_flagged_injected": 0,
+        "already_flagged_injected": 0
+      }
+    },
+    {
+      "id": "missing_source-scattered-rate0.3-seed19",
+      "scenario": "missing_source",
+      "pattern": "scattered",
+      "requested_rate": 0.3,
+      "seed": 19,
+      "injected_rows": 17,
+      "input_sha256": "12732c2002113faa88723d20deac782e6836b2e136cb5c181bc3e481887018df",
+      "detection": {
+        "tp": 17,
+        "fp": 7,
+        "fn": 0,
+        "tn": 96,
+        "precision": 0.7083333333333334,
+        "recall": 1.0,
+        "false_positive_rate": 0.06796116504854369,
+        "retained_fraction": 0.8
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 96,
+        "observed": 36,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 81,
+        "observed_fraction_among_known": 0.4444444444444444
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.12698412698412698,
+      "incremental_detection": {
+        "newly_flagged_injected": 16,
+        "already_flagged_injected": 1
+      }
+    },
+    {
+      "id": "naive_timestamp-scattered-rate0.3-seed19",
+      "scenario": "naive_timestamp",
+      "pattern": "scattered",
+      "requested_rate": 0.3,
+      "seed": 19,
+      "injected_rows": 17,
+      "input_sha256": "16bab4c0f052f01b830bb2bcd8911c14b0782cade87417703c6c7d80b22b0a92",
+      "detection": {
+        "tp": 17,
+        "fp": 7,
+        "fn": 0,
+        "tn": 96,
+        "precision": 0.7083333333333334,
+        "recall": 1.0,
+        "false_positive_rate": 0.06796116504854369,
+        "retained_fraction": 0.8
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 96,
+        "observed": 36,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 81,
+        "observed_fraction_among_known": 0.4444444444444444
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.12698412698412698,
+      "incremental_detection": {
+        "newly_flagged_injected": 16,
+        "already_flagged_injected": 1
+      }
+    },
+    {
+      "id": "missingness_contradiction-scattered-rate0.3-seed19",
+      "scenario": "missingness_contradiction",
+      "pattern": "scattered",
+      "requested_rate": 0.3,
+      "seed": 19,
+      "injected_rows": 17,
+      "input_sha256": "22526c9ebad5b32c546674a6be7fa8eedd0e599ab2134e57a0bf78cb1375a774",
+      "detection": {
+        "tp": 17,
+        "fp": 7,
+        "fn": 0,
+        "tn": 96,
+        "precision": 0.7083333333333334,
+        "recall": 1.0,
+        "false_positive_rate": 0.06796116504854369,
+        "retained_fraction": 0.8
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 43,
+        "not_occurring": 45,
+        "not_recorded": 32,
+        "known_rows": 88,
+        "observed_fraction_among_known": 0.48863636363636365
+      },
+      "retained": {
+        "rows": 96,
+        "observed": 36,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 81,
+        "observed_fraction_among_known": 0.4444444444444444
+      },
+      "raw_absolute_error": 0.08279220779220775,
+      "retained_absolute_error": 0.12698412698412698,
+      "incremental_detection": {
+        "newly_flagged_injected": 16,
+        "already_flagged_injected": 1
+      }
+    },
+    {
+      "id": "duplicate_id-scattered-rate0.3-seed19",
+      "scenario": "duplicate_id",
+      "pattern": "scattered",
+      "requested_rate": 0.3,
+      "seed": 19,
+      "injected_rows": 17,
+      "input_sha256": "05f30381ce42578e37b3ece06a968c2d691a43e3365ca874ed39c0f37959e0e0",
+      "detection": {
+        "tp": 1,
+        "fp": 7,
+        "fn": 16,
+        "tn": 96,
+        "precision": 0.125,
+        "recall": 0.058823529411764705,
+        "false_positive_rate": 0.06796116504854369,
+        "retained_fraction": 0.9333333333333333
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 112,
+        "observed": 52,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 97,
+        "observed_fraction_among_known": 0.5360824742268041
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.03534609720176729,
+      "incremental_detection": {
+        "newly_flagged_injected": 0,
+        "already_flagged_injected": 1
+      }
+    },
+    {
+      "id": "invalid_timezone-scattered-rate0.3-seed19",
+      "scenario": "invalid_timezone",
+      "pattern": "scattered",
+      "requested_rate": 0.3,
+      "seed": 19,
+      "injected_rows": 17,
+      "input_sha256": "f357dff6b3a07adc231a8aa464a6bfe242a3582110d50140fe0e55f0cf42c0d7",
+      "detection": {
+        "tp": 1,
+        "fp": 7,
+        "fn": 16,
+        "tn": 96,
+        "precision": 0.125,
+        "recall": 0.058823529411764705,
+        "false_positive_rate": 0.06796116504854369,
+        "retained_fraction": 0.9333333333333333
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 112,
+        "observed": 52,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 97,
+        "observed_fraction_among_known": 0.5360824742268041
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.03534609720176729,
+      "incremental_detection": {
+        "newly_flagged_injected": 0,
+        "already_flagged_injected": 1
+      }
+    },
+    {
+      "id": "false_non_occurrence-scattered-rate0.3-seed19",
+      "scenario": "false_non_occurrence",
+      "pattern": "scattered",
+      "requested_rate": 0.3,
+      "seed": 19,
+      "injected_rows": 17,
+      "input_sha256": "0b8889d6657041e94a92aac3b711f2e0de7733464cd2920e238ade22e48a3e1b",
+      "detection": {
+        "tp": 0,
+        "fp": 7,
+        "fn": 17,
+        "tn": 96,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.06796116504854369,
+        "retained_fraction": 0.9416666666666667
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 43,
+        "not_occurring": 62,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.4095238095238095
+      },
+      "retained": {
+        "rows": 113,
+        "observed": 36,
+        "not_occurring": 62,
+        "not_recorded": 15,
+        "known_rows": 98,
+        "observed_fraction_among_known": 0.3673469387755102
+      },
+      "raw_absolute_error": 0.16190476190476188,
+      "retained_absolute_error": 0.20408163265306117,
+      "incremental_detection": {
+        "newly_flagged_injected": 0,
+        "already_flagged_injected": 0
+      }
+    },
+    {
+      "id": "missing_source-scattered-rate0.6-seed19",
+      "scenario": "missing_source",
+      "pattern": "scattered",
+      "requested_rate": 0.6,
+      "seed": 19,
+      "injected_rows": 35,
+      "input_sha256": "0ffc18328605ce33602bdd4abeb648788d997c1652db37853c41be7dfccfbc00",
+      "detection": {
+        "tp": 35,
+        "fp": 4,
+        "fn": 0,
+        "tn": 81,
+        "precision": 0.8974358974358975,
+        "recall": 1.0,
+        "false_positive_rate": 0.047058823529411764,
+        "retained_fraction": 0.675
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 81,
+        "observed": 21,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 66,
+        "observed_fraction_among_known": 0.3181818181818182
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.2532467532467532,
+      "incremental_detection": {
+        "newly_flagged_injected": 31,
+        "already_flagged_injected": 4
+      }
+    },
+    {
+      "id": "naive_timestamp-scattered-rate0.6-seed19",
+      "scenario": "naive_timestamp",
+      "pattern": "scattered",
+      "requested_rate": 0.6,
+      "seed": 19,
+      "injected_rows": 35,
+      "input_sha256": "f42ccbabefc66f19ae8f28522862001b2d3a1ccc646bfce446f1ecd897d78d2f",
+      "detection": {
+        "tp": 35,
+        "fp": 4,
+        "fn": 0,
+        "tn": 81,
+        "precision": 0.8974358974358975,
+        "recall": 1.0,
+        "false_positive_rate": 0.047058823529411764,
+        "retained_fraction": 0.675
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 81,
+        "observed": 21,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 66,
+        "observed_fraction_among_known": 0.3181818181818182
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.2532467532467532,
+      "incremental_detection": {
+        "newly_flagged_injected": 31,
+        "already_flagged_injected": 4
+      }
+    },
+    {
+      "id": "missingness_contradiction-scattered-rate0.6-seed19",
+      "scenario": "missingness_contradiction",
+      "pattern": "scattered",
+      "requested_rate": 0.6,
+      "seed": 19,
+      "injected_rows": 35,
+      "input_sha256": "4a1aa3bcebf77623217642dba819d791902acb2577b325cd81b6ee6a584b883e",
+      "detection": {
+        "tp": 35,
+        "fp": 4,
+        "fn": 0,
+        "tn": 81,
+        "precision": 0.8974358974358975,
+        "recall": 1.0,
+        "false_positive_rate": 0.047058823529411764,
+        "retained_fraction": 0.675
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 25,
+        "not_occurring": 45,
+        "not_recorded": 50,
+        "known_rows": 70,
+        "observed_fraction_among_known": 0.35714285714285715
+      },
+      "retained": {
+        "rows": 81,
+        "observed": 21,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 66,
+        "observed_fraction_among_known": 0.3181818181818182
+      },
+      "raw_absolute_error": 0.21428571428571425,
+      "retained_absolute_error": 0.2532467532467532,
+      "incremental_detection": {
+        "newly_flagged_injected": 31,
+        "already_flagged_injected": 4
+      }
+    },
+    {
+      "id": "duplicate_id-scattered-rate0.6-seed19",
+      "scenario": "duplicate_id",
+      "pattern": "scattered",
+      "requested_rate": 0.6,
+      "seed": 19,
+      "injected_rows": 35,
+      "input_sha256": "fa38b7c3e48234571c6d8d872af97809439c1724cdf041084639340c943e0555",
+      "detection": {
+        "tp": 4,
+        "fp": 4,
+        "fn": 31,
+        "tn": 81,
+        "precision": 0.5,
+        "recall": 0.11428571428571428,
+        "false_positive_rate": 0.047058823529411764,
+        "retained_fraction": 0.9333333333333333
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 112,
+        "observed": 52,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 97,
+        "observed_fraction_among_known": 0.5360824742268041
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.03534609720176729,
+      "incremental_detection": {
+        "newly_flagged_injected": 0,
+        "already_flagged_injected": 4
+      }
+    },
+    {
+      "id": "invalid_timezone-scattered-rate0.6-seed19",
+      "scenario": "invalid_timezone",
+      "pattern": "scattered",
+      "requested_rate": 0.6,
+      "seed": 19,
+      "injected_rows": 35,
+      "input_sha256": "ad039c3315f5bbf1d3f784e1f248b8345bce04f16a97ae733fa96e0d3b64fd7f",
+      "detection": {
+        "tp": 4,
+        "fp": 4,
+        "fn": 31,
+        "tn": 81,
+        "precision": 0.5,
+        "recall": 0.11428571428571428,
+        "false_positive_rate": 0.047058823529411764,
+        "retained_fraction": 0.9333333333333333
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 112,
+        "observed": 52,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 97,
+        "observed_fraction_among_known": 0.5360824742268041
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.03534609720176729,
+      "incremental_detection": {
+        "newly_flagged_injected": 0,
+        "already_flagged_injected": 4
+      }
+    },
+    {
+      "id": "false_non_occurrence-scattered-rate0.6-seed19",
+      "scenario": "false_non_occurrence",
+      "pattern": "scattered",
+      "requested_rate": 0.6,
+      "seed": 19,
+      "injected_rows": 35,
+      "input_sha256": "e75392cee7ae55db86a920559c2d2cd7d820fd1ad11919d1d4872cfe7db26a89",
+      "detection": {
+        "tp": 0,
+        "fp": 4,
+        "fn": 35,
+        "tn": 81,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.047058823529411764,
+        "retained_fraction": 0.9666666666666667
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 25,
+        "not_occurring": 80,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.23809523809523808
+      },
+      "retained": {
+        "rows": 116,
+        "observed": 21,
+        "not_occurring": 80,
+        "not_recorded": 15,
+        "known_rows": 101,
+        "observed_fraction_among_known": 0.2079207920792079
+      },
+      "raw_absolute_error": 0.3333333333333333,
+      "retained_absolute_error": 0.3635077793493635,
+      "incremental_detection": {
+        "newly_flagged_injected": 0,
+        "already_flagged_injected": 0
+      }
+    },
+    {
+      "id": "missing_source-block-rate0.1-seed19",
+      "scenario": "missing_source",
+      "pattern": "block",
+      "requested_rate": 0.1,
+      "seed": 19,
+      "injected_rows": 5,
+      "input_sha256": "55c76b5c233f1866673ca2c86de44cb77c004c19789e0ba3e09acd9f96eed574",
+      "detection": {
+        "tp": 5,
+        "fp": 8,
+        "fn": 0,
+        "tn": 107,
+        "precision": 0.38461538461538464,
+        "recall": 1.0,
+        "false_positive_rate": 0.06956521739130435,
+        "retained_fraction": 0.8916666666666667
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 107,
+        "observed": 47,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 92,
+        "observed_fraction_among_known": 0.5108695652173914
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.060559006211180044,
+      "incremental_detection": {
+        "newly_flagged_injected": 5,
+        "already_flagged_injected": 0
+      }
+    },
+    {
+      "id": "naive_timestamp-block-rate0.1-seed19",
+      "scenario": "naive_timestamp",
+      "pattern": "block",
+      "requested_rate": 0.1,
+      "seed": 19,
+      "injected_rows": 5,
+      "input_sha256": "aeb1b640c631ab697bec12e9d28be0e28cf3be3b9f622d97c8951b5aaeb13563",
+      "detection": {
+        "tp": 5,
+        "fp": 8,
+        "fn": 0,
+        "tn": 107,
+        "precision": 0.38461538461538464,
+        "recall": 1.0,
+        "false_positive_rate": 0.06956521739130435,
+        "retained_fraction": 0.8916666666666667
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 107,
+        "observed": 47,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 92,
+        "observed_fraction_among_known": 0.5108695652173914
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.060559006211180044,
+      "incremental_detection": {
+        "newly_flagged_injected": 5,
+        "already_flagged_injected": 0
+      }
+    },
+    {
+      "id": "missingness_contradiction-block-rate0.1-seed19",
+      "scenario": "missingness_contradiction",
+      "pattern": "block",
+      "requested_rate": 0.1,
+      "seed": 19,
+      "injected_rows": 5,
+      "input_sha256": "9d4f07da76a967a2d4a67862e26fa30ac80e658ddab1f0951e1c23b5fb61cfe0",
+      "detection": {
+        "tp": 5,
+        "fp": 8,
+        "fn": 0,
+        "tn": 107,
+        "precision": 0.38461538461538464,
+        "recall": 1.0,
+        "false_positive_rate": 0.06956521739130435,
+        "retained_fraction": 0.8916666666666667
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 55,
+        "not_occurring": 45,
+        "not_recorded": 20,
+        "known_rows": 100,
+        "observed_fraction_among_known": 0.55
+      },
+      "retained": {
+        "rows": 107,
+        "observed": 47,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 92,
+        "observed_fraction_among_known": 0.5108695652173914
+      },
+      "raw_absolute_error": 0.021428571428571352,
+      "retained_absolute_error": 0.060559006211180044,
+      "incremental_detection": {
+        "newly_flagged_injected": 5,
+        "already_flagged_injected": 0
+      }
+    },
+    {
+      "id": "duplicate_id-block-rate0.1-seed19",
+      "scenario": "duplicate_id",
+      "pattern": "block",
+      "requested_rate": 0.1,
+      "seed": 19,
+      "injected_rows": 5,
+      "input_sha256": "82e0f2866a26f41b5eea61c8832608e563b94969058cf38d11ae78ab676b5143",
+      "detection": {
+        "tp": 0,
+        "fp": 8,
+        "fn": 5,
+        "tn": 107,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.06956521739130435,
+        "retained_fraction": 0.9333333333333333
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 112,
+        "observed": 52,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 97,
+        "observed_fraction_among_known": 0.5360824742268041
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.03534609720176729,
+      "incremental_detection": {
+        "newly_flagged_injected": 0,
+        "already_flagged_injected": 0
+      }
+    },
+    {
+      "id": "invalid_timezone-block-rate0.1-seed19",
+      "scenario": "invalid_timezone",
+      "pattern": "block",
+      "requested_rate": 0.1,
+      "seed": 19,
+      "injected_rows": 5,
+      "input_sha256": "f56d8a10fe2fc141c45ef6e0ad7cd8963cfe0b97acb6379aa3fdc05034b01714",
+      "detection": {
+        "tp": 0,
+        "fp": 8,
+        "fn": 5,
+        "tn": 107,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.06956521739130435,
+        "retained_fraction": 0.9333333333333333
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 112,
+        "observed": 52,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 97,
+        "observed_fraction_among_known": 0.5360824742268041
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.03534609720176729,
+      "incremental_detection": {
+        "newly_flagged_injected": 0,
+        "already_flagged_injected": 0
+      }
+    },
+    {
+      "id": "false_non_occurrence-block-rate0.1-seed19",
+      "scenario": "false_non_occurrence",
+      "pattern": "block",
+      "requested_rate": 0.1,
+      "seed": 19,
+      "injected_rows": 5,
+      "input_sha256": "3308f958d56c4fbef5be6375eb405f6c7ea250a5e9f8fdda8353232f305fa096",
+      "detection": {
+        "tp": 0,
+        "fp": 8,
+        "fn": 5,
+        "tn": 107,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.06956521739130435,
+        "retained_fraction": 0.9333333333333333
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 55,
+        "not_occurring": 50,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5238095238095238
+      },
+      "retained": {
+        "rows": 112,
+        "observed": 47,
+        "not_occurring": 50,
+        "not_recorded": 15,
+        "known_rows": 97,
+        "observed_fraction_among_known": 0.4845360824742268
+      },
+      "raw_absolute_error": 0.04761904761904756,
+      "retained_absolute_error": 0.0868924889543446,
+      "incremental_detection": {
+        "newly_flagged_injected": 0,
+        "already_flagged_injected": 0
+      }
+    },
+    {
+      "id": "missing_source-block-rate0.3-seed19",
+      "scenario": "missing_source",
+      "pattern": "block",
+      "requested_rate": 0.3,
+      "seed": 19,
+      "injected_rows": 17,
+      "input_sha256": "eb7731be1720b7d9757e985bac250964522d348fcbf5c835fe5d6d63b12b8eb6",
+      "detection": {
+        "tp": 17,
+        "fp": 6,
+        "fn": 0,
+        "tn": 97,
+        "precision": 0.7391304347826086,
+        "recall": 1.0,
+        "false_positive_rate": 0.05825242718446602,
+        "retained_fraction": 0.8083333333333333
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 97,
+        "observed": 37,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 82,
+        "observed_fraction_among_known": 0.45121951219512196
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.12020905923344943,
+      "incremental_detection": {
+        "newly_flagged_injected": 15,
+        "already_flagged_injected": 2
+      }
+    },
+    {
+      "id": "naive_timestamp-block-rate0.3-seed19",
+      "scenario": "naive_timestamp",
+      "pattern": "block",
+      "requested_rate": 0.3,
+      "seed": 19,
+      "injected_rows": 17,
+      "input_sha256": "ebbecc9303185b8eb96738d6cc97ec66ed1f30b6481e5244839b3e518742cfe2",
+      "detection": {
+        "tp": 17,
+        "fp": 6,
+        "fn": 0,
+        "tn": 97,
+        "precision": 0.7391304347826086,
+        "recall": 1.0,
+        "false_positive_rate": 0.05825242718446602,
+        "retained_fraction": 0.8083333333333333
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 97,
+        "observed": 37,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 82,
+        "observed_fraction_among_known": 0.45121951219512196
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.12020905923344943,
+      "incremental_detection": {
+        "newly_flagged_injected": 15,
+        "already_flagged_injected": 2
+      }
+    },
+    {
+      "id": "missingness_contradiction-block-rate0.3-seed19",
+      "scenario": "missingness_contradiction",
+      "pattern": "block",
+      "requested_rate": 0.3,
+      "seed": 19,
+      "injected_rows": 17,
+      "input_sha256": "2059356bed9474afacab35e77f86e78a6d10c4f2395adfe6400ca6a4952e50fb",
+      "detection": {
+        "tp": 17,
+        "fp": 6,
+        "fn": 0,
+        "tn": 97,
+        "precision": 0.7391304347826086,
+        "recall": 1.0,
+        "false_positive_rate": 0.05825242718446602,
+        "retained_fraction": 0.8083333333333333
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 43,
+        "not_occurring": 45,
+        "not_recorded": 32,
+        "known_rows": 88,
+        "observed_fraction_among_known": 0.48863636363636365
+      },
+      "retained": {
+        "rows": 97,
+        "observed": 37,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 82,
+        "observed_fraction_among_known": 0.45121951219512196
+      },
+      "raw_absolute_error": 0.08279220779220775,
+      "retained_absolute_error": 0.12020905923344943,
+      "incremental_detection": {
+        "newly_flagged_injected": 15,
+        "already_flagged_injected": 2
+      }
+    },
+    {
+      "id": "duplicate_id-block-rate0.3-seed19",
+      "scenario": "duplicate_id",
+      "pattern": "block",
+      "requested_rate": 0.3,
+      "seed": 19,
+      "injected_rows": 17,
+      "input_sha256": "c09323794575e064027e6aec4c959800a01df9e689d5f1d3f4aacaccfd1094fe",
+      "detection": {
+        "tp": 2,
+        "fp": 6,
+        "fn": 15,
+        "tn": 97,
+        "precision": 0.25,
+        "recall": 0.11764705882352941,
+        "false_positive_rate": 0.05825242718446602,
+        "retained_fraction": 0.9333333333333333
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 112,
+        "observed": 52,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 97,
+        "observed_fraction_among_known": 0.5360824742268041
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.03534609720176729,
+      "incremental_detection": {
+        "newly_flagged_injected": 0,
+        "already_flagged_injected": 2
+      }
+    },
+    {
+      "id": "invalid_timezone-block-rate0.3-seed19",
+      "scenario": "invalid_timezone",
+      "pattern": "block",
+      "requested_rate": 0.3,
+      "seed": 19,
+      "injected_rows": 17,
+      "input_sha256": "b4f4edacbbe4f5f26b88cbbb26642a2dc6f1f39cbb5f583dbac3992ba90a0bef",
+      "detection": {
+        "tp": 2,
+        "fp": 6,
+        "fn": 15,
+        "tn": 97,
+        "precision": 0.25,
+        "recall": 0.11764705882352941,
+        "false_positive_rate": 0.05825242718446602,
+        "retained_fraction": 0.9333333333333333
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 112,
+        "observed": 52,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 97,
+        "observed_fraction_among_known": 0.5360824742268041
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.03534609720176729,
+      "incremental_detection": {
+        "newly_flagged_injected": 0,
+        "already_flagged_injected": 2
+      }
+    },
+    {
+      "id": "false_non_occurrence-block-rate0.3-seed19",
+      "scenario": "false_non_occurrence",
+      "pattern": "block",
+      "requested_rate": 0.3,
+      "seed": 19,
+      "injected_rows": 17,
+      "input_sha256": "e1bf52072309341ccfa144f68b06e02400fcc584b37d766149ba1c6fe5057d0b",
+      "detection": {
+        "tp": 0,
+        "fp": 6,
+        "fn": 17,
+        "tn": 97,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.05825242718446602,
+        "retained_fraction": 0.95
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 43,
+        "not_occurring": 62,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.4095238095238095
+      },
+      "retained": {
+        "rows": 114,
+        "observed": 37,
+        "not_occurring": 62,
+        "not_recorded": 15,
+        "known_rows": 99,
+        "observed_fraction_among_known": 0.37373737373737376
+      },
+      "raw_absolute_error": 0.16190476190476188,
+      "retained_absolute_error": 0.19769119769119764,
+      "incremental_detection": {
+        "newly_flagged_injected": 0,
+        "already_flagged_injected": 0
+      }
+    },
+    {
+      "id": "missing_source-block-rate0.6-seed19",
+      "scenario": "missing_source",
+      "pattern": "block",
+      "requested_rate": 0.6,
+      "seed": 19,
+      "injected_rows": 35,
+      "input_sha256": "2b6713f25ea3f53ccbdd1e1f457a4d7aca64b06799f0823ae4c7b4b66971cf7b",
+      "detection": {
+        "tp": 35,
+        "fp": 4,
+        "fn": 0,
+        "tn": 81,
+        "precision": 0.8974358974358975,
+        "recall": 1.0,
+        "false_positive_rate": 0.047058823529411764,
+        "retained_fraction": 0.675
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 81,
+        "observed": 21,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 66,
+        "observed_fraction_among_known": 0.3181818181818182
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.2532467532467532,
+      "incremental_detection": {
+        "newly_flagged_injected": 31,
+        "already_flagged_injected": 4
+      }
+    },
+    {
+      "id": "naive_timestamp-block-rate0.6-seed19",
+      "scenario": "naive_timestamp",
+      "pattern": "block",
+      "requested_rate": 0.6,
+      "seed": 19,
+      "injected_rows": 35,
+      "input_sha256": "72681fc8dd65e4a62f4192e98beb2ed68ee2c6e8816a445b2ee2beb0022785bc",
+      "detection": {
+        "tp": 35,
+        "fp": 4,
+        "fn": 0,
+        "tn": 81,
+        "precision": 0.8974358974358975,
+        "recall": 1.0,
+        "false_positive_rate": 0.047058823529411764,
+        "retained_fraction": 0.675
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 81,
+        "observed": 21,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 66,
+        "observed_fraction_among_known": 0.3181818181818182
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.2532467532467532,
+      "incremental_detection": {
+        "newly_flagged_injected": 31,
+        "already_flagged_injected": 4
+      }
+    },
+    {
+      "id": "missingness_contradiction-block-rate0.6-seed19",
+      "scenario": "missingness_contradiction",
+      "pattern": "block",
+      "requested_rate": 0.6,
+      "seed": 19,
+      "injected_rows": 35,
+      "input_sha256": "6ec7a1fa9f0833a416f6360c35ae928d391c8bc7148dc7f1b5dc958d11babc8a",
+      "detection": {
+        "tp": 35,
+        "fp": 4,
+        "fn": 0,
+        "tn": 81,
+        "precision": 0.8974358974358975,
+        "recall": 1.0,
+        "false_positive_rate": 0.047058823529411764,
+        "retained_fraction": 0.675
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 25,
+        "not_occurring": 45,
+        "not_recorded": 50,
+        "known_rows": 70,
+        "observed_fraction_among_known": 0.35714285714285715
+      },
+      "retained": {
+        "rows": 81,
+        "observed": 21,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 66,
+        "observed_fraction_among_known": 0.3181818181818182
+      },
+      "raw_absolute_error": 0.21428571428571425,
+      "retained_absolute_error": 0.2532467532467532,
+      "incremental_detection": {
+        "newly_flagged_injected": 31,
+        "already_flagged_injected": 4
+      }
+    },
+    {
+      "id": "duplicate_id-block-rate0.6-seed19",
+      "scenario": "duplicate_id",
+      "pattern": "block",
+      "requested_rate": 0.6,
+      "seed": 19,
+      "injected_rows": 35,
+      "input_sha256": "7d0a4fc9f59e06d657068db3d645d8047b509b07c00ec692511c336b5dc23213",
+      "detection": {
+        "tp": 4,
+        "fp": 4,
+        "fn": 31,
+        "tn": 81,
+        "precision": 0.5,
+        "recall": 0.11428571428571428,
+        "false_positive_rate": 0.047058823529411764,
+        "retained_fraction": 0.9333333333333333
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 112,
+        "observed": 52,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 97,
+        "observed_fraction_among_known": 0.5360824742268041
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.03534609720176729,
+      "incremental_detection": {
+        "newly_flagged_injected": 0,
+        "already_flagged_injected": 4
+      }
+    },
+    {
+      "id": "invalid_timezone-block-rate0.6-seed19",
+      "scenario": "invalid_timezone",
+      "pattern": "block",
+      "requested_rate": 0.6,
+      "seed": 19,
+      "injected_rows": 35,
+      "input_sha256": "5c0bcbfb41e9a4f3707af2b8cc14433f0e0464c66e9afac66cf05da2df130be7",
+      "detection": {
+        "tp": 4,
+        "fp": 4,
+        "fn": 31,
+        "tn": 81,
+        "precision": 0.5,
+        "recall": 0.11428571428571428,
+        "false_positive_rate": 0.047058823529411764,
+        "retained_fraction": 0.9333333333333333
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 60,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.5714285714285714
+      },
+      "retained": {
+        "rows": 112,
+        "observed": 52,
+        "not_occurring": 45,
+        "not_recorded": 15,
+        "known_rows": 97,
+        "observed_fraction_among_known": 0.5360824742268041
+      },
+      "raw_absolute_error": 0.0,
+      "retained_absolute_error": 0.03534609720176729,
+      "incremental_detection": {
+        "newly_flagged_injected": 0,
+        "already_flagged_injected": 4
+      }
+    },
+    {
+      "id": "false_non_occurrence-block-rate0.6-seed19",
+      "scenario": "false_non_occurrence",
+      "pattern": "block",
+      "requested_rate": 0.6,
+      "seed": 19,
+      "injected_rows": 35,
+      "input_sha256": "f4b0b3b29612e469241a51c052525da158c288bb866fc8ece6c598870452a2fb",
+      "detection": {
+        "tp": 0,
+        "fp": 4,
+        "fn": 35,
+        "tn": 81,
+        "precision": 0.0,
+        "recall": 0.0,
+        "false_positive_rate": 0.047058823529411764,
+        "retained_fraction": 0.9666666666666667
+      },
+      "raw": {
+        "rows": 120,
+        "observed": 25,
+        "not_occurring": 80,
+        "not_recorded": 15,
+        "known_rows": 105,
+        "observed_fraction_among_known": 0.23809523809523808
+      },
+      "retained": {
+        "rows": 116,
+        "observed": 21,
+        "not_occurring": 80,
+        "not_recorded": 15,
+        "known_rows": 101,
+        "observed_fraction_among_known": 0.2079207920792079
+      },
+      "raw_absolute_error": 0.3333333333333333,
+      "retained_absolute_error": 0.3635077793493635,
+      "incremental_detection": {
+        "newly_flagged_injected": 0,
+        "already_flagged_injected": 0
+      }
+    }
+  ]
+}

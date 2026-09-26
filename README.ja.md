@@ -18,6 +18,16 @@
 関連情報: [SCHEMA.md](SCHEMA.md) / [SECURITY.md](SECURITY.md) / [CONTRIBUTING.md](CONTRIBUTING.md)
 ルールの定義は [rules.json](rules.json)。CLI・ブラウザデモ共通です（`severity`を含む `high/medium/low`）。
 
+## 検査の性能と限界を測る
+
+[合成データの評価手順（英語）](benchmarks/README.md)では、6種類の問題を注入し、検出率・誤検出・残ったデータ量・集計の偏りを測れます。
+
+```bash
+python3 benchmarks/quality_benchmark.py --output build/benchmark
+```
+
+既定では72条件と正常対照を評価し、変更履歴と再現用ハッシュも保存します。[実測レポート](examples/benchmark-v1/REPORT.md)には見逃しや、除外によって偏りが悪化するケースも含みます。合成データ上の検証であり、ML精度や臨床的有効性の評価ではありません。
+
 ## まずここを読む
 
 1. 合成データのサンプルで実行する

@@ -12,6 +12,16 @@ An offline Python toolkit for checking the quality of synthetic care observation
 
 Use it to explore data validation before building an analytics or machine learning pipeline. The repository contains a rule-based validator, synthetic fixtures, automated checks, and a standalone browser demo. It does not train or evaluate a machine learning model, and it does not provide medical judgments or diagnoses.
 
+## Evaluate the validator
+
+The [controlled benchmark](benchmarks/README.md) goes beyond valid/invalid examples: it injects six kinds of synthetic data problems and measures detection, false alarms, retained data, and changes to a simple aggregate.
+
+```bash
+python3 benchmarks/quality_benchmark.py --output build/benchmark
+```
+
+The default run produces 72 paired cases and a clean control, with replayable edits and source/data hashes. Read the [example results](examples/benchmark-v1/REPORT.md), including missed problems and cases where rejecting records worsens aggregate bias. This is a synthetic data-quality experiment, not an ML performance evaluation.
+
 ## Quick start
 
 Use Python 3.11 or later; CI covers Python 3.11, 3.12, and 3.13. The CLI uses the Python standard library and requires no API keys or third-party packages.

@@ -1,0 +1,8 @@
+{
+  "python": "3.12.10",
+  "platform": "macOS-15.7.9-x86_64-i386-64bit",
+  "elapsed_seconds_generation_and_evaluation": 0.19669068703660741,
+  "revision": "8fb2926b391f37996f5da0be61dd6e16ee4ff8dc",
+  "working_tree_dirty": true,
+  "source_identity": "Source SHA-256 values in metrics.json are authoritative, including uncommitted changes."
+}

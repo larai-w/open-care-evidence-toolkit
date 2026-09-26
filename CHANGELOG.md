@@ -4,6 +4,9 @@
 
 ### Added
 
+- Controlled synthetic benchmark: six injection scenarios, scattered/block placement, configurable rates and seeds, a clean challenge control, and replayable evidence.
+- Detection/false-alarm metrics and a paired aggregate comparison showing how rejection can introduce selection bias; undefined metrics remain null.
+
 - English CLI diagnostics by default and `--lang ja` for Japanese output.
 - Opt-in `--fail-on-issues` quality gate: exit 1 for findings, exit 2 for invalid input, with JSON output preserved for quality findings.
 - Temporary-input regression coverage for language-independent findings, quality gates, malformed JSON/CSV, and BOM-prefixed CSV with quoted newlines.
