@@ -13,7 +13,7 @@
 python3 care_evidence.py fixtures/complete.json
 ```
 
-Expected: no issues and output indicates all rules passed.
+Expected: English output with `Issues: 0` and `Passed all 6 rules`. Add `--lang ja` for Japanese.
 
 ## 3. Check one synthetic problem case
 
@@ -33,8 +33,16 @@ Expected: `browser CSV parser: quoted comma, BOM, and blank line PASS`
 
 ## 5. Try the browser demo
 
-Open `demo.html` in a browser and click `合成サンプルを表示`.
+Open `demo.html` in a browser, click **English**, then **Show synthetic sample**.
 You should see:
 
 - summary line: `1イベント / 0件の問題` (or `1 event(s) / 0 issue(s)`)
 - output line containing passed status
+
+## 6. Enforce a quality gate
+
+```bash
+python3 care_evidence.py fixtures/missing.json --format json --fail-on-issues
+```
+
+Expected: a complete report with four findings and exit code `1`. The complete fixture returns `0`; malformed inputs return `2` with an error on stderr. Without `--fail-on-issues`, quality findings do not change the exit code.

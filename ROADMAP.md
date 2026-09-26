@@ -1,24 +1,20 @@
 # Roadmap
 
-## Completed
+## Implemented
 
-- Offline CLI checker for synthetic care observation records
-- Browser demo (local only)
-- CSV parser robustness (quoted commas/newlines/BOM/blank lines)
-- Accessibility updates in result rendering
-- Rule metadata (`severity`, `area`, `machine_readable`)
+- Offline JSON/CSV CLI checker with six rule categories and synthetic fixtures
+- English/Japanese CLI diagnostics and a bilingual local browser demo
+- Opt-in CLI quality gate with distinct finding and input-error exit codes
+- CLI input-shape validation and BOM-aware CSV/JSON loading
+- Regression tests for CSV quoting, malformed inputs, and missingness semantics
+- English default README with a separate Japanese guide
+- Python 3.11–3.13 CI, browser checks, and public-content checks
 
-## In progress
+## Next candidates
 
-- Contributor onboarding hardening (governance docs, templates, changelog)
-- Discoverability and social distribution preparation
+1. Specify stronger field types and schema-version checks, then implement them consistently in the CLI and browser.
+2. Validate event-ID uniqueness and correction references across a dataset, with an explicit policy for references outside the supplied file.
+3. Expand shared synthetic fixtures to measure CLI/browser agreement and document intentional differences.
+4. Add batch reports and comparisons against an earlier report once the single-file contract is stable.
 
-## Planned
-
-- Team history and baseline checks API mode (optional)
-- Exportable validation reports for CSV/JSON batches
-- Optional packaging for local distribution
-
-## Notes
-
-This project remains local-first and synthetic-data-first. External data transfer is not supported in the MVP.
+These are candidates, not implemented features or delivery commitments. Scope remains offline validation of synthetic records; model training and clinical evaluation are outside the current implementation.

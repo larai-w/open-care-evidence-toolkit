@@ -5,7 +5,7 @@
 ## 問題のない記録
 
 ```bash
-python3 care_evidence.py fixtures/complete.json
+python3 care_evidence.py fixtures/complete.json --lang ja
 ```
 
 ```text
@@ -21,7 +21,7 @@ python3 care_evidence.py fixtures/complete.json
 ## 欠測を「問題なし」と解釈した記録
 
 ```bash
-python3 care_evidence.py fixtures/missing.json
+python3 care_evidence.py fixtures/missing.json --lang ja
 ```
 
 ```text

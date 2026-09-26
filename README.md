@@ -29,9 +29,25 @@ python3 care_evidence.py fixtures/missing.json --format json
 python3 care_evidence.py fixtures/complete.csv --format json
 ```
 
-The JSON report contains `events`, a total `issues` count, and per-event `results` with rule IDs and diagnostic messages. Rule IDs and JSON keys are in English; diagnostic messages and the default Markdown output are currently in Japanese.
+The JSON report contains `events`, a total `issues` count, and per-event `results` with rule IDs and diagnostic messages. Rule IDs and JSON keys stay the same across languages. Diagnostics and Markdown output default to English; use `--lang ja` for Japanese. Input-error details from the parser may remain in English.
 
-**Automation:** inspect the JSON `issues` count to decide whether a dataset passes your quality gate. Finding quality issues does not currently make the CLI exit with a non-zero status.
+### Use as a CI quality gate
+
+```bash
+python3 care_evidence.py fixtures/complete.json --format json --fail-on-issues
+python3 care_evidence.py fixtures/missing.json --format json --fail-on-issues
+python3 care_evidence.py fixtures/missing.json --lang ja
+```
+
+The second command deliberately returns exit code **1** while still printing the complete JSON report.
+
+| Exit code | Meaning |
+| --- | --- |
+| `0` | Input was inspected; with `--fail-on-issues`, no quality issues were found. |
+| `1` | Quality issues were found and `--fail-on-issues` was enabled. |
+| `2` | Input could not be read or parsed, its container structure was invalid, or CLI arguments were invalid. |
+
+Without `--fail-on-issues`, findings remain report-only for compatibility. Input errors go to stderr and produce no report on stdout. Empty datasets, non-object events, duplicate/blank CSV headers, and CSV row-width mismatches are rejected instead of being reported as clean data.
 
 ## Why these checks matter
 
@@ -85,9 +101,9 @@ python3 scripts/check_public_repo.py
 
 ## Browser demo
 
-Open [demo.html](demo.html) locally in a browser. Select a synthetic JSON/CSV file or click **合成サンプルを表示** (Show synthetic sample). The interface is currently in Japanese. The demo runs without a server, external dependencies, or file uploads.
+Open [demo.html](demo.html) locally in a browser. Select a synthetic JSON/CSV file or click **合成サンプルを表示** (Show synthetic sample). Click **English** to switch the interface and results to English. The demo runs without a server, external dependencies, or file uploads.
 
-The browser CSV parser has checks for UTF-8 BOMs, quoted commas, quoted newlines, and blank lines. These browser-specific checks should not be read as a guarantee that every input behaves identically in the Python CLI.
+The CLI and browser have checks for UTF-8 BOMs, quoted commas, quoted newlines, and blank lines. The CLI additionally rejects malformed input containers and ambiguous CSV shapes. Full parser and validation parity between the two interfaces is not yet guaranteed.
 
 ## Scope and limitations
 

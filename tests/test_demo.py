@@ -19,7 +19,7 @@ class DemoTests(unittest.TestCase):
             self.assertIn(field, html)
 
     def test_english_readme_states_same_safety_boundary(self):
-        readme = (ROOT / "README.en.md").read_text(encoding="utf-8")
+        readme = (ROOT / "README.md").read_text(encoding="utf-8")
         for phrase in ("synthetic", "offline", "medical", "not_recorded", "not_occurring"):
             self.assertIn(phrase, readme)
 

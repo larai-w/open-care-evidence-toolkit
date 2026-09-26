@@ -52,8 +52,8 @@ python3 care_evidence.py fixtures/missing.json --format json
 python3 care_evidence.py fixtures/complete.csv
 ```
 
-JSONまたはCSVを入力できます。デフォルト出力は人が読むためのMarkdownです。`--format json`では機械処理しやすい結果を出します。
-CIや自動化では、`--format json` のみを想定してください。
+JSONまたはCSVを入力できます。デフォルト出力は英語のMarkdownです。`--lang ja` で日本語を選べます。`--format json`では機械処理しやすい結果を出します。
+CIでは `--format json --fail-on-issues` を使うと、品質問題がある場合は終了コード1、入力エラーは2になります。`--fail-on-issues` なしでは品質問題があっても従来どおり0です。入力エラー時は標準エラーに説明を出し、標準出力にはレポートを出しません。空データ、JSON内のオブジェクトでないイベント、CSVの重複・空ヘッダーや列数の不一致は入力エラーです。
 
 ```bash
 python3 care_evidence.py fixtures/complete.json --format json
