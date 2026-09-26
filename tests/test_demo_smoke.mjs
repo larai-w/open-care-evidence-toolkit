@@ -29,3 +29,41 @@ assert.equal(context.document.documentElement.lang, 'en');
 assert.match(elements.get('summary').textContent, /1 event\(s\) \/ 0 issue\(s\)/);
 assert.match(elements.get('output').textContent, /Passed all 6 rules/);
 console.log('browser demo smoke: sample and language toggle PASS');
+
+// The same synthetic corpus is evaluated by the actual CLI and browser entry point.
+const { spawnSync } = await import('node:child_process');
+const { tmpdir } = await import('node:os');
+const { join } = await import('node:path');
+const corpus = JSON.parse(fs.readFileSync(new URL('../fixtures/input-contract.json', import.meta.url)));
+const directory = fs.mkdtempSync(join(tmpdir(), 'care-input-contract-'));
+const failures = [];
+try {
+  for (const item of corpus) {
+    const path = join(directory, `synthetic.${item.extension}`);
+    fs.writeFileSync(path, item.text);
+    const cli = spawnSync(process.env.PYTHON || 'python3', [
+      new URL('../care_evidence.py', import.meta.url).pathname, path, '--format', 'json'
+    ], { encoding: 'utf8' });
+    assert.ifError(cli.error);
+    assert.equal(cli.status, item.accepted ? 0 : 2, `CLI: ${item.name}: ${cli.stderr}`);
+    context.setLanguage('en');
+    elements.get('sample').listeners.click(); // Make stale results observable.
+    try {
+      context.inspect(item.text, path);
+      const accepted = /event\(s\)/.test(elements.get('summary').textContent);
+      assert.equal(accepted, item.accepted, item.name);
+      if (item.accepted) {
+        assert.equal(vm.runInNewContext('lastResults.length', context), JSON.parse(cli.stdout).events);
+      } else {
+        assert.equal(elements.get('output').textContent, '');
+        elements.get('language').listeners.click();
+        assert.match(elements.get('summary').textContent, /読み込みエラー/);
+        assert.equal(elements.get('output').textContent, '');
+        elements.get('language').listeners.click();
+        assert.match(elements.get('summary').textContent, /Input error:/);
+      }
+    } catch (error) { failures.push(`${item.name}: ${error.message}`); }
+  }
+} finally { fs.rmSync(directory, { recursive: true }); }
+assert.deepEqual(failures, [], failures.join('\n'));
+console.log(`CLI/browser input contract: ${corpus.length} synthetic cases PASS`);

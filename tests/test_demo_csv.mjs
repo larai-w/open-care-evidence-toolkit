@@ -28,7 +28,7 @@ const canonicalRows = (rows) => rows.map((row) => JSON.stringify(row, [
 const rows = normalizeRows(context.parseCsv('\uFEFFevent_id,observation,status\r\n"evt-1","水分, 食事",observed\r\n\r\n'));
 const rowRows = canonicalRows(rows);
 assert.strictEqual(rowRows.length, 1);
-assert.strictEqual(rowRows[0], JSON.stringify({ event_id: 'evt-1', observation: '水分, 食事', status: 'observed', corrects: [], schema_version: undefined }));
+assert.strictEqual(rowRows[0], JSON.stringify({ event_id: 'evt-1', observation: '水分, 食事', status: 'observed', corrects: undefined, schema_version: undefined }));
 
 const edgeRows = normalizeRows(context.parseCsv(
   'event_id,observation,status\r\n' +
@@ -38,7 +38,11 @@ const edgeRows = normalizeRows(context.parseCsv(
 ));
 const edgeCanonicalRows = canonicalRows(edgeRows);
 assert.strictEqual(edgeCanonicalRows.length, 3);
-assert.strictEqual(edgeCanonicalRows[0], JSON.stringify({ event_id: 'evt-2', observation: 'line1\r\nline2', status: 'observed', corrects: [], schema_version: undefined }));
-assert.strictEqual(edgeCanonicalRows[1], JSON.stringify({ event_id: 'evt-3', observation: 'He said "Hello" today', status: 'observed', corrects: [], schema_version: undefined }));
-assert.strictEqual(edgeCanonicalRows[2], JSON.stringify({ event_id: 'evt-4', observation: '', status: 'observed', corrects: [], schema_version: undefined }));
+assert.strictEqual(edgeCanonicalRows[0], JSON.stringify({ event_id: 'evt-2', observation: 'line1\r\nline2', status: 'observed', corrects: undefined, schema_version: undefined }));
+assert.strictEqual(edgeCanonicalRows[1], JSON.stringify({ event_id: 'evt-3', observation: 'He said "Hello" today', status: 'observed', corrects: undefined, schema_version: undefined }));
+assert.strictEqual(edgeCanonicalRows[2], JSON.stringify({ event_id: 'evt-4', observation: '', status: 'observed', corrects: undefined, schema_version: undefined }));
 console.log('browser CSV parser: quoted comma, BOM, and blank line PASS');
+
+assert.equal(Object.hasOwn(context.parseCsv('event_id\nsynthetic-1')[0], 'corrects'), false);
+assert.equal(Object.hasOwn(context.parseCsv('event_id\nsynthetic-1')[0], 'schema_version'), false);
+assert.equal(JSON.stringify(context.parseCsv('corrects,schema_version\na;b,1')[0]), '{"corrects":["a","b"],"schema_version":1}');

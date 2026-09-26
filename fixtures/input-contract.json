@@ -1,0 +1,188 @@
+[
+  {
+    "name": "object",
+    "text": "{\"event_id\": \"evt-demo-001\", \"observed_at\": \"2026-09-10T09:00:00+09:00\", \"timezone\": \"Asia/Tokyo\", \"source\": \"synthetic-care-log\", \"recorder_role\": \"family-caregiver\", \"observation\": \"\\u671d\\u98df\\u5f8c\\u306b\\u6c34\\u3092200mL\\u98f2\\u3093\\u3060\", \"interpretation\": \"\", \"status\": \"observed\", \"corrects\": [], \"schema_version\": 1}",
+    "extension": "json",
+    "accepted": true
+  },
+  {
+    "name": "array",
+    "text": "[{\"event_id\": \"evt-demo-001\", \"observed_at\": \"2026-09-10T09:00:00+09:00\", \"timezone\": \"Asia/Tokyo\", \"source\": \"synthetic-care-log\", \"recorder_role\": \"family-caregiver\", \"observation\": \"\\u671d\\u98df\\u5f8c\\u306b\\u6c34\\u3092200mL\\u98f2\\u3093\\u3060\", \"interpretation\": \"\", \"status\": \"observed\", \"corrects\": [], \"schema_version\": 1}]",
+    "extension": "json",
+    "accepted": true
+  },
+  {
+    "name": "wrapper",
+    "text": "{\"events\": [{\"event_id\": \"evt-demo-001\", \"observed_at\": \"2026-09-10T09:00:00+09:00\", \"timezone\": \"Asia/Tokyo\", \"source\": \"synthetic-care-log\", \"recorder_role\": \"family-caregiver\", \"observation\": \"\\u671d\\u98df\\u5f8c\\u306b\\u6c34\\u3092200mL\\u98f2\\u3093\\u3060\", \"interpretation\": \"\", \"status\": \"observed\", \"corrects\": [], \"schema_version\": 1}]}",
+    "extension": "json",
+    "accepted": true
+  },
+  {
+    "name": "json-bom",
+    "text": "﻿{\"event_id\": \"evt-demo-001\", \"observed_at\": \"2026-09-10T09:00:00+09:00\", \"timezone\": \"Asia/Tokyo\", \"source\": \"synthetic-care-log\", \"recorder_role\": \"family-caregiver\", \"observation\": \"\\u671d\\u98df\\u5f8c\\u306b\\u6c34\\u3092200mL\\u98f2\\u3093\\u3060\", \"interpretation\": \"\", \"status\": \"observed\", \"corrects\": [], \"schema_version\": 1}",
+    "extension": "json",
+    "accepted": true
+  },
+  {
+    "name": "invalid-json-0",
+    "text": "{",
+    "extension": "json",
+    "accepted": false
+  },
+  {
+    "name": "invalid-json-1",
+    "text": "null",
+    "extension": "json",
+    "accepted": false
+  },
+  {
+    "name": "invalid-json-2",
+    "text": "false",
+    "extension": "json",
+    "accepted": false
+  },
+  {
+    "name": "invalid-json-3",
+    "text": "0",
+    "extension": "json",
+    "accepted": false
+  },
+  {
+    "name": "invalid-json-4",
+    "text": "\"text\"",
+    "extension": "json",
+    "accepted": false
+  },
+  {
+    "name": "invalid-json-5",
+    "text": "[]",
+    "extension": "json",
+    "accepted": false
+  },
+  {
+    "name": "invalid-json-6",
+    "text": "[null]",
+    "extension": "json",
+    "accepted": false
+  },
+  {
+    "name": "invalid-json-7",
+    "text": "[[]]",
+    "extension": "json",
+    "accepted": false
+  },
+  {
+    "name": "invalid-json-8",
+    "text": "[1]",
+    "extension": "json",
+    "accepted": false
+  },
+  {
+    "name": "invalid-json-9",
+    "text": "{\"events\":null}",
+    "extension": "json",
+    "accepted": false
+  },
+  {
+    "name": "invalid-json-10",
+    "text": "{\"events\":false}",
+    "extension": "json",
+    "accepted": false
+  },
+  {
+    "name": "invalid-json-11",
+    "text": "{\"events\":{}}",
+    "extension": "json",
+    "accepted": false
+  },
+  {
+    "name": "invalid-json-12",
+    "text": "{\"events\":[]}",
+    "extension": "json",
+    "accepted": false
+  },
+  {
+    "name": "empty",
+    "text": "",
+    "extension": "csv",
+    "accepted": false
+  },
+  {
+    "name": "header-only",
+    "text": "event_id,status\n",
+    "extension": "csv",
+    "accepted": false
+  },
+  {
+    "name": "duplicate",
+    "text": "event_id,event_id\na,b\n",
+    "extension": "csv",
+    "accepted": false
+  },
+  {
+    "name": "blank-header",
+    "text": "event_id, \na,b\n",
+    "extension": "csv",
+    "accepted": false
+  },
+  {
+    "name": "extra",
+    "text": "event_id,status\na,b,c\n",
+    "extension": "csv",
+    "accepted": false
+  },
+  {
+    "name": "short",
+    "text": "event_id,status\na\n",
+    "extension": "csv",
+    "accepted": false
+  },
+  {
+    "name": "unclosed",
+    "text": "event_id,status\n\"unclosed,b\n",
+    "extension": "csv",
+    "accepted": false
+  },
+  {
+    "name": "after-quote",
+    "text": "event_id,status\n\"a\"x,b\n",
+    "extension": "csv",
+    "accepted": false
+  },
+  {
+    "name": "leading-blank",
+    "text": "\nevent_id,status\na,b\n",
+    "extension": "csv",
+    "accepted": false
+  },
+  {
+    "name": "missing-fields",
+    "text": "event_id,status\nsynthetic-1,observed\n",
+    "extension": "csv",
+    "accepted": true
+  },
+  {
+    "name": "empty-cells",
+    "text": "event_id,status\n,\n",
+    "extension": "csv",
+    "accepted": true
+  },
+  {
+    "name": "empty-quoted-cell",
+    "text": "event_id\n\"\"\n",
+    "extension": "csv",
+    "accepted": true
+  },
+  {
+    "name": "bare-quote",
+    "text": "event_id,status\na\"b,observed\n",
+    "extension": "csv",
+    "accepted": true
+  },
+  {
+    "name": "quoted",
+    "text": "﻿event_id,observation,status\r\n\"a\",\"line1\r\nline2, \"\"quote\"\"\",observed\r\n\r\n",
+    "extension": "csv",
+    "accepted": true
+  }
+]

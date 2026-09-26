@@ -97,7 +97,7 @@ The distinction between `not_recorded` and `not_occurring` is deliberate: absenc
 
 ## Input contract
 
-JSON input can be a single event, an array of events, or an object with an `events` array. CSV input uses the same field names as column headers.
+JSON input can be a single event, a non-empty array of event objects, or an object with a non-empty `events` array. CSV input uses the same field names as column headers. Both entry points reject malformed containers before producing a report. See the [CLI/browser compatibility contract](docs/input-compatibility.md) for supported CSV syntax, regression cases, and remaining field-level differences.
 
 | Field | Intended meaning |
 | --- | --- |

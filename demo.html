@@ -42,7 +42,7 @@
     const REQUIRED = ['event_id','observed_at','timezone','source','recorder_role','observation','interpretation','status','corrects','schema_version'];
     const STATUSES = new Set(['observed','not_recorded','not_occurring']);
     const registry = JSON.parse(document.querySelector('#rule-registry').textContent);
-    let language = 'ja', lastResults = null;
+    let language = 'ja', lastResults = null, lastError = null;
     const labels = Object.fromEntries(registry.map(rule => [rule.id, rule.ja]));
     const copy = {
       ja: { title:'Open Care Evidence Toolkit', note:'ローカル専用デモです。ファイルはこのブラウザ内だけで処理され、外部へ送信されません。実在の介護記録ではなく合成データを使ってください。', file:'JSON / CSVファイル', sample:'合成サンプルを表示', results:'結果', initial:'ファイルを選択してください。', count:(events, issues)=>`${events}イベント / ${issues}件の問題`, passed:'✅ 6規則を通過', missing:'(event_idなし)' },
@@ -63,7 +63,8 @@
       const current = copy[language];
       title.textContent = current.title; privacyNote.textContent = current.note; fileLabel.textContent = current.file; sample.textContent = current.sample; resultsHeading.textContent = current.results;
       languageButton.textContent = language === 'ja' ? 'English' : '日本語'; languageButton.setAttribute('aria-pressed', String(language === 'en'));
-      if (!lastResults) summary.textContent = current.initial; else renderResults();
+      if (lastError !== null) renderError();
+      else if (!lastResults) summary.textContent = current.initial; else renderResults();
     }
     function check(event) {
       const issues = [], missing = REQUIRED.filter(key => !(key in event));
@@ -81,26 +82,65 @@
       return issues;
     }
     function parseCsv(text) {
-      const rows = [], normalized = text.replace(/^\uFEFF/, ''); let row = [], cell = '', quoted = false;
+      const rows = [], normalized = text.replace(/^\uFEFF/, '');
+      let row = [], cell = '', state = 'start', touched = false;
       for (let i = 0; i < normalized.length; i += 1) {
         const char = normalized[i], next = normalized[i + 1];
-        if (char === '"' && quoted && next === '"') { cell += '"'; i += 1; }
-        else if (char === '"') quoted = !quoted;
-        else if (char === ',' && !quoted) { row.push(cell); cell = ''; }
-        else if ((char === '\n' || char === '\r') && !quoted) { if (char === '\r' && next === '\n') i += 1; row.push(cell); if (row.some(value => value !== '')) rows.push(row); row = []; cell = ''; }
-        else cell += char;
+        if (state === 'quoted') {
+          if (char === '"' && next === '"') { cell += '"'; i += 1; }
+          else if (char === '"') state = 'closed';
+          else cell += char;
+          continue;
+        }
+        if (char === ',') { row.push(cell); cell = ''; state = 'start'; touched = true; }
+        else if (char === '\n' || char === '\r') {
+          if (char === '\r' && next === '\n') i += 1;
+          // A physical blank line differs from a row containing empty cells.
+          if (touched) { row.push(cell); rows.push(row); }
+          else if (!rows.length) rows.push([]);
+          row = []; cell = ''; state = 'start'; touched = false;
+        } else {
+          if (state === 'closed') throw new Error('Unexpected character after closing CSV quote');
+          if (state === 'start' && char === '"') state = 'quoted';
+          else { cell += char; state = 'plain'; }
+          touched = true;
+        }
       }
-      if (cell || row.length) { row.push(cell); if (row.some(value => value !== '')) rows.push(row); }
+      if (state === 'quoted') throw new Error('Unclosed CSV quote');
+      if (touched) { row.push(cell); rows.push(row); }
       const headers = rows.shift() || [];
-      return rows.map(row => Object.fromEntries(headers.map((header, i) => [header, row[i] || ''])))
-        .map(event => ({...event, corrects: event.corrects ? event.corrects.split(';').filter(Boolean) : [], schema_version: /^\d+$/.test(event.schema_version) ? Number(event.schema_version) : event.schema_version}));
+      if (!headers.length || headers.some(header => !header.trim()) || new Set(headers).size !== headers.length)
+        throw new Error('CSV requires non-empty, unique column names');
+      return rows.map(row => {
+        if (row.length !== headers.length) throw new Error('CSV column count mismatch');
+        const event = Object.fromEntries(headers.map((header, i) => [header, row[i]]));
+        if (Object.hasOwn(event, 'corrects')) event.corrects = event.corrects.split(';').filter(Boolean);
+        if (Object.hasOwn(event, 'schema_version') && /^\d+$/.test(event.schema_version)) event.schema_version = Number(event.schema_version);
+        return event;
+      });
     }
     function inspect(text, name) {
-      let events;
-      try { const payload = name.toLowerCase().endsWith('.csv') ? null : JSON.parse(text); events = payload ? (Array.isArray(payload) ? payload : payload.events || [payload]) : parseCsv(text); }
-      catch (error) { summary.textContent = `読み込みエラー: ${error.message}`; summary.className = 'bad'; output.textContent = ''; return; }
-      const results = events.map(event => ({ id:event.event_id, issues:check(event) }));
-      lastResults = results; renderResults();
+      lastResults = null; lastError = null;
+      try {
+        let events;
+        if (name.toLowerCase().endsWith('.csv')) events = parseCsv(text);
+        else {
+          const payload = JSON.parse(text.replace(/^\uFEFF/, ''));
+          if (Array.isArray(payload)) events = payload;
+          else if (payload !== null && typeof payload === 'object')
+            events = Object.hasOwn(payload, 'events') ? payload.events : [payload];
+          else throw new Error('JSON must contain an event object, an event array, or an events array wrapper');
+        }
+        if (!Array.isArray(events) || !events.length) throw new Error('Input must contain a non-empty event array');
+        if (events.some(event => event === null || typeof event !== 'object' || Array.isArray(event)))
+          throw new Error('Every event must be an object');
+        lastResults = events.map(event => ({ id:event.event_id, issues:check(event) }));
+        renderResults();
+      } catch (error) { lastResults = null; lastError = error.message; renderError(); }
+    }
+    function renderError() {
+      summary.textContent = `${language === 'ja' ? '読み込みエラー' : 'Input error'}: ${lastError}`;
+      summary.className = 'bad'; output.textContent = '';
     }
     const file = document.querySelector('#file'), summary = document.querySelector('#summary'), output = document.querySelector('#output'), title = document.querySelector('#title'), privacyNote = document.querySelector('#privacy-note'), fileLabel = document.querySelector('#file-label'), sample = document.querySelector('#sample'), resultsHeading = document.querySelector('#results-heading'), languageButton = document.querySelector('#language');
     file.addEventListener('change', () => { const selected = file.files[0]; if (!selected) return; const reader = new FileReader(); reader.onload = () => inspect(reader.result, selected.name); reader.readAsText(selected); });
