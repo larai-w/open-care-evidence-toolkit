@@ -4,6 +4,9 @@
 
 ### Added
 
+- Opt-in JSON history resolver with arrival-time cutoffs, immutable input handling, correction lineage, and explicit errors for ambiguous or incomplete visible histories.
+- Synthetic six-cutoff replay report demonstrating the difference between as-of data and retroactive use of later arrivals, with source/input hashes and temporal-boundary regression tests.
+
 - Controlled synthetic benchmark: six injection scenarios, scattered/block placement, configurable rates and seeds, a clean challenge control, and replayable evidence.
 - Detection/false-alarm metrics and a paired aggregate comparison showing how rejection can introduce selection bias; undefined metrics remain null.
 

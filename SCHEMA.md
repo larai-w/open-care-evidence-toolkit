@@ -27,3 +27,7 @@
 | `correction_reference` | 訂正履歴 | `corrects`がIDまたはID配列でない |
 
 検査は計算や診断を行いません。「記録がない」ことから、出来事が起きていないとは推定しません。
+
+## 履歴再現用の拡張
+
+`care_history.py` は別の明示的な `history_schema_version: 1` ラッパーで、各イベントに `received_at`（到着時刻）と `corrected_at`（訂正作成時刻、元記録はnull）を要求します。既存CLI/ブラウザはこの履歴処理を行いません。訂正は単一の直前バージョンを参照し、観察時刻を維持します。詳細な検証・可視性・分岐の方針は [HISTORY.md](HISTORY.md) を参照してください。

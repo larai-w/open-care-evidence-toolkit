@@ -10,13 +10,13 @@
 - English default README with a separate Japanese guide
 - Python 3.11–3.13 CI, browser checks, and public-content checks
 - Controlled synthetic data-quality benchmark with replayable injections, false-alarm measurements, and aggregate-bias comparisons
+- Arrival-aware JSON history replay with single-predecessor revision chains, explicit conflict handling, and a reproducible temporal-leakage example
 
 ## Next candidates
 
-1. Define observation, arrival, and correction time semantics; reproduce the information available at a chosen cutoff.
-2. Specify stronger field types and schema-version checks, then implement them consistently in the CLI and browser.
-3. Validate event-ID uniqueness and correction references across a dataset, with an explicit policy for references outside the supplied file.
-4. Expand shared synthetic fixtures to measure CLI/browser agreement and document intentional differences.
-5. Add batch reports and comparisons against an earlier report once the single-file contract is stable.
+1. Specify stronger field types and schema-version checks, then implement them consistently in the CLI and browser.
+2. Extend history validation to additional ingestion policies only after defining timestamp corrections, branch reconciliation, and references outside the supplied file.
+3. Expand shared synthetic fixtures to measure CLI/browser agreement and document intentional differences.
+4. Add batch reports and comparisons against an earlier report once the single-file contract is stable.
 
 These are candidates, not implemented features or delivery commitments. Scope remains offline validation of synthetic records; model training and clinical evaluation are outside the current implementation.

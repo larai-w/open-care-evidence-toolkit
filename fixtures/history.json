@@ -1,0 +1,79 @@
+{
+  "history_schema_version": 1,
+  "events": [
+    {
+      "timezone": "UTC",
+      "source": "synthetic-history-generator",
+      "recorder_role": "synthetic-recorder",
+      "interpretation": "",
+      "schema_version": 1,
+      "event_id": "synthetic-a",
+      "observed_at": "2026-01-01T09:00:00+00:00",
+      "received_at": "2026-01-01T09:05:00+00:00",
+      "corrected_at": null,
+      "status": "observed",
+      "observation": "The synthetic indicator was on.",
+      "corrects": []
+    },
+    {
+      "timezone": "UTC",
+      "source": "synthetic-history-generator",
+      "recorder_role": "synthetic-recorder",
+      "interpretation": "",
+      "schema_version": 1,
+      "event_id": "synthetic-b",
+      "observed_at": "2026-01-01T09:10:00+00:00",
+      "received_at": "2026-01-01T11:00:00+00:00",
+      "corrected_at": null,
+      "status": "not_occurring",
+      "observation": "",
+      "corrects": []
+    },
+    {
+      "timezone": "UTC",
+      "source": "synthetic-history-generator",
+      "recorder_role": "synthetic-recorder",
+      "interpretation": "",
+      "schema_version": 1,
+      "event_id": "synthetic-c",
+      "observed_at": "2026-01-01T09:20:00+00:00",
+      "received_at": "2026-01-01T09:21:00+00:00",
+      "corrected_at": null,
+      "status": "not_recorded",
+      "observation": "",
+      "corrects": []
+    },
+    {
+      "timezone": "UTC",
+      "source": "synthetic-history-generator",
+      "recorder_role": "synthetic-recorder",
+      "interpretation": "",
+      "schema_version": 1,
+      "event_id": "synthetic-a-r1",
+      "observed_at": "2026-01-01T09:00:00+00:00",
+      "received_at": "2026-01-01T10:30:00+00:00",
+      "corrected_at": "2026-01-01T10:15:00+00:00",
+      "status": "not_occurring",
+      "observation": "",
+      "corrects": [
+        "synthetic-a"
+      ]
+    },
+    {
+      "timezone": "UTC",
+      "source": "synthetic-history-generator",
+      "recorder_role": "synthetic-recorder",
+      "interpretation": "",
+      "schema_version": 1,
+      "event_id": "synthetic-a-r2",
+      "observed_at": "2026-01-01T09:00:00+00:00",
+      "received_at": "2026-01-01T12:00:00+00:00",
+      "corrected_at": "2026-01-01T11:45:00+00:00",
+      "status": "observed",
+      "observation": "The synthetic indicator was on.",
+      "corrects": [
+        "synthetic-a-r1"
+      ]
+    }
+  ]
+}

@@ -22,6 +22,17 @@ python3 benchmarks/quality_benchmark.py --output build/benchmark
 
 The default run produces 72 paired cases and a clean control, with replayable edits and source/data hashes. Read the [example results](examples/benchmark-v1/REPORT.md), including missed problems and cases where rejecting records worsens aggregate bias. This is a synthetic data-quality experiment, not an ML performance evaluation.
 
+## Replay history at a cutoff
+
+The [history resolver](HISTORY.md) distinguishes observation time, revision authoring time, and arrival time. It selects only versions available at the requested cutoff and retains correction lineage.
+
+```bash
+python3 care_history.py fixtures/history.json --as-of 2026-01-01T10:00:00Z
+python3 benchmarks/history_replay.py --output build/history-replay
+```
+
+Read the [synthetic replay results](examples/history-v1/REPORT.md): using later arrivals retroactively changes the example aggregate from 100% to 50%. This illustrates temporal leakage in a toy aggregation; no learned model is evaluated. Ambiguous branches, cycles, unavailable predecessors, and impossible time ordering are rejected explicitly.
+
 ## Quick start
 
 Use Python 3.11 or later; CI covers Python 3.11, 3.12, and 3.13. The CLI uses the Python standard library and requires no API keys or third-party packages.
