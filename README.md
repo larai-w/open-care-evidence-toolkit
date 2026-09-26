@@ -6,97 +6,101 @@
 [![Releases](https://img.shields.io/github/v/release/larai-w/open-care-evidence-toolkit)](https://github.com/larai-w/open-care-evidence-toolkit/releases)
 [![GitHub stars](https://img.shields.io/github/stars/larai-w/open-care-evidence-toolkit?style=social)](https://github.com/larai-w/open-care-evidence-toolkit/stargazers)
 
-合成データの観察記録を、**外部送信なし**で品質チェックするローカルツールです。  
-対象は研究・PoC・運用前の検証用途です。医療判断・診断・個人データの保存は扱いません。  
-[English version](README.en.md)
+English | [日本語](README.ja.md)
 
-対象利用者:  
-- 介護データ品質を社内でレビューしたい開発者
-- 外部APIなしで観察記録の検証を試したい研究者
-- CSV/JSONデータの品質チェックを自動化したい開発チーム
+An offline Python toolkit for checking the quality of synthetic care observation records. It reads JSON or CSV and produces a deterministic report of missing fields, timestamp issues, provenance gaps, and inconsistent missingness labels.
 
-関連情報: [SCHEMA.md](SCHEMA.md) / [SECURITY.md](SECURITY.md) / [CONTRIBUTING.md](CONTRIBUTING.md)  
-ルールの定義は [rules.json](rules.json)。CLI・ブラウザデモ共通です（`severity`を含む `high/medium/low`）。
+Use it to explore data validation before building an analytics or machine learning pipeline. The repository contains a rule-based validator, synthetic fixtures, automated checks, and a standalone browser demo. It does not train or evaluate a machine learning model, and it does not provide medical judgments or diagnoses.
 
-## まずここを読む
+## Quick start
 
-1. 合成データのサンプルで実行する
-2. `--format json` でCI向けに結果を取得する
-3. `demo.html` で直感的に結果を確認する
-
-## 目次
-
-1. [クイックスタート](#クイックスタート)
-2. [使い方（CLI）](#使い方cli)
-3. [ブラウザで試す](#ブラウザで試す)
-4. [出力の見方](#出力の見方)
-5. [最小スキーマ](#最小スキーマ)
-
-## クイックスタート
+Use Python 3.11 or later; CI covers Python 3.11, 3.12, and 3.13. The CLI uses the Python standard library and requires no API keys or third-party packages.
 
 ```bash
-git clone https://github.com/larai-w/open-care-evidence-toolkit
+git clone https://github.com/larai-w/open-care-evidence-toolkit.git
 cd open-care-evidence-toolkit
-python3 care_evidence.py fixtures/complete.json
-```
-
-### 1分で再現したいとき
-
-- [1分で始める手順](examples/ONE_MINUTE.md)
-
-## 使い方（CLI）
-
-```bash
-python3 care_evidence.py fixtures/complete.json
-python3 care_evidence.py fixtures/missing.json --format json
-python3 care_evidence.py fixtures/complete.csv
-```
-
-JSONまたはCSVを入力できます。デフォルト出力は人が読むためのMarkdownです。`--format json`では機械処理しやすい結果を出します。  
-CIや自動化では、`--format json` のみを想定してください。
-
-```bash
 python3 care_evidence.py fixtures/complete.json --format json
 ```
 
-## 出力の見方
+The complete fixture produces `"issues": 0`. Compare it with a deliberately incomplete fixture:
 
-### CSV対応（実データ取込前チェック）
+```bash
+python3 care_evidence.py fixtures/missing.json --format json
+python3 care_evidence.py fixtures/complete.csv --format json
+```
 
-実データ取り込み前のPoC向けに、現実的なCSVエッジケースを確認します。
+The JSON report contains `events`, a total `issues` count, and per-event `results` with rule IDs and diagnostic messages. Rule IDs and JSON keys are in English; diagnostic messages and the default Markdown output are currently in Japanese.
 
-- UTF-8 BOMの除去
-- ダブルクォート内のカンマ
-- ダブルクォート内改行
-- 空行のスキップ
+**Automation:** inspect the JSON `issues` count to decide whether a dataset passes your quality gate. Finding quality issues does not currently make the CLI exit with a non-zero status.
 
-## 品質ルール
+## Why these checks matter
 
-`rules.json` にはルールIDと説明だけでなく、運用で使いやすい以下のメタ情報も含まれます。
+Observation data can lose meaning before it reaches a model. An absent record can be mistaken for a negative example, an interpretation can be stored as an observation, or a timestamp can lose its timezone context. This toolkit makes a small set of those assumptions explicit and inspectable.
 
-- `severity`: 高/中/低を示す優先度
-- `area`: 判定カテゴリ
-- `machine_readable`: 自動処理連携可否の明示
+| Rule | Current check |
+| --- | --- |
+| `required_fields` | Checks that all ten schema keys are present. |
+| `timestamp_timezone` | Parses the observation timestamp, requires an offset, and checks that the timezone field is non-empty. |
+| `observation_interpretation` | Flags selected speculative phrases and an empty observation when the status is `observed`. |
+| `provenance` | Requires a non-empty source and recorder role. |
+| `missingness_status` | Checks the status vocabulary and rejects observation or interpretation text for `not_recorded`. |
+| `correction_reference` | Checks the outer type of a supplied correction reference. |
 
-## ブラウザで試す
+The distinction between `not_recorded` and `not_occurring` is deliberate: absence of a record is not evidence that an event did not happen.
 
-`demo.html`をブラウザで開き、JSON/CSVを選択してください。「合成サンプルを表示」でも動作を確認できます。デモは依存・サーバー・外部送信を使いません。
+## Input contract
 
-## 最小スキーマ
+JSON input can be a single event, an array of events, or an object with an `events` array. CSV input uses the same field names as column headers.
 
-`event_id`, `observed_at`, `timezone`, `source`, `recorder_role`, `observation`, `interpretation`, `status`, `corrects`, `schema_version` を使います。`status` は `observed`（観察あり）、`not_recorded`（記録なし）、`not_occurring`（起きていないことを確認）のいずれかです。
+| Field | Intended meaning |
+| --- | --- |
+| `event_id` | Event identifier. |
+| `observed_at` | ISO 8601 observation timestamp with an explicit offset. |
+| `timezone` | IANA timezone name, such as `Pacific/Auckland`. |
+| `source` | Origin of the synthetic record. |
+| `recorder_role` | Recorder role, without a person's name. |
+| `observation` | What was observed. |
+| `interpretation` | What the observation may mean; an empty string means no interpretation. |
+| `status` | `observed`, `not_recorded`, or `not_occurring`. |
+| `corrects` | Earlier event ID or a list of IDs; use `[]` when there is no correction. |
+| `schema_version` | Input schema version. |
 
-このMVPはローカルのJSONだけを読み、ネットワーク・クラウド・アカウントを使いません。入力には実在の介護記録を入れず、合成データで試してください。
+For CSV, separate multiple correction IDs with semicolons. See the [synthetic fixtures](fixtures/) for runnable examples and [schema notes in Japanese](SCHEMA.md) for further context.
 
-## GitHubでの進め方
+## Review the implementation
 
-- [最新リリース](https://github.com/larai-w/open-care-evidence-toolkit/releases)
-- [変更履歴](CHANGELOG.md)
-- [スター](https://github.com/larai-w/open-care-evidence-toolkit/stargazers)
-- [引用情報](CITATION.md)
-- [問題を報告する](https://github.com/larai-w/open-care-evidence-toolkit/issues/new)
-- [issueテンプレート](https://github.com/larai-w/open-care-evidence-toolkit/issues/new/choose)
-- [プルリクエスト](https://github.com/larai-w/open-care-evidence-toolkit/pulls)
-- [開発ロードマップ](ROADMAP.md)
-- [行動規範](CODE_OF_CONDUCT.md)
-- [サポート窓口](SUPPORT.md)
+- [Python validator](care_evidence.py): parsing, individual checks, and Markdown/JSON report generation.
+- [Rule catalogue](rules.json): rule IDs, English/Japanese labels, severity, quality area, and automation metadata. The CLI report references rule IDs; it does not embed all catalogue metadata in every issue.
+- [Tests](tests/): validator behaviour, synthetic inputs, browser CSV parsing, and browser smoke checks.
+- [CI workflow](.github/workflows/test.yml): Python version matrix, browser checks, and a public-content boundary check.
+
+To run the existing checks locally, install Python and Node.js, then run:
+
+```bash
+python3 -m unittest discover -s tests -v
+node tests/test_demo_csv.mjs
+node tests/test_demo_smoke.mjs
+python3 scripts/check_public_repo.py
+```
+
+## Browser demo
+
+Open [demo.html](demo.html) locally in a browser. Select a synthetic JSON/CSV file or click **合成サンプルを表示** (Show synthetic sample). The interface is currently in Japanese. The demo runs without a server, external dependencies, or file uploads.
+
+The browser CSV parser has checks for UTF-8 BOMs, quoted commas, quoted newlines, and blank lines. These browser-specific checks should not be read as a guarantee that every input behaves identically in the Python CLI.
+
+## Scope and limitations
+
+- Use synthetic data only. The repository is an exploratory data-quality MVP, with no clinical validation or production-readiness claim.
+- The checks are deterministic heuristics, not a learned model or a complete schema validator.
+- The current implementation does not verify IANA timezone names, enforce schema-version values, detect duplicate event IDs, or resolve correction IDs against earlier events. Correction-list element types are not fully validated.
+- The observation/interpretation check matches a small set of phrases; it does not establish whether a statement is factually correct.
+- No model performance, clinical outcomes, or real-world deployment results are demonstrated here.
+
+## Project resources
+
+[One-minute guide](examples/ONE_MINUTE.md) · [Releases](https://github.com/larai-w/open-care-evidence-toolkit/releases) · [Changelog](CHANGELOG.md) · [Citation](CITATION.md)
+
+Some supporting documents remain in Japanese: [Contributing](CONTRIBUTING.md), [Security](SECURITY.md), [Roadmap](ROADMAP.md), [Code of Conduct](CODE_OF_CONDUCT.md), and [Support](SUPPORT.md).
+
+Licensed under the [MIT License](LICENSE).
