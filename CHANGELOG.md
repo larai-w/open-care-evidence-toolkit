@@ -4,6 +4,9 @@
 
 ### Added
 
+- Versioned synthetic summary export with as-of provenance and separate eligible, quality-rejected, and insufficient-data outcomes, for the abstain-har input consumer.
+- Cross-repository contract example with six samples and explicit synthetic feature semantics.
+
 - Opt-in JSON history resolver with arrival-time cutoffs, immutable input handling, correction lineage, and explicit errors for ambiguous or incomplete visible histories.
 - Synthetic six-cutoff replay report demonstrating the difference between as-of data and retroactive use of later arrivals, with source/input hashes and temporal-boundary regression tests.
 

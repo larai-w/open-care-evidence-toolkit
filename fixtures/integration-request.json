@@ -1,0 +1,509 @@
+{
+  "dataset_kind": "synthetic",
+  "samples": [
+    {
+      "sample_id": "fit-at-10",
+      "subject_id": "synthetic-fit",
+      "as_of": "2026-01-01T10:00:00Z",
+      "history": {
+        "history_schema_version": 1,
+        "events": [
+          {
+            "timezone": "UTC",
+            "source": "synthetic-history-generator",
+            "recorder_role": "synthetic-recorder",
+            "interpretation": "",
+            "schema_version": 1,
+            "event_id": "fit-synthetic-a",
+            "observed_at": "2026-01-01T09:00:00+00:00",
+            "received_at": "2026-01-01T09:05:00+00:00",
+            "corrected_at": null,
+            "status": "observed",
+            "observation": "The synthetic indicator was on.",
+            "corrects": []
+          },
+          {
+            "timezone": "UTC",
+            "source": "synthetic-history-generator",
+            "recorder_role": "synthetic-recorder",
+            "interpretation": "",
+            "schema_version": 1,
+            "event_id": "fit-synthetic-b",
+            "observed_at": "2026-01-01T09:10:00+00:00",
+            "received_at": "2026-01-01T11:00:00+00:00",
+            "corrected_at": null,
+            "status": "not_occurring",
+            "observation": "",
+            "corrects": []
+          },
+          {
+            "timezone": "UTC",
+            "source": "synthetic-history-generator",
+            "recorder_role": "synthetic-recorder",
+            "interpretation": "",
+            "schema_version": 1,
+            "event_id": "fit-synthetic-c",
+            "observed_at": "2026-01-01T09:20:00+00:00",
+            "received_at": "2026-01-01T09:21:00+00:00",
+            "corrected_at": null,
+            "status": "not_recorded",
+            "observation": "",
+            "corrects": []
+          },
+          {
+            "timezone": "UTC",
+            "source": "synthetic-history-generator",
+            "recorder_role": "synthetic-recorder",
+            "interpretation": "",
+            "schema_version": 1,
+            "event_id": "fit-synthetic-a-r1",
+            "observed_at": "2026-01-01T09:00:00+00:00",
+            "received_at": "2026-01-01T10:30:00+00:00",
+            "corrected_at": "2026-01-01T10:15:00+00:00",
+            "status": "not_occurring",
+            "observation": "",
+            "corrects": [
+              "fit-synthetic-a"
+            ]
+          },
+          {
+            "timezone": "UTC",
+            "source": "synthetic-history-generator",
+            "recorder_role": "synthetic-recorder",
+            "interpretation": "",
+            "schema_version": 1,
+            "event_id": "fit-synthetic-a-r2",
+            "observed_at": "2026-01-01T09:00:00+00:00",
+            "received_at": "2026-01-01T12:00:00+00:00",
+            "corrected_at": "2026-01-01T11:45:00+00:00",
+            "status": "observed",
+            "observation": "The synthetic indicator was on.",
+            "corrects": [
+              "fit-synthetic-a-r1"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "fit-before-arrival",
+      "subject_id": "synthetic-fit",
+      "as_of": "2026-01-01T09:00:00Z",
+      "history": {
+        "history_schema_version": 1,
+        "events": [
+          {
+            "timezone": "UTC",
+            "source": "synthetic-history-generator",
+            "recorder_role": "synthetic-recorder",
+            "interpretation": "",
+            "schema_version": 1,
+            "event_id": "fit-synthetic-a",
+            "observed_at": "2026-01-01T09:00:00+00:00",
+            "received_at": "2026-01-01T09:05:00+00:00",
+            "corrected_at": null,
+            "status": "observed",
+            "observation": "The synthetic indicator was on.",
+            "corrects": []
+          },
+          {
+            "timezone": "UTC",
+            "source": "synthetic-history-generator",
+            "recorder_role": "synthetic-recorder",
+            "interpretation": "",
+            "schema_version": 1,
+            "event_id": "fit-synthetic-b",
+            "observed_at": "2026-01-01T09:10:00+00:00",
+            "received_at": "2026-01-01T11:00:00+00:00",
+            "corrected_at": null,
+            "status": "not_occurring",
+            "observation": "",
+            "corrects": []
+          },
+          {
+            "timezone": "UTC",
+            "source": "synthetic-history-generator",
+            "recorder_role": "synthetic-recorder",
+            "interpretation": "",
+            "schema_version": 1,
+            "event_id": "fit-synthetic-c",
+            "observed_at": "2026-01-01T09:20:00+00:00",
+            "received_at": "2026-01-01T09:21:00+00:00",
+            "corrected_at": null,
+            "status": "not_recorded",
+            "observation": "",
+            "corrects": []
+          },
+          {
+            "timezone": "UTC",
+            "source": "synthetic-history-generator",
+            "recorder_role": "synthetic-recorder",
+            "interpretation": "",
+            "schema_version": 1,
+            "event_id": "fit-synthetic-a-r1",
+            "observed_at": "2026-01-01T09:00:00+00:00",
+            "received_at": "2026-01-01T10:30:00+00:00",
+            "corrected_at": "2026-01-01T10:15:00+00:00",
+            "status": "not_occurring",
+            "observation": "",
+            "corrects": [
+              "fit-synthetic-a"
+            ]
+          },
+          {
+            "timezone": "UTC",
+            "source": "synthetic-history-generator",
+            "recorder_role": "synthetic-recorder",
+            "interpretation": "",
+            "schema_version": 1,
+            "event_id": "fit-synthetic-a-r2",
+            "observed_at": "2026-01-01T09:00:00+00:00",
+            "received_at": "2026-01-01T12:00:00+00:00",
+            "corrected_at": "2026-01-01T11:45:00+00:00",
+            "status": "observed",
+            "observation": "The synthetic indicator was on.",
+            "corrects": [
+              "fit-synthetic-a-r1"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "calibration-at-10",
+      "subject_id": "synthetic-calibration",
+      "as_of": "2026-01-01T10:00:00Z",
+      "history": {
+        "history_schema_version": 1,
+        "events": [
+          {
+            "timezone": "UTC",
+            "source": "synthetic-history-generator",
+            "recorder_role": "synthetic-recorder",
+            "interpretation": "",
+            "schema_version": 1,
+            "event_id": "calibration-synthetic-a",
+            "observed_at": "2026-01-01T09:00:00+00:00",
+            "received_at": "2026-01-01T09:05:00+00:00",
+            "corrected_at": null,
+            "status": "observed",
+            "observation": "The synthetic indicator was on.",
+            "corrects": []
+          },
+          {
+            "timezone": "UTC",
+            "source": "synthetic-history-generator",
+            "recorder_role": "synthetic-recorder",
+            "interpretation": "",
+            "schema_version": 1,
+            "event_id": "calibration-synthetic-b",
+            "observed_at": "2026-01-01T09:10:00+00:00",
+            "received_at": "2026-01-01T11:00:00+00:00",
+            "corrected_at": null,
+            "status": "not_occurring",
+            "observation": "",
+            "corrects": []
+          },
+          {
+            "timezone": "UTC",
+            "source": "synthetic-history-generator",
+            "recorder_role": "synthetic-recorder",
+            "interpretation": "",
+            "schema_version": 1,
+            "event_id": "calibration-synthetic-c",
+            "observed_at": "2026-01-01T09:20:00+00:00",
+            "received_at": "2026-01-01T09:21:00+00:00",
+            "corrected_at": null,
+            "status": "not_recorded",
+            "observation": "",
+            "corrects": []
+          },
+          {
+            "timezone": "UTC",
+            "source": "synthetic-history-generator",
+            "recorder_role": "synthetic-recorder",
+            "interpretation": "",
+            "schema_version": 1,
+            "event_id": "calibration-synthetic-a-r1",
+            "observed_at": "2026-01-01T09:00:00+00:00",
+            "received_at": "2026-01-01T10:30:00+00:00",
+            "corrected_at": "2026-01-01T10:15:00+00:00",
+            "status": "not_occurring",
+            "observation": "",
+            "corrects": [
+              "calibration-synthetic-a"
+            ]
+          },
+          {
+            "timezone": "UTC",
+            "source": "synthetic-history-generator",
+            "recorder_role": "synthetic-recorder",
+            "interpretation": "",
+            "schema_version": 1,
+            "event_id": "calibration-synthetic-a-r2",
+            "observed_at": "2026-01-01T09:00:00+00:00",
+            "received_at": "2026-01-01T12:00:00+00:00",
+            "corrected_at": "2026-01-01T11:45:00+00:00",
+            "status": "observed",
+            "observation": "The synthetic indicator was on.",
+            "corrects": [
+              "calibration-synthetic-a-r1"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "threshold-at-10",
+      "subject_id": "synthetic-threshold",
+      "as_of": "2026-01-01T10:00:00Z",
+      "history": {
+        "history_schema_version": 1,
+        "events": [
+          {
+            "timezone": "UTC",
+            "source": "synthetic-history-generator",
+            "recorder_role": "synthetic-recorder",
+            "interpretation": "",
+            "schema_version": 1,
+            "event_id": "threshold-synthetic-a",
+            "observed_at": "2026-01-01T09:00:00+00:00",
+            "received_at": "2026-01-01T09:05:00+00:00",
+            "corrected_at": null,
+            "status": "observed",
+            "observation": "The synthetic indicator was on.",
+            "corrects": []
+          },
+          {
+            "timezone": "UTC",
+            "source": "synthetic-history-generator",
+            "recorder_role": "synthetic-recorder",
+            "interpretation": "",
+            "schema_version": 1,
+            "event_id": "threshold-synthetic-b",
+            "observed_at": "2026-01-01T09:10:00+00:00",
+            "received_at": "2026-01-01T11:00:00+00:00",
+            "corrected_at": null,
+            "status": "not_occurring",
+            "observation": "",
+            "corrects": []
+          },
+          {
+            "timezone": "UTC",
+            "source": "synthetic-history-generator",
+            "recorder_role": "synthetic-recorder",
+            "interpretation": "",
+            "schema_version": 1,
+            "event_id": "threshold-synthetic-c",
+            "observed_at": "2026-01-01T09:20:00+00:00",
+            "received_at": "2026-01-01T09:21:00+00:00",
+            "corrected_at": null,
+            "status": "not_recorded",
+            "observation": "",
+            "corrects": []
+          },
+          {
+            "timezone": "UTC",
+            "source": "synthetic-history-generator",
+            "recorder_role": "synthetic-recorder",
+            "interpretation": "",
+            "schema_version": 1,
+            "event_id": "threshold-synthetic-a-r1",
+            "observed_at": "2026-01-01T09:00:00+00:00",
+            "received_at": "2026-01-01T10:30:00+00:00",
+            "corrected_at": "2026-01-01T10:15:00+00:00",
+            "status": "not_occurring",
+            "observation": "",
+            "corrects": [
+              "threshold-synthetic-a"
+            ]
+          },
+          {
+            "timezone": "UTC",
+            "source": "synthetic-history-generator",
+            "recorder_role": "synthetic-recorder",
+            "interpretation": "",
+            "schema_version": 1,
+            "event_id": "threshold-synthetic-a-r2",
+            "observed_at": "2026-01-01T09:00:00+00:00",
+            "received_at": "2026-01-01T12:00:00+00:00",
+            "corrected_at": "2026-01-01T11:45:00+00:00",
+            "status": "observed",
+            "observation": "The synthetic indicator was on.",
+            "corrects": [
+              "threshold-synthetic-a-r1"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "test-at-10",
+      "subject_id": "synthetic-test",
+      "as_of": "2026-01-01T10:00:00Z",
+      "history": {
+        "history_schema_version": 1,
+        "events": [
+          {
+            "timezone": "UTC",
+            "source": "synthetic-history-generator",
+            "recorder_role": "synthetic-recorder",
+            "interpretation": "",
+            "schema_version": 1,
+            "event_id": "test-synthetic-a",
+            "observed_at": "2026-01-01T09:00:00+00:00",
+            "received_at": "2026-01-01T09:05:00+00:00",
+            "corrected_at": null,
+            "status": "observed",
+            "observation": "The indicator was maybe on.",
+            "corrects": []
+          },
+          {
+            "timezone": "UTC",
+            "source": "synthetic-history-generator",
+            "recorder_role": "synthetic-recorder",
+            "interpretation": "",
+            "schema_version": 1,
+            "event_id": "test-synthetic-b",
+            "observed_at": "2026-01-01T09:10:00+00:00",
+            "received_at": "2026-01-01T11:00:00+00:00",
+            "corrected_at": null,
+            "status": "not_occurring",
+            "observation": "",
+            "corrects": []
+          },
+          {
+            "timezone": "UTC",
+            "source": "synthetic-history-generator",
+            "recorder_role": "synthetic-recorder",
+            "interpretation": "",
+            "schema_version": 1,
+            "event_id": "test-synthetic-c",
+            "observed_at": "2026-01-01T09:20:00+00:00",
+            "received_at": "2026-01-01T09:21:00+00:00",
+            "corrected_at": null,
+            "status": "not_recorded",
+            "observation": "",
+            "corrects": []
+          },
+          {
+            "timezone": "UTC",
+            "source": "synthetic-history-generator",
+            "recorder_role": "synthetic-recorder",
+            "interpretation": "",
+            "schema_version": 1,
+            "event_id": "test-synthetic-a-r1",
+            "observed_at": "2026-01-01T09:00:00+00:00",
+            "received_at": "2026-01-01T10:30:00+00:00",
+            "corrected_at": "2026-01-01T10:15:00+00:00",
+            "status": "not_occurring",
+            "observation": "",
+            "corrects": [
+              "test-synthetic-a"
+            ]
+          },
+          {
+            "timezone": "UTC",
+            "source": "synthetic-history-generator",
+            "recorder_role": "synthetic-recorder",
+            "interpretation": "",
+            "schema_version": 1,
+            "event_id": "test-synthetic-a-r2",
+            "observed_at": "2026-01-01T09:00:00+00:00",
+            "received_at": "2026-01-01T12:00:00+00:00",
+            "corrected_at": "2026-01-01T11:45:00+00:00",
+            "status": "observed",
+            "observation": "The synthetic indicator was on.",
+            "corrects": [
+              "test-synthetic-a-r1"
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "sample_id": "test-at-12",
+      "subject_id": "synthetic-test",
+      "as_of": "2026-01-01T12:00:00Z",
+      "history": {
+        "history_schema_version": 1,
+        "events": [
+          {
+            "timezone": "UTC",
+            "source": "synthetic-history-generator",
+            "recorder_role": "synthetic-recorder",
+            "interpretation": "",
+            "schema_version": 1,
+            "event_id": "test-synthetic-a",
+            "observed_at": "2026-01-01T09:00:00+00:00",
+            "received_at": "2026-01-01T09:05:00+00:00",
+            "corrected_at": null,
+            "status": "observed",
+            "observation": "The indicator was maybe on.",
+            "corrects": []
+          },
+          {
+            "timezone": "UTC",
+            "source": "synthetic-history-generator",
+            "recorder_role": "synthetic-recorder",
+            "interpretation": "",
+            "schema_version": 1,
+            "event_id": "test-synthetic-b",
+            "observed_at": "2026-01-01T09:10:00+00:00",
+            "received_at": "2026-01-01T11:00:00+00:00",
+            "corrected_at": null,
+            "status": "not_occurring",
+            "observation": "",
+            "corrects": []
+          },
+          {
+            "timezone": "UTC",
+            "source": "synthetic-history-generator",
+            "recorder_role": "synthetic-recorder",
+            "interpretation": "",
+            "schema_version": 1,
+            "event_id": "test-synthetic-c",
+            "observed_at": "2026-01-01T09:20:00+00:00",
+            "received_at": "2026-01-01T09:21:00+00:00",
+            "corrected_at": null,
+            "status": "not_recorded",
+            "observation": "",
+            "corrects": []
+          },
+          {
+            "timezone": "UTC",
+            "source": "synthetic-history-generator",
+            "recorder_role": "synthetic-recorder",
+            "interpretation": "",
+            "schema_version": 1,
+            "event_id": "test-synthetic-a-r1",
+            "observed_at": "2026-01-01T09:00:00+00:00",
+            "received_at": "2026-01-01T10:30:00+00:00",
+            "corrected_at": "2026-01-01T10:15:00+00:00",
+            "status": "not_occurring",
+            "observation": "",
+            "corrects": [
+              "test-synthetic-a"
+            ]
+          },
+          {
+            "timezone": "UTC",
+            "source": "synthetic-history-generator",
+            "recorder_role": "synthetic-recorder",
+            "interpretation": "",
+            "schema_version": 1,
+            "event_id": "test-synthetic-a-r2",
+            "observed_at": "2026-01-01T09:00:00+00:00",
+            "received_at": "2026-01-01T12:00:00+00:00",
+            "corrected_at": "2026-01-01T11:45:00+00:00",
+            "status": "observed",
+            "observation": "The synthetic indicator was on.",
+            "corrects": [
+              "test-synthetic-a-r1"
+            ]
+          }
+        ]
+      }
+    }
+  ]
+}

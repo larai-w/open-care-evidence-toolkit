@@ -33,6 +33,16 @@ python3 benchmarks/history_replay.py --output build/history-replay
 
 Read the [synthetic replay results](examples/history-v1/REPORT.md): using later arrivals retroactively changes the example aggregate from 100% to 50%. This illustrates temporal leakage in a toy aggregation; no learned model is evaluated. Ambiguous branches, cycles, unavailable predecessors, and impossible time ordering are rejected explicitly.
 
+## Connect a downstream consumer
+
+The [synthetic integration](INTEGRATION.md) exports as-of summaries with quality decisions and provenance to [abstain-har](https://github.com/larai-w/abstain-har). The consumer verifies feature values, availability cutoffs, and subject-disjoint input splits. Six synthetic samples produce four eligible rows and two explicit exclusions.
+
+```bash
+python3 care_export.py fixtures/integration-request.json --output build/care-bundle.json
+```
+
+The feature set is a three-value synthetic indicator summary. It is not a HAR sensor representation, and this path performs no model training or prediction.
+
 ## Quick start
 
 Use Python 3.11 or later; CI covers Python 3.11, 3.12, and 3.13. The CLI uses the Python standard library and requires no API keys or third-party packages.

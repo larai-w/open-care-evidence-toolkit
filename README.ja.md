@@ -38,6 +38,14 @@ python3 care_history.py fixtures/history.json --as-of 2026-01-01T10:00:00Z
 
 [合成データの再現例](examples/history-v1/REPORT.md)では、後から届いた情報を過去に持ち込むと集計が100%から50%に変わります。学習モデルの評価ではありません。訂正の分岐・循環・未到着の訂正元・時刻の矛盾はエラーにします。
 
+## abstain-harとの合成データ連携
+
+[接続仕様（英語）](INTEGRATION.md)に沿って履歴・品質検査後の3つの集計値を渡し、受信側で時刻・来歴・対象者の分割を確認します。合成6サンプルから4件を入力候補とし、情報不足1件・品質問題1件を区別して除外します。HARセンサー特徴量への変換、学習、モデルによる回答保留はまだ行いません。
+
+```bash
+python3 care_export.py fixtures/integration-request.json --output build/care-bundle.json
+```
+
 ## まずここを読む
 
 1. 合成データのサンプルで実行する

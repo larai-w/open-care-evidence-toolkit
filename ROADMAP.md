@@ -12,6 +12,8 @@
 - Controlled synthetic data-quality benchmark with replayable injections, false-alarm measurements, and aggregate-bias comparisons
 - Arrival-aware JSON history replay with single-predecessor revision chains, explicit conflict handling, and a reproducible temporal-leakage example
 
+- Synthetic bundle export and a separately validated abstain-har consumer, with explicit input exclusions and subject-disjoint split checks
+
 ## Next candidates
 
 1. Specify stronger field types and schema-version checks, then implement them consistently in the CLI and browser.
