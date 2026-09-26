@@ -25,6 +25,9 @@
 
 ### Changed
 
+- Align generic CLI/browser field checks under a documented timestamp grammar, string/ID requirements, numeric schema version 1, and correction-list element checks. Previously tolerated malformed values now produce quality findings; see `docs/input-compatibility.md` for migration.
+- Preserve historical example artifacts and add current source-hashed regression snapshots under `examples/field-contract-v1`.
+
 - English is now the default README; Japanese documentation is preserved in `README.ja.md`.
 - Default human-readable CLI output and JSON diagnostic messages are now English. JSON keys and rule IDs remain unchanged. Use `--lang ja` to retain Japanese diagnostics.
 

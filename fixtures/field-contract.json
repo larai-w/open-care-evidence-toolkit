@@ -1,0 +1,1979 @@
+[
+  {
+    "name": "clean",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": []
+  },
+  {
+    "name": "event_id-0",
+    "event": {
+      "event_id": null,
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "required_fields"
+    ]
+  },
+  {
+    "name": "event_id-1",
+    "event": {
+      "event_id": false,
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "required_fields"
+    ]
+  },
+  {
+    "name": "event_id-2",
+    "event": {
+      "event_id": 0,
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "required_fields"
+    ]
+  },
+  {
+    "name": "event_id-3",
+    "event": {
+      "event_id": [],
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "required_fields"
+    ]
+  },
+  {
+    "name": "event_id-4",
+    "event": {
+      "event_id": {},
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "required_fields"
+    ]
+  },
+  {
+    "name": "event_id-5",
+    "event": {
+      "event_id": "",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "required_fields"
+    ]
+  },
+  {
+    "name": "event_id-6",
+    "event": {
+      "event_id": " \t\n",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "required_fields"
+    ]
+  },
+  {
+    "name": "event_id-7",
+    "event": {
+      "event_id": "　﻿",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "required_fields"
+    ]
+  },
+  {
+    "name": "timezone-0",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": null,
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "timestamp_timezone"
+    ]
+  },
+  {
+    "name": "timezone-1",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": false,
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "timestamp_timezone"
+    ]
+  },
+  {
+    "name": "timezone-2",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": 0,
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "timestamp_timezone"
+    ]
+  },
+  {
+    "name": "timezone-3",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": [],
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "timestamp_timezone"
+    ]
+  },
+  {
+    "name": "timezone-4",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": {},
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "timestamp_timezone"
+    ]
+  },
+  {
+    "name": "timezone-5",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "timestamp_timezone"
+    ]
+  },
+  {
+    "name": "timezone-6",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": " \t\n",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "timestamp_timezone"
+    ]
+  },
+  {
+    "name": "timezone-7",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "　﻿",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "timestamp_timezone"
+    ]
+  },
+  {
+    "name": "source-0",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": null,
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "provenance"
+    ]
+  },
+  {
+    "name": "source-1",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": false,
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "provenance"
+    ]
+  },
+  {
+    "name": "source-2",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": 0,
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "provenance"
+    ]
+  },
+  {
+    "name": "source-3",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": [],
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "provenance"
+    ]
+  },
+  {
+    "name": "source-4",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": {},
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "provenance"
+    ]
+  },
+  {
+    "name": "source-5",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "provenance"
+    ]
+  },
+  {
+    "name": "source-6",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": " \t\n",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "provenance"
+    ]
+  },
+  {
+    "name": "source-7",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "　﻿",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "provenance"
+    ]
+  },
+  {
+    "name": "recorder_role-0",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": null,
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "provenance"
+    ]
+  },
+  {
+    "name": "recorder_role-1",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": false,
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "provenance"
+    ]
+  },
+  {
+    "name": "recorder_role-2",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": 0,
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "provenance"
+    ]
+  },
+  {
+    "name": "recorder_role-3",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": [],
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "provenance"
+    ]
+  },
+  {
+    "name": "recorder_role-4",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": {},
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "provenance"
+    ]
+  },
+  {
+    "name": "recorder_role-5",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "provenance"
+    ]
+  },
+  {
+    "name": "recorder_role-6",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": " \t\n",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "provenance"
+    ]
+  },
+  {
+    "name": "recorder_role-7",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "　﻿",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "provenance"
+    ]
+  },
+  {
+    "name": "observation-0",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": null,
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "observation_interpretation"
+    ]
+  },
+  {
+    "name": "observation-1",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": false,
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "observation_interpretation"
+    ]
+  },
+  {
+    "name": "observation-2",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": 0,
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "observation_interpretation"
+    ]
+  },
+  {
+    "name": "observation-3",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": [],
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "observation_interpretation"
+    ]
+  },
+  {
+    "name": "observation-4",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": {},
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "observation_interpretation"
+    ]
+  },
+  {
+    "name": "interpretation-0",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": null,
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "observation_interpretation"
+    ]
+  },
+  {
+    "name": "interpretation-1",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": false,
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "observation_interpretation"
+    ]
+  },
+  {
+    "name": "interpretation-2",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": 0,
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "observation_interpretation"
+    ]
+  },
+  {
+    "name": "interpretation-3",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": [],
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "observation_interpretation"
+    ]
+  },
+  {
+    "name": "interpretation-4",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": {},
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "observation_interpretation"
+    ]
+  },
+  {
+    "name": "version-0",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": null
+    },
+    "rules": [
+      "required_fields"
+    ]
+  },
+  {
+    "name": "version-1",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": true
+    },
+    "rules": [
+      "required_fields"
+    ]
+  },
+  {
+    "name": "version-2",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": false
+    },
+    "rules": [
+      "required_fields"
+    ]
+  },
+  {
+    "name": "version-3",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 0
+    },
+    "rules": [
+      "required_fields"
+    ]
+  },
+  {
+    "name": "version-4",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 2
+    },
+    "rules": [
+      "required_fields"
+    ]
+  },
+  {
+    "name": "version-5",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": "1"
+    },
+    "rules": [
+      "required_fields"
+    ]
+  },
+  {
+    "name": "version-6",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": []
+    },
+    "rules": [
+      "required_fields"
+    ]
+  },
+  {
+    "name": "version-7",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": {}
+    },
+    "rules": [
+      "required_fields"
+    ]
+  },
+  {
+    "name": "version-integral-number",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1.0
+    },
+    "rules": []
+  },
+  {
+    "name": "corrects-0",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": null,
+      "schema_version": 1
+    },
+    "rules": [
+      "correction_reference"
+    ]
+  },
+  {
+    "name": "corrects-1",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": true,
+      "schema_version": 1
+    },
+    "rules": [
+      "correction_reference"
+    ]
+  },
+  {
+    "name": "corrects-2",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": 0,
+      "schema_version": 1
+    },
+    "rules": [
+      "correction_reference"
+    ]
+  },
+  {
+    "name": "corrects-3",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": "",
+      "schema_version": 1
+    },
+    "rules": [
+      "correction_reference"
+    ]
+  },
+  {
+    "name": "corrects-4",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": " ",
+      "schema_version": 1
+    },
+    "rules": [
+      "correction_reference"
+    ]
+  },
+  {
+    "name": "corrects-5",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [
+        ""
+      ],
+      "schema_version": 1
+    },
+    "rules": [
+      "correction_reference"
+    ]
+  },
+  {
+    "name": "corrects-6",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [
+        "a",
+        null
+      ],
+      "schema_version": 1
+    },
+    "rules": [
+      "correction_reference"
+    ]
+  },
+  {
+    "name": "corrects-7",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [
+        1
+      ],
+      "schema_version": 1
+    },
+    "rules": [
+      "correction_reference"
+    ]
+  },
+  {
+    "name": "corrects-8",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": {},
+      "schema_version": 1
+    },
+    "rules": [
+      "correction_reference"
+    ]
+  },
+  {
+    "name": "corrects-valid-0",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": "synthetic-earlier",
+      "schema_version": 1
+    },
+    "rules": []
+  },
+  {
+    "name": "corrects-valid-1",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [
+        "synthetic-earlier"
+      ],
+      "schema_version": 1
+    },
+    "rules": []
+  },
+  {
+    "name": "corrects-valid-2",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": []
+  },
+  {
+    "name": "missing-corrects",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "schema_version": 1
+    },
+    "rules": [
+      "required_fields"
+    ]
+  },
+  {
+    "name": "missing-version",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": []
+    },
+    "rules": [
+      "required_fields"
+    ]
+  },
+  {
+    "name": "missing-id",
+    "event": {
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "required_fields"
+    ]
+  },
+  {
+    "name": "interpretation-only",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "",
+      "interpretation": "Synthetic explanation",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "observation_interpretation",
+      "observation_interpretation"
+    ]
+  },
+  {
+    "name": "missing-record-content",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "not_recorded",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "missingness_status"
+    ]
+  },
+  {
+    "name": "missing-record-empty",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": " 　",
+      "interpretation": "",
+      "status": "not_recorded",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": []
+  },
+  {
+    "name": "speculative",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Maybe synthetic signal",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "observation_interpretation"
+    ]
+  },
+  {
+    "name": "status-0",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": null,
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "missingness_status"
+    ]
+  },
+  {
+    "name": "status-1",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": [],
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "missingness_status"
+    ]
+  },
+  {
+    "name": "status-2",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": {},
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "missingness_status"
+    ]
+  },
+  {
+    "name": "status-3",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-02-29T12:34:56Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "unknown",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "missingness_status"
+    ]
+  },
+  {
+    "name": "timestamp-valid-0",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "0001-01-01T00:00:00Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": []
+  },
+  {
+    "name": "timestamp-valid-1",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "0099-12-31T23:59:59Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": []
+  },
+  {
+    "name": "timestamp-valid-2",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2000-02-29T12:00:00Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": []
+  },
+  {
+    "name": "timestamp-valid-3",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "9999-12-31T23:59:59Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": []
+  },
+  {
+    "name": "timestamp-valid-4",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2026-09-26T00:00:00+23:59",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": []
+  },
+  {
+    "name": "timestamp-valid-5",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2026-09-26T00:00:00-23:59",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": []
+  },
+  {
+    "name": "timestamp-valid-6",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2026-09-26T00:00:00.1+00:00",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": []
+  },
+  {
+    "name": "timestamp-valid-7",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2026-09-26T00:00:00.123456-00:00",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": []
+  },
+  {
+    "name": "timestamp-invalid-0",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "1900-02-29T12:00:00Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "timestamp_timezone"
+    ]
+  },
+  {
+    "name": "timestamp-invalid-1",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2025-02-29T12:00:00Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "timestamp_timezone"
+    ]
+  },
+  {
+    "name": "timestamp-invalid-2",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2024-04-31T12:00:00Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "timestamp_timezone"
+    ]
+  },
+  {
+    "name": "timestamp-invalid-3",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "0000-01-01T00:00:00Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "timestamp_timezone"
+    ]
+  },
+  {
+    "name": "timestamp-invalid-4",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2026-00-01T00:00:00Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "timestamp_timezone"
+    ]
+  },
+  {
+    "name": "timestamp-invalid-5",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2026-13-01T00:00:00Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "timestamp_timezone"
+    ]
+  },
+  {
+    "name": "timestamp-invalid-6",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2026-01-00T00:00:00Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "timestamp_timezone"
+    ]
+  },
+  {
+    "name": "timestamp-invalid-7",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2026-01-32T00:00:00Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "timestamp_timezone"
+    ]
+  },
+  {
+    "name": "timestamp-invalid-8",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2026-01-01T24:00:00Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "timestamp_timezone"
+    ]
+  },
+  {
+    "name": "timestamp-invalid-9",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2026-01-01T00:60:00Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "timestamp_timezone"
+    ]
+  },
+  {
+    "name": "timestamp-invalid-10",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2026-01-01T00:00:60Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "timestamp_timezone"
+    ]
+  },
+  {
+    "name": "timestamp-invalid-11",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2026-01-01T00:00:00+24:00",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "timestamp_timezone"
+    ]
+  },
+  {
+    "name": "timestamp-invalid-12",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2026-01-01T00:00:00+00:60",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "timestamp_timezone"
+    ]
+  },
+  {
+    "name": "timestamp-invalid-13",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2026-01-01T00:00:00+0000",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "timestamp_timezone"
+    ]
+  },
+  {
+    "name": "timestamp-invalid-14",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2026-01-01T00:00:00+00:00:01",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "timestamp_timezone"
+    ]
+  },
+  {
+    "name": "timestamp-invalid-15",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "20260101T000000Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "timestamp_timezone"
+    ]
+  },
+  {
+    "name": "timestamp-invalid-16",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2026-W01-1T00:00:00Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "timestamp_timezone"
+    ]
+  },
+  {
+    "name": "timestamp-invalid-17",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2026-01-01 00:00:00Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "timestamp_timezone"
+    ]
+  },
+  {
+    "name": "timestamp-invalid-18",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2026-01-01t00:00:00z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "timestamp_timezone"
+    ]
+  },
+  {
+    "name": "timestamp-invalid-19",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2026-01-01T00:00Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "timestamp_timezone"
+    ]
+  },
+  {
+    "name": "timestamp-invalid-20",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2026-01-01T00:00:00.1234567Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "timestamp_timezone"
+    ]
+  },
+  {
+    "name": "timestamp-invalid-21",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2026-01-01T00:00:00,1Z",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "timestamp_timezone"
+    ]
+  },
+  {
+    "name": "timestamp-invalid-22",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2026-01-01T00:00:00Z\n",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "timestamp_timezone"
+    ]
+  },
+  {
+    "name": "timestamp-invalid-23",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": "2026-01-01T00:00:00",
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "timestamp_timezone"
+    ]
+  },
+  {
+    "name": "timestamp-invalid-24",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": null,
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "timestamp_timezone"
+    ]
+  },
+  {
+    "name": "timestamp-invalid-25",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": 0,
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "timestamp_timezone"
+    ]
+  },
+  {
+    "name": "timestamp-invalid-26",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": [],
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "timestamp_timezone"
+    ]
+  },
+  {
+    "name": "timestamp-invalid-27",
+    "event": {
+      "event_id": "synthetic-field-001",
+      "observed_at": {},
+      "timezone": "UTC",
+      "source": "synthetic",
+      "recorder_role": "observer",
+      "observation": "Synthetic observation",
+      "interpretation": "",
+      "status": "observed",
+      "corrects": [],
+      "schema_version": 1
+    },
+    "rules": [
+      "timestamp_timezone"
+    ]
+  }
+]

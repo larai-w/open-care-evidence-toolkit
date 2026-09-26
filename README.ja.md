@@ -128,3 +128,7 @@ python3 care_evidence.py fixtures/complete.json --format json
 - [開発ロードマップ](ROADMAP.md)
 - [行動規範](CODE_OF_CONDUCT.md)
 - [サポート窓口](SUPPORT.md)
+
+## フィールド検査の互換性
+
+CLIとブラウザは共通の合成ケースで日時書式・カレンダー・文字列型・訂正ID配列・バージョンを照合します。従来通っていたnullや不正な型・日時は品質問題になる場合があります。[仕様と移行方法（英語）](docs/input-compatibility.md)を参照してください。過去の検証結果は保持し、変更後のソースハッシュ付き結果は[別の検証セット](examples/field-contract-v1/README.md)へ保存しています。

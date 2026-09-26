@@ -1,8 +1,56 @@
 [
-  {"id":"required_fields","ja":"必須フィールド","en":"Required fields","hint":"Add every field in the minimum event schema.","severity":"high","area":"Schema completeness","machine_readable":true},
-  {"id":"timestamp_timezone","ja":"時刻とタイムゾーン","en":"Timestamp and timezone","hint":"Use ISO 8601 with an offset and an IANA timezone.","severity":"high","area":"Temporal integrity","machine_readable":true},
-  {"id":"observation_interpretation","ja":"観察と解釈の分離","en":"Observation and interpretation","hint":"Keep what was observed separate from what it may mean.","severity":"medium","area":"Content quality","machine_readable":true},
-  {"id":"provenance","ja":"出典と記録者","en":"Provenance","hint":"Record a source and a recorder role without personal names.","severity":"medium","area":"Traceability","machine_readable":true},
-  {"id":"missingness_status","ja":"欠測と非発生の区別","en":"Missingness and non-occurrence","hint":"Use not_recorded only for missing records, not as proof of non-occurrence.","severity":"medium","area":"Data semantics","machine_readable":true},
-  {"id":"correction_reference","ja":"訂正履歴","en":"Correction reference","hint":"Point to the earlier event ID when correcting a record.","severity":"low","area":"Auditability","machine_readable":true}
+  {
+    "id": "required_fields",
+    "ja": "必須フィールド",
+    "en": "Required fields",
+    "hint": "Include all ten fields, a nonblank string event_id, and numeric schema_version 1.",
+    "severity": "high",
+    "area": "Schema completeness",
+    "machine_readable": true
+  },
+  {
+    "id": "timestamp_timezone",
+    "ja": "時刻とタイムゾーン",
+    "en": "Timestamp and timezone",
+    "hint": "Use the documented timestamp format with a valid date and offset, and a nonblank timezone string.",
+    "severity": "high",
+    "area": "Temporal integrity",
+    "machine_readable": true
+  },
+  {
+    "id": "observation_interpretation",
+    "ja": "観察と解釈の分離",
+    "en": "Observation and interpretation",
+    "hint": "Use strings for observation and interpretation; keep observed facts separate from explanations.",
+    "severity": "medium",
+    "area": "Content quality",
+    "machine_readable": true
+  },
+  {
+    "id": "provenance",
+    "ja": "出典と記録者",
+    "en": "Provenance",
+    "hint": "Use nonblank strings for source and recorder_role, without personal names.",
+    "severity": "medium",
+    "area": "Traceability",
+    "machine_readable": true
+  },
+  {
+    "id": "missingness_status",
+    "ja": "欠測と非発生の区別",
+    "en": "Missingness and non-occurrence",
+    "hint": "Use not_recorded only for missing records, not as proof of non-occurrence.",
+    "severity": "medium",
+    "area": "Data semantics",
+    "machine_readable": true
+  },
+  {
+    "id": "correction_reference",
+    "ja": "訂正履歴",
+    "en": "Correction reference",
+    "hint": "Use a nonblank earlier event ID or a list of nonblank IDs; use [] for no correction.",
+    "severity": "low",
+    "area": "Auditability",
+    "machine_readable": true
+  }
 ]

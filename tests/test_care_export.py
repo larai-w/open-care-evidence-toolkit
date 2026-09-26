@@ -62,8 +62,13 @@ class ExportTests(unittest.TestCase):
                 self.assertEqual(set(row['features']), set(bundle['feature_names']))
 
     def test_checked_in_bundle_matches_exporter(self):
-        saved = json.loads((ROOT / 'examples/integration-v1/bundle.json').read_text())
+        saved = json.loads((ROOT / 'examples/field-contract-v1/bundle.json').read_text())
         self.assertEqual(saved, export_bundle(self.request))
+        historical = json.loads((ROOT / 'examples/integration-v1/bundle.json').read_text())
+        historical['audit'].pop('source_sha256')
+        current = deepcopy(saved)
+        current['audit'].pop('source_sha256')
+        self.assertEqual(historical, current)
 
     def test_cli_does_not_overwrite_or_write_on_validation_error(self):
         with tempfile.TemporaryDirectory() as directory:

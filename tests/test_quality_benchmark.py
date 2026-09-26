@@ -131,10 +131,13 @@ class BenchmarkTests(unittest.TestCase):
 
     def test_checked_in_example_matches_current_sources(self):
         directory = ROOT / 'examples/benchmark-v1'
-        saved = json.loads((directory / 'metrics.json').read_text())
+        saved = json.loads((ROOT / 'examples/field-contract-v1/benchmark-metrics.json').read_text())
         config = saved['configuration']
         report, evidence = build_benchmark(config['size'], config['rates'], config['seeds'])
-        self.assertEqual(saved, report, 'Regenerate the example after changing benchmark or validator sources')
+        self.assertEqual(saved, report, 'Current field-contract snapshot must match source hashes')
+        historical = json.loads((directory / 'metrics.json').read_text())
+        self.assertEqual({k: v for k, v in historical.items() if k != 'source_sha256'},
+                         {k: v for k, v in report.items() if k != 'source_sha256'})
         self.assertEqual(json.loads((directory / 'evidence.json').read_text()), evidence)
 
     def test_invalid_parameters_are_rejected(self):

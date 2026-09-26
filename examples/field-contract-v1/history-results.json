@@ -1,0 +1,413 @@
+{
+  "synthetic_only": true,
+  "snapshots": [
+    {
+      "history_schema_version": 1,
+      "as_of": "2026-01-01T09:00:00+00:00",
+      "visible_versions": 0,
+      "excluded_after_cutoff": 5,
+      "superseded_event_ids": [],
+      "events": [],
+      "lineage": [],
+      "summary": {
+        "records": 0,
+        "observed": 0,
+        "not_occurring": 0,
+        "not_recorded": 0,
+        "known_records": 0,
+        "observed_fraction_among_known": null
+      }
+    },
+    {
+      "history_schema_version": 1,
+      "as_of": "2026-01-01T10:00:00+00:00",
+      "visible_versions": 2,
+      "excluded_after_cutoff": 3,
+      "superseded_event_ids": [],
+      "events": [
+        {
+          "timezone": "UTC",
+          "source": "synthetic-history-generator",
+          "recorder_role": "synthetic-recorder",
+          "interpretation": "",
+          "schema_version": 1,
+          "event_id": "synthetic-a",
+          "observed_at": "2026-01-01T09:00:00+00:00",
+          "received_at": "2026-01-01T09:05:00+00:00",
+          "corrected_at": null,
+          "status": "observed",
+          "observation": "The synthetic indicator was on.",
+          "corrects": []
+        },
+        {
+          "timezone": "UTC",
+          "source": "synthetic-history-generator",
+          "recorder_role": "synthetic-recorder",
+          "interpretation": "",
+          "schema_version": 1,
+          "event_id": "synthetic-c",
+          "observed_at": "2026-01-01T09:20:00+00:00",
+          "received_at": "2026-01-01T09:21:00+00:00",
+          "corrected_at": null,
+          "status": "not_recorded",
+          "observation": "",
+          "corrects": []
+        }
+      ],
+      "lineage": [
+        {
+          "root_event_id": "synthetic-a",
+          "selected_event_id": "synthetic-a",
+          "chain": [
+            "synthetic-a"
+          ]
+        },
+        {
+          "root_event_id": "synthetic-c",
+          "selected_event_id": "synthetic-c",
+          "chain": [
+            "synthetic-c"
+          ]
+        }
+      ],
+      "summary": {
+        "records": 2,
+        "observed": 1,
+        "not_occurring": 0,
+        "not_recorded": 1,
+        "known_records": 1,
+        "observed_fraction_among_known": 1.0
+      }
+    },
+    {
+      "history_schema_version": 1,
+      "as_of": "2026-01-01T10:20:00+00:00",
+      "visible_versions": 2,
+      "excluded_after_cutoff": 3,
+      "superseded_event_ids": [],
+      "events": [
+        {
+          "timezone": "UTC",
+          "source": "synthetic-history-generator",
+          "recorder_role": "synthetic-recorder",
+          "interpretation": "",
+          "schema_version": 1,
+          "event_id": "synthetic-a",
+          "observed_at": "2026-01-01T09:00:00+00:00",
+          "received_at": "2026-01-01T09:05:00+00:00",
+          "corrected_at": null,
+          "status": "observed",
+          "observation": "The synthetic indicator was on.",
+          "corrects": []
+        },
+        {
+          "timezone": "UTC",
+          "source": "synthetic-history-generator",
+          "recorder_role": "synthetic-recorder",
+          "interpretation": "",
+          "schema_version": 1,
+          "event_id": "synthetic-c",
+          "observed_at": "2026-01-01T09:20:00+00:00",
+          "received_at": "2026-01-01T09:21:00+00:00",
+          "corrected_at": null,
+          "status": "not_recorded",
+          "observation": "",
+          "corrects": []
+        }
+      ],
+      "lineage": [
+        {
+          "root_event_id": "synthetic-a",
+          "selected_event_id": "synthetic-a",
+          "chain": [
+            "synthetic-a"
+          ]
+        },
+        {
+          "root_event_id": "synthetic-c",
+          "selected_event_id": "synthetic-c",
+          "chain": [
+            "synthetic-c"
+          ]
+        }
+      ],
+      "summary": {
+        "records": 2,
+        "observed": 1,
+        "not_occurring": 0,
+        "not_recorded": 1,
+        "known_records": 1,
+        "observed_fraction_among_known": 1.0
+      }
+    },
+    {
+      "history_schema_version": 1,
+      "as_of": "2026-01-01T10:30:00+00:00",
+      "visible_versions": 3,
+      "excluded_after_cutoff": 2,
+      "superseded_event_ids": [
+        "synthetic-a"
+      ],
+      "events": [
+        {
+          "timezone": "UTC",
+          "source": "synthetic-history-generator",
+          "recorder_role": "synthetic-recorder",
+          "interpretation": "",
+          "schema_version": 1,
+          "event_id": "synthetic-a-r1",
+          "observed_at": "2026-01-01T09:00:00+00:00",
+          "received_at": "2026-01-01T10:30:00+00:00",
+          "corrected_at": "2026-01-01T10:15:00+00:00",
+          "status": "not_occurring",
+          "observation": "",
+          "corrects": [
+            "synthetic-a"
+          ]
+        },
+        {
+          "timezone": "UTC",
+          "source": "synthetic-history-generator",
+          "recorder_role": "synthetic-recorder",
+          "interpretation": "",
+          "schema_version": 1,
+          "event_id": "synthetic-c",
+          "observed_at": "2026-01-01T09:20:00+00:00",
+          "received_at": "2026-01-01T09:21:00+00:00",
+          "corrected_at": null,
+          "status": "not_recorded",
+          "observation": "",
+          "corrects": []
+        }
+      ],
+      "lineage": [
+        {
+          "root_event_id": "synthetic-a",
+          "selected_event_id": "synthetic-a-r1",
+          "chain": [
+            "synthetic-a",
+            "synthetic-a-r1"
+          ]
+        },
+        {
+          "root_event_id": "synthetic-c",
+          "selected_event_id": "synthetic-c",
+          "chain": [
+            "synthetic-c"
+          ]
+        }
+      ],
+      "summary": {
+        "records": 2,
+        "observed": 0,
+        "not_occurring": 1,
+        "not_recorded": 1,
+        "known_records": 1,
+        "observed_fraction_among_known": 0.0
+      }
+    },
+    {
+      "history_schema_version": 1,
+      "as_of": "2026-01-01T11:00:00+00:00",
+      "visible_versions": 4,
+      "excluded_after_cutoff": 1,
+      "superseded_event_ids": [
+        "synthetic-a"
+      ],
+      "events": [
+        {
+          "timezone": "UTC",
+          "source": "synthetic-history-generator",
+          "recorder_role": "synthetic-recorder",
+          "interpretation": "",
+          "schema_version": 1,
+          "event_id": "synthetic-a-r1",
+          "observed_at": "2026-01-01T09:00:00+00:00",
+          "received_at": "2026-01-01T10:30:00+00:00",
+          "corrected_at": "2026-01-01T10:15:00+00:00",
+          "status": "not_occurring",
+          "observation": "",
+          "corrects": [
+            "synthetic-a"
+          ]
+        },
+        {
+          "timezone": "UTC",
+          "source": "synthetic-history-generator",
+          "recorder_role": "synthetic-recorder",
+          "interpretation": "",
+          "schema_version": 1,
+          "event_id": "synthetic-b",
+          "observed_at": "2026-01-01T09:10:00+00:00",
+          "received_at": "2026-01-01T11:00:00+00:00",
+          "corrected_at": null,
+          "status": "not_occurring",
+          "observation": "",
+          "corrects": []
+        },
+        {
+          "timezone": "UTC",
+          "source": "synthetic-history-generator",
+          "recorder_role": "synthetic-recorder",
+          "interpretation": "",
+          "schema_version": 1,
+          "event_id": "synthetic-c",
+          "observed_at": "2026-01-01T09:20:00+00:00",
+          "received_at": "2026-01-01T09:21:00+00:00",
+          "corrected_at": null,
+          "status": "not_recorded",
+          "observation": "",
+          "corrects": []
+        }
+      ],
+      "lineage": [
+        {
+          "root_event_id": "synthetic-a",
+          "selected_event_id": "synthetic-a-r1",
+          "chain": [
+            "synthetic-a",
+            "synthetic-a-r1"
+          ]
+        },
+        {
+          "root_event_id": "synthetic-b",
+          "selected_event_id": "synthetic-b",
+          "chain": [
+            "synthetic-b"
+          ]
+        },
+        {
+          "root_event_id": "synthetic-c",
+          "selected_event_id": "synthetic-c",
+          "chain": [
+            "synthetic-c"
+          ]
+        }
+      ],
+      "summary": {
+        "records": 3,
+        "observed": 0,
+        "not_occurring": 2,
+        "not_recorded": 1,
+        "known_records": 2,
+        "observed_fraction_among_known": 0.0
+      }
+    },
+    {
+      "history_schema_version": 1,
+      "as_of": "2026-01-01T12:00:00+00:00",
+      "visible_versions": 5,
+      "excluded_after_cutoff": 0,
+      "superseded_event_ids": [
+        "synthetic-a",
+        "synthetic-a-r1"
+      ],
+      "events": [
+        {
+          "timezone": "UTC",
+          "source": "synthetic-history-generator",
+          "recorder_role": "synthetic-recorder",
+          "interpretation": "",
+          "schema_version": 1,
+          "event_id": "synthetic-a-r2",
+          "observed_at": "2026-01-01T09:00:00+00:00",
+          "received_at": "2026-01-01T12:00:00+00:00",
+          "corrected_at": "2026-01-01T11:45:00+00:00",
+          "status": "observed",
+          "observation": "The synthetic indicator was on.",
+          "corrects": [
+            "synthetic-a-r1"
+          ]
+        },
+        {
+          "timezone": "UTC",
+          "source": "synthetic-history-generator",
+          "recorder_role": "synthetic-recorder",
+          "interpretation": "",
+          "schema_version": 1,
+          "event_id": "synthetic-b",
+          "observed_at": "2026-01-01T09:10:00+00:00",
+          "received_at": "2026-01-01T11:00:00+00:00",
+          "corrected_at": null,
+          "status": "not_occurring",
+          "observation": "",
+          "corrects": []
+        },
+        {
+          "timezone": "UTC",
+          "source": "synthetic-history-generator",
+          "recorder_role": "synthetic-recorder",
+          "interpretation": "",
+          "schema_version": 1,
+          "event_id": "synthetic-c",
+          "observed_at": "2026-01-01T09:20:00+00:00",
+          "received_at": "2026-01-01T09:21:00+00:00",
+          "corrected_at": null,
+          "status": "not_recorded",
+          "observation": "",
+          "corrects": []
+        }
+      ],
+      "lineage": [
+        {
+          "root_event_id": "synthetic-a",
+          "selected_event_id": "synthetic-a-r2",
+          "chain": [
+            "synthetic-a",
+            "synthetic-a-r1",
+            "synthetic-a-r2"
+          ]
+        },
+        {
+          "root_event_id": "synthetic-b",
+          "selected_event_id": "synthetic-b",
+          "chain": [
+            "synthetic-b"
+          ]
+        },
+        {
+          "root_event_id": "synthetic-c",
+          "selected_event_id": "synthetic-c",
+          "chain": [
+            "synthetic-c"
+          ]
+        }
+      ],
+      "summary": {
+        "records": 3,
+        "observed": 1,
+        "not_occurring": 1,
+        "not_recorded": 1,
+        "known_records": 2,
+        "observed_fraction_among_known": 0.5
+      }
+    }
+  ],
+  "comparison": {
+    "target_cutoff": "2026-01-01T10:00:00+00:00",
+    "incorrect_later_cutoff": "2026-01-01T12:00:00+00:00",
+    "as_of_summary": {
+      "records": 2,
+      "observed": 1,
+      "not_occurring": 0,
+      "not_recorded": 1,
+      "known_records": 1,
+      "observed_fraction_among_known": 1.0
+    },
+    "naive_latest_summary": {
+      "records": 3,
+      "observed": 1,
+      "not_occurring": 1,
+      "not_recorded": 1,
+      "known_records": 2,
+      "observed_fraction_among_known": 0.5
+    },
+    "absolute_fraction_difference": 0.5
+  },
+  "source_sha256": {
+    "care_history.py": "879bc17aa60de91b8327855942746c0dea8fbd5b0da82802942b1df39cef8237",
+    "care_evidence.py": "a3eaaaf43b734c6a7d11b6d02304070c684df484b7437df806c72b66d0914cf5",
+    "fixtures/history.json": "06e0feebd4a9380b701eb8f6aa30d5a5f65ee0d9348fa0dcc17ef5b244657283",
+    "benchmarks/history_replay.py": "ebcbdaceaef9baf8d0ce3f7e3ca024383a0fd665e6ac145be55e825d21827dfb"
+  }
+}

@@ -31,12 +31,12 @@
     </div>
   </main>
   <script type="application/json" id="rule-registry">[
-    {"id":"required_fields","ja":"必須フィールド","en":"Required fields","hint":"Add every field in the minimum event schema."},
-    {"id":"timestamp_timezone","ja":"時刻とタイムゾーン","en":"Timestamp and timezone","hint":"Use ISO 8601 with an offset and an IANA timezone."},
-    {"id":"observation_interpretation","ja":"観察と解釈の分離","en":"Observation and interpretation","hint":"Keep what was observed separate from what it may mean."},
-    {"id":"provenance","ja":"出典と記録者","en":"Provenance","hint":"Record a source and a recorder role without personal names."},
+    {"id":"required_fields","ja":"必須フィールド","en":"Required fields","hint":"Include all ten fields, a nonblank string event_id, and numeric schema_version 1."},
+    {"id":"timestamp_timezone","ja":"時刻とタイムゾーン","en":"Timestamp and timezone","hint":"Use the documented timestamp format with a valid date and offset, and a nonblank timezone string."},
+    {"id":"observation_interpretation","ja":"観察と解釈の分離","en":"Observation and interpretation","hint":"Use strings for observation and interpretation; keep observed facts separate from explanations."},
+    {"id":"provenance","ja":"出典と記録者","en":"Provenance","hint":"Use nonblank strings for source and recorder_role, without personal names."},
     {"id":"missingness_status","ja":"欠測と非発生の区別","en":"Missingness and non-occurrence","hint":"Use not_recorded only for missing records, not as proof of non-occurrence."},
-    {"id":"correction_reference","ja":"訂正履歴","en":"Correction reference","hint":"Point to the earlier event ID when correcting a record."}
+    {"id":"correction_reference","ja":"訂正履歴","en":"Correction reference","hint":"Use a nonblank earlier event ID or a list of nonblank IDs; use [] for no correction."}
   ]</script>
   <script>
     const REQUIRED = ['event_id','observed_at','timezone','source','recorder_role','observation','interpretation','status','corrects','schema_version'];
@@ -66,19 +66,48 @@
       if (lastError !== null) renderError();
       else if (!lastResults) summary.textContent = current.initial; else renderResults();
     }
+    function nonblank(value) {
+      return typeof value === 'string' && value.replace(/[\u0009-\u000d\u0020\u0085\u00a0\u1680\u2000-\u200a\u2028\u2029\u202f\u205f\u3000\ufeff]/g, '').length > 0;
+    }
+    function validTimestamp(value) {
+      if (typeof value !== 'string') return false;
+      const match = /^([0-9]{4})-([0-9]{2})-([0-9]{2})T([0-9]{2}):([0-9]{2}):([0-9]{2})(?:\.[0-9]{1,6})?(Z|[+-]([0-9]{2}):([0-9]{2}))$/.exec(value);
+      // JS $ also matches before a final newline; require the entire value.
+      if (!match || match[0] !== value) return false;
+      const [, yearText, monthText, dayText, hour, minute, second, zone, offsetHour, offsetMinute] = match;
+      const year = Number(yearText), month = Number(monthText), day = Number(dayText);
+      const leap = year % 4 === 0 && (year % 100 !== 0 || year % 400 === 0);
+      const days = [31, leap ? 29 : 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+      return year >= 1 && month >= 1 && month <= 12 && day >= 1 && day <= days[month - 1]
+        && Number(hour) <= 23 && Number(minute) <= 59 && Number(second) <= 59
+        && (zone === 'Z' || (Number(offsetHour) <= 23 && Number(offsetMinute) <= 59));
+    }
     function check(event) {
-      const issues = [], missing = REQUIRED.filter(key => !(key in event));
+      const issues = [], missing = REQUIRED.filter(key => !Object.hasOwn(event, key));
       if (missing.length) issues.push(['required_fields', `不足: ${missing.join(', ')}`]);
-      const parsed = new Date(String(event.observed_at || ''));
-      if (Number.isNaN(parsed.getTime()) || !/[zZ]|[+-]\d\d:\d\d$/.test(String(event.observed_at || ''))) issues.push(['timestamp_timezone','observed_at はISO 8601形式とタイムゾーンオフセットが必要です']);
-      if (!String(event.timezone || '').trim()) issues.push(['timestamp_timezone','timezone がありません']);
-      const observation = String(event.observation || '').trim();
-      if (observation && /と思う|かもしれない|likely|maybe/i.test(observation)) issues.push(['observation_interpretation','観察欄に推測表現があります']);
-      if (event.status === 'observed' && !observation) issues.push(['observation_interpretation','observed には観察内容が必要です']);
-      if (!String(event.source || '').trim() || !String(event.recorder_role || '').trim()) issues.push(['provenance','source と recorder_role を記録してください']);
-      if (!STATUSES.has(event.status)) issues.push(['missingness_status','status は observed / not_recorded / not_occurring のいずれかです']);
-      if (event.status === 'not_recorded' && (observation || String(event.interpretation || '').trim())) issues.push(['missingness_status','not_recorded に観察・解釈を入れないでください']);
-      if (!(typeof event.corrects === 'string' || Array.isArray(event.corrects))) issues.push(['correction_reference','corrects は元イベントIDまたはID配列です']);
+      if ((Object.hasOwn(event, 'event_id') && !nonblank(event.event_id)) ||
+          (Object.hasOwn(event, 'schema_version') && event.schema_version !== 1))
+        issues.push(['required_fields','event_idは空でない文字列、schema_versionは数値1が必要です']);
+      if (!validTimestamp(event.observed_at)) issues.push(['timestamp_timezone','observed_atは実在する日時と対応するオフセット形式が必要です']);
+      if (!nonblank(event.timezone)) issues.push(['timestamp_timezone','timezoneは空でない文字列が必要です']);
+      const observation = Object.hasOwn(event, 'observation') ? event.observation : '';
+      const interpretation = Object.hasOwn(event, 'interpretation') ? event.interpretation : '';
+      if (typeof observation !== 'string' || typeof interpretation !== 'string')
+        issues.push(['observation_interpretation','observationとinterpretationは文字列が必要です']);
+      else {
+        const lower = observation.toLowerCase();
+        if (['と思う', 'かもしれない', 'likely', 'maybe'].some(token => lower.includes(token)))
+          issues.push(['observation_interpretation','観察欄に推測表現があります']);
+        if (event.status === 'observed' && !nonblank(observation)) {
+          issues.push(['observation_interpretation','observedには観察内容が必要です']);
+          if (nonblank(interpretation)) issues.push(['observation_interpretation','解釈だけで、観察の根拠がありません']);
+        }
+      }
+      if (!nonblank(event.source) || !nonblank(event.recorder_role)) issues.push(['provenance','sourceとrecorder_roleを空でない文字列で記録してください']);
+      if (!STATUSES.has(event.status)) issues.push(['missingness_status','statusはobserved / not_recorded / not_occurringのいずれかです']);
+      if (event.status === 'not_recorded' && (nonblank(observation) || nonblank(interpretation))) issues.push(['missingness_status','not_recordedに観察・解釈を入れないでください']);
+      if (Object.hasOwn(event, 'corrects') && !(nonblank(event.corrects) || (Array.isArray(event.corrects) && event.corrects.every(nonblank))))
+        issues.push(['correction_reference','correctsは空でないIDまたはID配列、訂正なしは[]を使用してください']);
       return issues;
     }
     function parseCsv(text) {
@@ -115,7 +144,7 @@
         if (row.length !== headers.length) throw new Error('CSV column count mismatch');
         const event = Object.fromEntries(headers.map((header, i) => [header, row[i]]));
         if (Object.hasOwn(event, 'corrects')) event.corrects = event.corrects.split(';').filter(Boolean);
-        if (Object.hasOwn(event, 'schema_version') && /^\d+$/.test(event.schema_version)) event.schema_version = Number(event.schema_version);
+        if (Object.hasOwn(event, 'schema_version') && /^0*1$/.test(event.schema_version) && event.schema_version.slice(-1) === "1") event.schema_version = Number(event.schema_version);
         return event;
       });
     }

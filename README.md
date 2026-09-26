@@ -43,6 +43,8 @@ python3 care_export.py fixtures/integration-request.json --output build/care-bun
 
 The feature set is a three-value synthetic indicator summary. It is not a HAR sensor representation, and this path performs no model training or prediction.
 
+Current source-hashed regression snapshots are in [field-contract-v1](examples/field-contract-v1/README.md). Earlier benchmark, history, and integration examples remain unchanged as historical evidence.
+
 ## Quick start
 
 Use Python 3.11 or later; CI covers Python 3.11, 3.12, and 3.13. The CLI uses the Python standard library and requires no API keys or third-party packages.
@@ -86,18 +88,18 @@ Observation data can lose meaning before it reaches a model. An absent record ca
 
 | Rule | Current check |
 | --- | --- |
-| `required_fields` | Checks that all ten schema keys are present. |
-| `timestamp_timezone` | Parses the observation timestamp, requires an offset, and checks that the timezone field is non-empty. |
-| `observation_interpretation` | Flags selected speculative phrases and an empty observation when the status is `observed`. |
-| `provenance` | Requires a non-empty source and recorder role. |
+| `required_fields` | Requires all ten keys, a nonblank string event ID, and numeric schema version 1. |
+| `timestamp_timezone` | Checks the documented timestamp grammar, calendar date, offset, and nonblank timezone string. |
+| `observation_interpretation` | Requires text fields to be strings; flags selected speculative phrases and missing observed content. |
+| `provenance` | Requires nonblank strings for source and recorder role. |
 | `missingness_status` | Checks the status vocabulary and rejects observation or interpretation text for `not_recorded`. |
-| `correction_reference` | Checks the outer type of a supplied correction reference. |
+| `correction_reference` | Requires a nonblank string ID or an array of nonblank string IDs; accepts `[]`. |
 
 The distinction between `not_recorded` and `not_occurring` is deliberate: absence of a record is not evidence that an event did not happen.
 
 ## Input contract
 
-JSON input can be a single event, a non-empty array of event objects, or an object with a non-empty `events` array. CSV input uses the same field names as column headers. Both entry points reject malformed containers before producing a report. See the [CLI/browser compatibility contract](docs/input-compatibility.md) for supported CSV syntax, regression cases, and remaining field-level differences.
+JSON input can be a single event, a non-empty array of event objects, or an object with a non-empty `events` array. CSV input uses the same field names as column headers. Both entry points reject malformed containers before producing a report. See the [CLI/browser compatibility contract](docs/input-compatibility.md) for supported CSV syntax, regression cases, and field-level rules and migration notes.
 
 | Field | Intended meaning |
 | --- | --- |
@@ -110,7 +112,7 @@ JSON input can be a single event, a non-empty array of event objects, or an obje
 | `interpretation` | What the observation may mean; an empty string means no interpretation. |
 | `status` | `observed`, `not_recorded`, or `not_occurring`. |
 | `corrects` | Earlier event ID or a list of IDs; use `[]` when there is no correction. |
-| `schema_version` | Input schema version. |
+| `schema_version` | Numeric value 1 (booleans and JSON strings are invalid). |
 
 For CSV, separate multiple correction IDs with semicolons. See the [synthetic fixtures](fixtures/) for runnable examples and [schema notes in Japanese](SCHEMA.md) for further context.
 
@@ -134,13 +136,13 @@ python3 scripts/check_public_repo.py
 
 Open [demo.html](demo.html) locally in a browser. Select a synthetic JSON/CSV file or click **合成サンプルを表示** (Show synthetic sample). Click **English** to switch the interface and results to English. The demo runs without a server, external dependencies, or file uploads.
 
-The CLI and browser have checks for UTF-8 BOMs, quoted commas, quoted newlines, and blank lines. The CLI additionally rejects malformed input containers and ambiguous CSV shapes. Full parser and validation parity between the two interfaces is not yet guaranteed.
+The CLI and browser share synthetic container and field-contract fixtures, including exact ordered rule IDs. See the [compatibility contract](docs/input-compatibility.md) for timestamp grammar, CSV conversion, migration changes, and test limits.
 
 ## Scope and limitations
 
 - Use synthetic data only. The repository is an exploratory data-quality MVP, with no clinical validation or production-readiness claim.
 - The checks are deterministic heuristics, not a learned model or a complete schema validator.
-- The current implementation does not verify IANA timezone names, enforce schema-version values, detect duplicate event IDs, or resolve correction IDs against earlier events. Correction-list element types are not fully validated.
+- Generic event checks do not verify IANA timezone membership, detect duplicate IDs, or resolve correction targets. History replay has its own stricter graph and temporal contract.
 - The observation/interpretation check matches a small set of phrases; it does not establish whether a statement is factually correct.
 - No model performance, clinical outcomes, or real-world deployment results are demonstrated here.
 

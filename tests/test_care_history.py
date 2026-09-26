@@ -200,8 +200,11 @@ class HistoryTests(unittest.TestCase):
         self.assertEqual([s['summary']['observed_fraction_among_known'] for s in report['snapshots']],
                          [None, 1, 1, 0, 0, .5])
         self.assertEqual(report['comparison']['absolute_fraction_difference'], .5)
-        saved = json.loads((ROOT / 'examples/history-v1/results.json').read_text())
-        self.assertEqual(report, saved, 'Regenerate the example when history sources change')
+        saved = json.loads((ROOT / 'examples/field-contract-v1/history-results.json').read_text())
+        self.assertEqual(report, saved, 'Current snapshot must match history and validator sources')
+        historical = json.loads((ROOT / 'examples/history-v1/results.json').read_text())
+        self.assertEqual({k: v for k, v in report.items() if k != 'source_sha256'},
+                         {k: v for k, v in historical.items() if k != 'source_sha256'})
 
     def test_cli_json_and_markdown(self):
         for fmt in ('json', 'markdown'):

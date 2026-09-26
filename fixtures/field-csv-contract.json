@@ -1,0 +1,73 @@
+[
+  {
+    "name": "version-one",
+    "text": "event_id,observed_at,timezone,source,recorder_role,observation,interpretation,status,corrects,schema_version\r\nsynthetic-field-001,2024-02-29T12:34:56Z,UTC,synthetic,observer,Synthetic observation,,observed,,1\r\n",
+    "rules": []
+  },
+  {
+    "name": "version-zero-padded",
+    "text": "event_id,observed_at,timezone,source,recorder_role,observation,interpretation,status,corrects,schema_version\r\nsynthetic-field-001,2024-02-29T12:34:56Z,UTC,synthetic,observer,Synthetic observation,,observed,,0001\r\n",
+    "rules": []
+  },
+  {
+    "name": "version-text-float",
+    "text": "event_id,observed_at,timezone,source,recorder_role,observation,interpretation,status,corrects,schema_version\r\nsynthetic-field-001,2024-02-29T12:34:56Z,UTC,synthetic,observer,Synthetic observation,,observed,,1.0\r\n",
+    "rules": [
+      "required_fields"
+    ]
+  },
+  {
+    "name": "version-unicode",
+    "text": "event_id,observed_at,timezone,source,recorder_role,observation,interpretation,status,corrects,schema_version\r\nsynthetic-field-001,2024-02-29T12:34:56Z,UTC,synthetic,observer,Synthetic observation,,observed,,١\r\n",
+    "rules": [
+      "required_fields"
+    ]
+  },
+  {
+    "name": "version-large",
+    "text": "event_id,observed_at,timezone,source,recorder_role,observation,interpretation,status,corrects,schema_version\r\nsynthetic-field-001,2024-02-29T12:34:56Z,UTC,synthetic,observer,Synthetic observation,,observed,,9999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999\r\n",
+    "rules": [
+      "required_fields"
+    ]
+  },
+  {
+    "name": "version-newline",
+    "text": "event_id,observed_at,timezone,source,recorder_role,observation,interpretation,status,corrects,schema_version\r\nsynthetic-field-001,2024-02-29T12:34:56Z,UTC,synthetic,observer,Synthetic observation,,observed,,\"1\n\"\r\n",
+    "rules": [
+      "required_fields"
+    ]
+  },
+  {
+    "name": "version-cr",
+    "text": "event_id,observed_at,timezone,source,recorder_role,observation,interpretation,status,corrects,schema_version\r\nsynthetic-field-001,2024-02-29T12:34:56Z,UTC,synthetic,observer,Synthetic observation,,observed,,\"1\r\"\r\n",
+    "rules": [
+      "required_fields"
+    ]
+  },
+  {
+    "name": "version-whitespace",
+    "text": "event_id,observed_at,timezone,source,recorder_role,observation,interpretation,status,corrects,schema_version\r\nsynthetic-field-001,2024-02-29T12:34:56Z,UTC,synthetic,observer,Synthetic observation,,observed,, 1\r\n",
+    "rules": [
+      "required_fields"
+    ]
+  },
+  {
+    "name": "corrects-many",
+    "text": "event_id,observed_at,timezone,source,recorder_role,observation,interpretation,status,corrects,schema_version\r\nsynthetic-field-001,2024-02-29T12:34:56Z,UTC,synthetic,observer,Synthetic observation,,observed,first;;second,1\r\n",
+    "rules": []
+  },
+  {
+    "name": "corrects-blank-id",
+    "text": "event_id,observed_at,timezone,source,recorder_role,observation,interpretation,status,corrects,schema_version\r\nsynthetic-field-001,2024-02-29T12:34:56Z,UTC,synthetic,observer,Synthetic observation,,observed,first; ,1\r\n",
+    "rules": [
+      "correction_reference"
+    ]
+  },
+  {
+    "name": "timestamp-newline",
+    "text": "event_id,observed_at,timezone,source,recorder_role,observation,interpretation,status,corrects,schema_version\r\nsynthetic-field-001,\"2024-02-29T12:34:56Z\n\",UTC,synthetic,observer,Synthetic observation,,observed,,1\r\n",
+    "rules": [
+      "timestamp_timezone"
+    ]
+  }
+]

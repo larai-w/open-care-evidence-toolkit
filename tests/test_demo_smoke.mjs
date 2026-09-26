@@ -67,3 +67,36 @@ try {
 } finally { fs.rmSync(directory, { recursive: true }); }
 assert.deepEqual(failures, [], failures.join('\n'));
 console.log(`CLI/browser input contract: ${corpus.length} synthetic cases PASS`);
+
+const fieldCases = JSON.parse(fs.readFileSync(new URL('../fixtures/field-contract.json', import.meta.url)));
+const fieldFailures = [];
+for (const item of fieldCases) {
+  for (const language of ['en', 'ja']) {
+    context.setLanguage(language);
+    context.inspect(JSON.stringify(item.event), 'synthetic.json');
+    try {
+      const actual = JSON.parse(vm.runInNewContext('JSON.stringify(lastResults[0].issues.map(issue => issue[0]))', context));
+      assert.deepEqual(actual, item.rules);
+    } catch (error) { fieldFailures.push(`${item.name} (${language}): ${error.message}`); }
+  }
+}
+assert.deepEqual(fieldFailures, [], fieldFailures.join('\n'));
+console.log(`Browser field contract: ${fieldCases.length} cases in both languages PASS`);
+
+const csvFields = JSON.parse(fs.readFileSync(new URL('../fixtures/field-csv-contract.json', import.meta.url)));
+const csvDirectory = fs.mkdtempSync(join(tmpdir(), 'care-csv-fields-'));
+try {
+  for (const item of csvFields) {
+    const path = join(csvDirectory, 'synthetic.csv');
+    fs.writeFileSync(path, item.text);
+    const cli = spawnSync(process.env.PYTHON || 'python3', [
+      new URL('../care_evidence.py', import.meta.url).pathname, path, '--format', 'json', '--fail-on-issues'
+    ], { encoding: 'utf8' });
+    assert.ifError(cli.error);
+    assert.equal(cli.status, item.rules.length ? 1 : 0, `${item.name}: ${cli.stderr}`);
+    assert.deepEqual(JSON.parse(cli.stdout).results[0].issues.map(issue => issue.rule), item.rules, item.name);
+    context.inspect(item.text, path);
+    assert.deepEqual(JSON.parse(vm.runInNewContext('JSON.stringify(lastResults[0].issues.map(issue => issue[0]))', context)), item.rules, item.name);
+  }
+} finally { fs.rmSync(csvDirectory, { recursive: true }); }
+console.log(`CLI/browser CSV field contract: ${csvFields.length} cases PASS`);
